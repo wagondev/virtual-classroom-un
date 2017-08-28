@@ -5,7 +5,7 @@
 ## MIEMBROS:
 
 * Omar Jose Beltran Rodriguez
-* David Celiano Herrera Gutierrez
+* [David Celiano Herrera Gutiérrez] (https://dacherreragu.github.io/)
 * Carlos Arturo Lopez Romero
 * Carlos Alfonso Guevara Gonzalez
 
