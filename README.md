@@ -3,7 +3,6 @@
 ## GRUPO: WagonDev
 
 ## MIEMBROS:
-
 * Omar Jose Beltran Rodriguez
 * [David Celiano Herrera Gutiérrez](https://dacherreragu.github.io/)
 * Carlos Arturo Lopez Romero
