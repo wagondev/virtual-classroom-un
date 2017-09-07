@@ -10,5 +10,6 @@
  
 * Omar: Diagrama entidades, entidades y validaciones
 * Carlos G: implementación de autenticación en devise
-* Carlos L:
+* Carlos L: Landing page- en bootstrap, Pagina de contacto incluida en la Landing page, Mockups Landingpage- login correcto - Pagina de Login - Login incorrecto
 * David: Configuración base de datos, mockup contacto, revisiones de algunos problemas presentados, creaciòn esqueleto proyecto.
+
