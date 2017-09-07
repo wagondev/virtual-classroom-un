@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :workteams
   get 'pages/info'
 
   root to: redirect('/tests')

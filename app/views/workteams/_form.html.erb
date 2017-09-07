@@ -1,0 +1,32 @@
+<%= form_with(model: workteam, local: true) do |form| %>
+  <% if workteam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(workteam.errors.count, "error") %> prohibited this workteam from being saved:</h2>
+
+      <ul>
+      <% workteam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idWorkteam %>
+    <%= form.number_field :idWorkteam, id: :workteam_idWorkteam %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idStudent %>
+    <%= form.number_field :idStudent, id: :workteam_idStudent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idGroup %>
+    <%= form.number_field :idGroup, id: :workteam_idGroup %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
