@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
+      <th>Id group</th>
       <th>Name</th>
       <th>Number member</th>
       <th colspan="3"></th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.id %></td>
+        <td><%= group.id_group %></td>
         <td><%= group.name %></td>
         <td><%= group.number_member %></td>
         <td><%= link_to 'Show', group %></td>

@@ -17,7 +17,7 @@ class RolsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create rol" do
     assert_difference('Rol.count') do
-      post rols_url, params: { rol: { id: @rol.id, password: @rol.password, user_name: @rol.user_name } }
+      post rols_url, params: { rol: { idRol: @rol.idRol, password: @rol.password, user_name: @rol.user_name } }
     end
 
     assert_redirected_to rol_url(Rol.last)
@@ -34,7 +34,7 @@ class RolsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update rol" do
-    patch rol_url(@rol), params: { rol: { id: @rol.id, password: @rol.password, user_name: @rol.user_name } }
+    patch rol_url(@rol), params: { rol: { idRol: @rol.idRol, password: @rol.password, user_name: @rol.user_name } }
     assert_redirected_to rol_url(@rol)
   end
 
