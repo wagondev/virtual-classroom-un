@@ -1,0 +1,2 @@
+class PruebaControladorController < ApplicationController
+end
