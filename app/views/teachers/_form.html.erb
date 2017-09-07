@@ -1,0 +1,57 @@
+<%= form_with(model: teacher, local: true) do |form| %>
+  <% if teacher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+      <% teacher.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :teacher_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :teacher_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_day %>
+    <%= form.date_select :birth_day, id: :teacher_birth_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :teacher_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ocupation %>
+    <%= form.text_field :ocupation, id: :teacher_ocupation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :career %>
+    <%= form.text_field :career, id: :teacher_career %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preferences %>
+    <%= form.text_field :preferences, id: :teacher_preferences %>
+  </div>
+
+  <div class="field">
+    <%= form.label :about_me %>
+    <%= form.text_field :about_me, id: :teacher_about_me %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
