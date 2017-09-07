@@ -6,5 +6,5 @@
 * Pagina de contacto incluida en la Landing page --Carlos Arturo Lopez
 * Mockups Landingpage- login correcto - Pagina de Login - Login incorrecto -- Carlos Arturo Lopez
 
-* Implementación de autenticación usando device - Carlos Guevara
+* Implementación de registro y autenticación usando device - Carlos Guevara
 * personalización básica a las vistas por defecto de devise - Carlos Guevara
