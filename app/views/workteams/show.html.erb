@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idworkteam:</strong>
+  <%= @workteam.idWorkteam %>
+</p>
+
+<p>
+  <strong>Idstudent:</strong>
+  <%= @workteam.idStudent %>
+</p>
+
+<p>
+  <strong>Idgroup:</strong>
+  <%= @workteam.idGroup %>
+</p>
+
+<%= link_to 'Edit', edit_workteam_path(@workteam) %> |
+<%= link_to 'Back', workteams_path %>

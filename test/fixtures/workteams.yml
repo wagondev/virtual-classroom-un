@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idWorkteam: 1
+  idStudent: 1
+  idGroup: 1
+
+two:
+  idWorkteam: 1
+  idStudent: 1
+  idGroup: 1
