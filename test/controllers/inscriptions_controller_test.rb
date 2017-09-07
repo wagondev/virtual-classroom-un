@@ -17,7 +17,7 @@ class InscriptionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create inscription" do
     assert_difference('Inscription.count') do
-      post inscriptions_url, params: { inscription: { id: @inscription.id, idCourse: @inscription.idCourse, idStudent: @inscription.idStudent } }
+      post inscriptions_url, params: { inscription: { idCourse: @inscription.idCourse, idInscription: @inscription.idInscription, idStudent: @inscription.idStudent } }
     end
 
     assert_redirected_to inscription_url(Inscription.last)
@@ -34,7 +34,7 @@ class InscriptionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update inscription" do
-    patch inscription_url(@inscription), params: { inscription: { id: @inscription.id, idCourse: @inscription.idCourse, idStudent: @inscription.idStudent } }
+    patch inscription_url(@inscription), params: { inscription: { idCourse: @inscription.idCourse, idInscription: @inscription.idInscription, idStudent: @inscription.idStudent } }
     assert_redirected_to inscription_url(@inscription)
   end
 

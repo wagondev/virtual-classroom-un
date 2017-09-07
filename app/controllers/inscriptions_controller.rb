@@ -69,6 +69,6 @@ class InscriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inscription_params
-      params.require(:inscription).permit(:id, :idStudent, :idCourse)
+      params.require(:inscription).permit(:idInscription, :idStudent, :idCourse)
     end
 end
