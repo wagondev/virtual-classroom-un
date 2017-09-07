@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'pages/info'
+
+  root to: redirect('/tests')
+  resources :tests
+  devise_for :users
   resources :students
   resources :teachers
   resources :rols
