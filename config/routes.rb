@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
+  #get 'home/index'
 
   resources :workteams
   get 'pages/info'
-
-  root to: redirect('/tests')
+  
+  root to: redirect('Landing%20Page/index')
   resources :tests
   devise_for :users
   resources :students
