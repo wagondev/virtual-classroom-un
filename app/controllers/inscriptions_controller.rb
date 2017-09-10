@@ -1,4 +1,5 @@
 class InscriptionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_inscription, only: [:show, :edit, :update, :destroy]
 
   # GET /inscriptions
