@@ -1,4 +1,5 @@
 class WorkteamsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_workteam, only: [:show, :edit, :update, :destroy]
 
   # GET /workteams
