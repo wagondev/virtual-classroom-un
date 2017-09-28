@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Group Inscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rol</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_inscriptions.each do |group_inscription| %>
+      <tr>
+        <td><%= group_inscription.rol %></td>
+        <td><%= link_to 'Show', group_inscription %></td>
+        <td><%= link_to 'Edit', edit_group_inscription_path(group_inscription) %></td>
+        <td><%= link_to 'Destroy', group_inscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group Inscription', new_group_inscription_path %>

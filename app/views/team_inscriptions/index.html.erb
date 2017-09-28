@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Team Inscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rol</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team_inscriptions.each do |team_inscription| %>
+      <tr>
+        <td><%= team_inscription.rol %></td>
+        <td><%= link_to 'Show', team_inscription %></td>
+        <td><%= link_to 'Edit', edit_team_inscription_path(team_inscription) %></td>
+        <td><%= link_to 'Destroy', team_inscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team Inscription', new_team_inscription_path %>

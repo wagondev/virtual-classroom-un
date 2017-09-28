@@ -1,0 +1,2 @@
+class TeamInscription < ApplicationRecord
+end

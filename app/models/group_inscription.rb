@@ -1,0 +1,2 @@
+class GroupInscription < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+module TeamInscriptionsHelper
+end

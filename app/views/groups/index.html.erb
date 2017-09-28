@@ -5,9 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id group</th>
-      <th>Name</th>
-      <th>Number member</th>
+      <th>Course</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +13,7 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.id_group %></td>
-        <td><%= group.name %></td>
-        <td><%= group.number_member %></td>
+        <td><%= group.course %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
