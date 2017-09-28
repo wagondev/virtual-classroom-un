@@ -23,4 +23,8 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: db/production.pg
+  database: d46ormrium3l01
+  username: gitrqzkqysfphc
+  password: ec429018e33d7e12024cf4c22e44558d40a27ab14210f78b026dba3aaa57ca7b
+  host: ec2-184-72-230-93.compute-1.amazonaws.com
+  port: 5342

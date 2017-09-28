@@ -4,9 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Home-VirtualClassroom</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<%= stylesheet_link_tag 'bootstrap' %>
+	<%= stylesheet_link_tag 'main' %>
+	<%= stylesheet_link_tag 'font-awesome.min' %>
+	<%= stylesheet_link_tag 'jquery' %>
+	<%= stylesheet_link_tag 'bootstrap.min' %>
+	<%= stylesheet_link_tag 'navbar' %>
 </head>
 <body class="container-fluid" data-spy="scroll" data-target=".navbar" data-offset="20">
 	<header class="container-fluid">
@@ -37,7 +41,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#login">
+							<a href="/users/sign_in">
 								Login
 								<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
 							</a>
@@ -196,8 +200,6 @@
                 <br /><br />
             </div>
 	</section>
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/navbar.js"></script>
+
 </body>
 </html>
