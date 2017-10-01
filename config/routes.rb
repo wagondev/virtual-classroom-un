@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :inscriptions
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  get 'prueba', to:'student_create_groups#nombre'
 end
