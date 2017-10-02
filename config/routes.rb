@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'student_create_groups/create_groups'
+
   resources :team_inscriptions
   resources :group_inscriptions
   resources :teams

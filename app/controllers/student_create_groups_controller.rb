@@ -1,5 +1,4 @@
 class StudentCreateGroupsController < ApplicationController
-    def nombre
-        
-    end
+  def create_groups
+  end
 end
