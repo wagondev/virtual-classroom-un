@@ -4,12 +4,17 @@
 	<meta charset="UTF-8">
 	<title>CreateGroups</title>
 	<meta name="viewport" content="width=divice-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<%= stylesheet_link_tag 'main' %>
+	 <%= stylesheet_link_tag 'bootstrap' %>
+  <%= stylesheet_link_tag 'main' %>
+  <%= stylesheet_link_tag 'font-awesome.min' %>
+  <%= stylesheet_link_tag 'jquery' %>
+  <%= stylesheet_link_tag 'bootstrap.min' %>
+
 </head>
 
 <body class="container">
 	
-	<%= start_form_tag :action => 'create_groups' %>
+	
 	
 	<div class="form-group row" id="nameGroup">
 		<div class="col-md-5" id="people">
@@ -20,19 +25,19 @@
 			<button class="btn-info">Cargar imagen de grupo</button>
 		</div>
 		<div class="col-md-4">
-			<label for="nameGroupText" class="sr-only" >Nombre del grupo</label>
-			<%= text_field 'create_groups', 'nombre' %>
-			<!--><input type="text" class="form-control" id="nameGroupText" placeholder="Ingrese el nombre del grupo"><-->
+			<label for="nameGroupText" class="" >Nombre del grupo</label>
+			<%= text_field 'create_groups', 'nombre', class:"form-control" %>
+	
 		</div>
 	</div>
 	<div class="form-group row">
 		<div class="col-md-3">
 			<label for="studentsNumber" class="label-control">Numero max. de integrantes</label>
-			<input type="number" class="form-control" placeholder="Ingresa el numero de compañeros">
+			<%= number_field 'create_groups', 'maxIntegrantes', class:"form-control" %>
 		</div>
 		<div class="col-md-9">
 			<label for="descriptionGroup" class="label-control">Ingrese una breve descripcion del grupo</label>
-			<textarea name="descriptionGroup" id="descriptionGroup" cols=5 rows="10" class="form-control"></textarea>
+			<%= text_area_tag 'create_groups', 'descripcion', class:"form-control"%>
 		</div>
 	</div>
 	<div class="form-group row">
@@ -43,7 +48,6 @@
 
 	</div>
 	
-	<%= end_form_tag %>
 
 </body>
 
