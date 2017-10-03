@@ -1,2 +1,44 @@
-<h1>StudentCreateGroups#create_groups</h1>
-<p>Find me in app/views/student_create_groups/create_groups.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CreateGroups</title>
+	<meta name="viewport" content="width=divice-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<%= stylesheet_link_tag 'main' %>
+</head>
+
+<body class="container">
+	<div class="form-group row" id="nameGroup">
+		<div class="col-md-5" id="people">
+			<div class="thumbnail">
+				<div class="fill center-block" id="image1">
+					</div>
+			</div>
+			<button class="btn-info">Cargar imagen de grupo</button>
+		</div>
+		<div class="col-md-4">
+			<label for="nameGroupText" class="sr-only" >Nombre del grupo</label>
+			<input type="text" class="form-control" id="nameGroupText" placeholder="Ingrese el nombre del grupo">
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-md-3">
+			<label for="studentsNumber" class="label-control">Numero max. de integrantes</label>
+			<input type="number" class="form-control" placeholder="Ingresa el numero de compañeros">
+		</div>
+		<div class="col-md-9">
+			<label for="descriptionGroup" class="label-control">Ingrese una breve descripcion del grupo</label>
+			<textarea name="descriptionGroup" id="descriptionGroup" cols=5 rows="10" class="form-control"></textarea>
+		</div>
+	</div>
+	<div class="form-group row">
+
+		<div class="col-md-offset-10">
+			<button class="btn-primary">Invitar estudiantes</button>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

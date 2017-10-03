@@ -157,7 +157,17 @@ header p{
 #servicios p{
     padding: 3rem;
 }
-
+#people .fill{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#people #image1{
+  background-image: url(people.png);
+}
 #quienSomos .row{
     background-color: rgba(0,0,0, 0.5);
     padding-top: 5rem;
