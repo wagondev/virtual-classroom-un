@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :groups
+  resources :people
   resources :team_inscriptions
   resources :group_inscriptions
   resources :teams
-  resources :groups
   get 'home/index'
 
   get 'pages/info'

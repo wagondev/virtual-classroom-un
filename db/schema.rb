@@ -10,26 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907213809) do
+ActiveRecord::Schema.define(version: 20171003203527) do
 
-  create_table "administrators", force: :cascade do |t|
-    t.integer "idAdministrator"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "courses", force: :cascade do |t|
-    t.integer "idCourse"
-    t.string "name"
+  create_table "group_inscriptions", force: :cascade do |t|
+    t.string "rol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "groups", force: :cascade do |t|
-    t.integer "id_group"
     t.string "name"
-    t.integer "number_member"
+    t.text "description"
+    t.integer "number_max_person"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,36 +35,24 @@ ActiveRecord::Schema.define(version: 20170907213809) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rols", force: :cascade do |t|
-    t.integer "idRol"
-    t.string "user_name"
-    t.string "password"
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.boolean "administrator"
+    t.string "type"
+    t.string "career"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", force: :cascade do |t|
-    t.integer "idStudent"
-    t.string "name"
-    t.date "birth_day"
-    t.string "city"
-    t.string "ocupation"
-    t.string "career"
-    t.string "preferences"
-    t.string "about_me"
+  create_table "team_inscriptions", force: :cascade do |t|
+    t.string "rol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "teachers", force: :cascade do |t|
-    t.integer "idTeacher"
+  create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.date "birth_day"
-    t.string "city"
-    t.string "ocupation"
-    t.string "career"
-    t.string "preferences"
-    t.string "about_me"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -98,14 +79,6 @@ ActiveRecord::Schema.define(version: 20170907213809) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "workteams", force: :cascade do |t|
-    t.integer "idWorkteam"
-    t.integer "idStudent"
-    t.integer "idGroup"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

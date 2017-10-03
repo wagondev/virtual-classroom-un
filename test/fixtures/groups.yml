@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  course: 1
+  name: MyString
+  description: MyText
+  number_max_person: 1
+  photo: MyString
 
 two:
-  course: 1
+  name: MyString
+  description: MyText
+  number_max_person: 1
+  photo: MyString

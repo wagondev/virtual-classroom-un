@@ -12,8 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :course %>
-    <%= form.number_field :course, id: :group_course %>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :group_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :group_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_max_person %>
+    <%= form.number_field :number_max_person, id: :group_number_max_person %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo, id: :group_photo %>
   </div>
 
   <div class="actions">
