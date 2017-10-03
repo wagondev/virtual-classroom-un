@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171002195244) do
+=======
+ActiveRecord::Schema.define(version: 20171003203527) do
+>>>>>>> entidades
 
   create_table "group_inscriptions", force: :cascade do |t|
     t.string "rol"
@@ -19,7 +23,14 @@ ActiveRecord::Schema.define(version: 20171002195244) do
   end
 
   create_table "groups", force: :cascade do |t|
+<<<<<<< HEAD
     t.integer "course"
+=======
+    t.string "name"
+    t.text "description"
+    t.integer "number_max_person"
+    t.string "photo"
+>>>>>>> entidades
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,10 +43,19 @@ ActiveRecord::Schema.define(version: 20171002195244) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "student_create_groups", force: :cascade do |t|
     t.string "nombre"
     t.integer "maxIntegrantes"
     t.text "descripcion"
+=======
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.boolean "administrator"
+    t.string "type"
+    t.string "career"
+    t.string "city"
+>>>>>>> entidades
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

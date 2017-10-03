@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD:test/fixtures/student_create_groups.yml
   nombre: 
   maxIntegrantes: 
   descripcion: MyText
@@ -9,3 +10,15 @@ two:
   nombre: 
   maxIntegrantes: 
   descripcion: MyText
+=======
+  name: MyString
+  description: MyText
+  number_max_person: 1
+  photo: MyString
+
+two:
+  name: MyString
+  description: MyText
+  number_max_person: 1
+  photo: MyString
+>>>>>>> entidades:test/fixtures/groups.yml

@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get 'student_create_groups/create_groups'
 
+=======
+  resources :groups
+  resources :people
+>>>>>>> entidades
   resources :team_inscriptions
   resources :group_inscriptions
   resources :teams

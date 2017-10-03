@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  administrator: false
+  type: 
+  career: MyString
+  city: MyString
+
+two:
+  name: MyString
+  administrator: false
+  type: 
+  career: MyString
+  city: MyString
