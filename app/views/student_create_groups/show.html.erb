@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @student_create_group.nombre %>
+</p>
+
+<p>
+  <strong>Maxintegrantes:</strong>
+  <%= @student_create_group.maxIntegrantes %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @student_create_group.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_student_create_group_path(@student_create_group) %> |
+<%= link_to 'Back', student_create_groups_path %>
