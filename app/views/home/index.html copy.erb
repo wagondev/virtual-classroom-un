@@ -40,16 +40,12 @@
 								Contacto
 							</a>
 						</li>
-						<% if user_signed_in? %>
-						  <li>
-						  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-						  </li>
-						<% else %>
-						  <li>
-						  <%= link_to('Login', new_user_session_path)  %>  
-						  </li>
-						<% end %>
-						
+						<li>
+							<a href="/users/sign_in">
+								Login
+								<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+							</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
