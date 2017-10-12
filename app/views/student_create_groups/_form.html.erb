@@ -11,22 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre, id: :student_create_group_nombre %>
-  </div>
+        <br>
+        <div class="">
+          <div class="row ">
+            <div class="form-group col-md-offset-2 col-md-6">
+              <div class="field">
+                  <%= form.label :nombre_del_Grupo, class: "label-control" %>
+                      <%= form.text_field :nombre_del_Grupo, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-offset-2 col-md-6">
+              <div class="field">
+                <%= form.label :numero_maximo_de_integrantes %>
+                    <%= form.number_field :numero_maximo_de_integrantes, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-offset-2 col-md-8">
+              <div class="field">
+                <%= form.label :descripcion_del_Grupo, class: 'label-control'%>
+                <%= text_area_tag(:descripción_del_Grupo , :'Ingrese una breve descripcion del grupo.... Algo que llame la atención :)' , rows: 4, class: 'form-control') %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-offset-8 col-md-2">
+              <div class="actions">
+                <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+                  <i class="icon-ok icon-white"></i> Crear Grupo
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :maxIntegrantes %>
-    <%= form.number_field :maxIntegrantes, id: :student_create_group_maxIntegrantes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.text_area :descripcion, id: :student_create_group_descripcion %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
