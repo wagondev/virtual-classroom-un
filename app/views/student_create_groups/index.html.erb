@@ -11,7 +11,7 @@
         <th>Nombre del grupo</th>
         <th>Numero de integrantes</th>
         <th>Descripción</th>
-         <th>Imagen</th>
+        <th>Imagen</th>
         <th colspan="3"></th>
            
       </tr>
@@ -23,7 +23,7 @@
           <td><%= student_create_group.nombre %></td>
           <td><%= student_create_group.maxIntegrantes %></td>
           <td><%= student_create_group.descripcion %></td>
-           <%= image_tag(student_create_group.imagen_url, :width => 65, :height => 75) if student_create_group.imagen.present? %>
+           <td><%= image_tag(student_create_group.imagen_url, :width => 65, :height => 75) if student_create_group.imagen.present? %></td>
           <td><%= link_to 'Ver', student_create_group %></td>
           <td><%= link_to 'Editar', edit_student_create_group_path(student_create_group) %></td>
           <td><%= link_to 'Eliminar', student_create_group, method: :delete, data: { confirm: '¿Esta seguro de borar este grupo?' } %></td>
