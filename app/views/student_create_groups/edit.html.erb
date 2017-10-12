@@ -4,6 +4,9 @@
 	
 	<%= render 'form', student_create_group: @student_create_group %>
 	
-	<%= link_to 'Show', @student_create_group %> |
-	<%= link_to 'Back', student_create_groups_path %>
+	<div class="">
+		<%= link_to 'Ver grupos', @student_create_group, class: 'btn btn-link' %> |
+		<%= link_to 'Retroceder', student_create_groups_path, class: 'btn btn-link' %>
+			
+		</div>
 </div>

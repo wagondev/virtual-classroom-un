@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   resources :inscriptions
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-  get 'prueba', to:'student_create_groups#create_groups'
+  #get 'prueba', to:'student_create_groups#create_groups'
 end
