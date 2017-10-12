@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
   #root to: redirect('Landing%20Page/index')
   resources :tests
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :inscriptions
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   #get 'prueba', to:'student_create_groups#create_groups'
