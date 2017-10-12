@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nident: 1
+  name: MyString
+  administrator: false
+  isStudent: false
+  owner: false
+  gender: MyString
+  career: MyString
+  city: MyString
+  aboutme: MyText
+
+two:
+  nident: 1
+  name: MyString
+  administrator: false
+  isStudent: false
+  owner: false
+  gender: MyString
+  career: MyString
+  city: MyString
+  aboutme: MyText
