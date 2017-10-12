@@ -40,6 +40,12 @@
 								Contacto
 							</a>
 						</li>
+						<li>
+							<%= link_to('Personas', people_path) %>
+						</li>
+						<li>
+							<%= link_to('Grupos', student_create_groups_path) %>
+						</li>
 						<% if user_signed_in? %>
 						  <li>
 						  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
@@ -204,6 +210,7 @@
                 <br /><br />
             </div>
 	</section>
+
 
 </body>
 </html>

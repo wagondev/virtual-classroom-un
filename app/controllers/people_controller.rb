@@ -1,10 +1,11 @@
 class PeopleController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    @people = Person.paginate(:page => params[:page], per_page: 10)
   end
 
   # GET /people/1
