@@ -1,4 +1,5 @@
 class TeamInscriptionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_team_inscription, only: [:show, :edit, :update, :destroy]
 
   # GET /team_inscriptions

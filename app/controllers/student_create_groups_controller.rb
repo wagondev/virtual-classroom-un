@@ -1,4 +1,5 @@
 class StudentCreateGroupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_student_create_group, only: [:show, :edit, :update, :destroy]
 
   # GET /student_create_groups
@@ -28,6 +29,8 @@ class StudentCreateGroupsController < ApplicationController
 
     respond_to do |format|
       if @student_create_group.save
+        UserMailer.group_created_email(current_user,@student_create_group).deliver_later
+        
         format.html { redirect_to @student_create_group, notice: 'Student create group was successfully created.' }
         format.json { render :show, status: :created, location: @student_create_group }
       else

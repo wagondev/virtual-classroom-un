@@ -1,4 +1,5 @@
 class GroupInscriptionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_group_inscription, only: [:show, :edit, :update, :destroy]
 
   # GET /group_inscriptions
