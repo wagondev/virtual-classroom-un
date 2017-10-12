@@ -10,3 +10,4 @@ class CreateStudentCreateGroups < ActiveRecord::Migration[5.1]
     end
   end
 end
+

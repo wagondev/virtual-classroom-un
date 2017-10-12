@@ -153,6 +153,9 @@ header p{
 #servicios #image6{
   background-image: url(group.png);
 }
+#verGrupos .fill{
+  background-image: url(devops.jpg);
+}
 
 #servicios p{
     padding: 3rem;

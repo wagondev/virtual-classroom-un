@@ -1,33 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Student Create Groups</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Maxintegrantes</th>
-      <th>Descripcion</th>
-      <th>Imagen</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @student_create_groups.each do |student_create_group| %>
+      
+<div class="container">
+  <h1 class="text-center text-success">Grupos creados</h1>
+  <br>
+  <table class="table table-hover">
+    <thead>
+     
       <tr>
-        <td><%= student_create_group.nombre %></td>
-        <td><%= student_create_group.maxIntegrantes %></td>
-        <td><%= student_create_group.descripcion %></td>
-            <%= image_tag(student_create_group.imagen_url, :width => 65, :height => 75) if student_create_group.imagen.present? %>
-        <td><%= link_to 'Show', student_create_group %></td>
-        <td><%= link_to 'Edit', edit_student_create_group_path(student_create_group) %></td>
-        <td><%= link_to 'Destroy', student_create_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre del grupo</th>
+        <th>Numero de integrantes</th>
+        <th>Descripción</th>
+        <th>Imagen</th>
+        <th colspan="3"></th>
+           
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+  
+    <tbody>
+      <% @student_create_groups.each do |student_create_group| %>
+        <tr>
+          <td><%= student_create_group.nombre %></td>
+          <td><%= student_create_group.maxIntegrantes %></td>
+          <td><%= student_create_group.descripcion %></td>
+           <td><%= image_tag(student_create_group.imagen_url, :width => 65, :height => 75) if student_create_group.imagen.present? %></td>
+          <td><%= link_to 'Ver', student_create_group %></td>
+          <td><%= link_to 'Editar', edit_student_create_group_path(student_create_group) %></td>
+          <td><%= link_to 'Eliminar', student_create_group, method: :delete, data: { confirm: '¿Esta seguro de borar este grupo?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<br>
 <br>
 
-<%= link_to 'New Student Create Group', new_student_create_group_path %>
+<%= link_to 'Crear un grupo nuevo', new_student_create_group_path, class: 'btn btn-link'%>
+</div>
