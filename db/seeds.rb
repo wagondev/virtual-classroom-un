@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Student_create_group.create(nombre: "WagonDev", maxIntegrantes:5, descripcion:"Ingenieria de Software II", imagen:"")
-Student_create_group.create(nombre: "WagonDev", maxIntegrantes:5, descripcion:"Ingenieria de Software II", imagen:"")
+#Student_create_group.create(nombre: "WagonDev", maxIntegrantes:5, descripcion:"Ingenieria de Software II", imagen:"")
+#Student_create_group.create(nombre: "WagonDev", maxIntegrantes:5, descripcion:"Ingenieria de Software II", imagen:"")
 
 
 Subject.create(name: "CALCULO DIFERENCIAL", idSubject: 1000004)
 Subject.create(name: "INTRODUCCION A LA INGENIERIA DE SISTEMAS Y COMPUTACION", idSubject: 2025975)
 Subject.create(name: "PROGRAMACION DE COMPUTADORES",idSubject: 2015734)
 Subject.create(name: "FUNDAMENTOS DE MECANICA", idSubject: 1000019)
-Subject.create(name: "CALCULO INTEGRA", idSubject: 1000005)
+Subject.create(name: "CALCULO INTEGRAL", idSubject: 1000005)
 Subject.create(name: "ALGEBRA LINEAL", idSubject: 1000003)
 Subject.create(name: "PROGRAMACION ORIENTADA A OBJETOS", idSubject: 2016375)
 Subject.create(name: "PROBABILIDAD Y ESTADISTICA", idSubject: 1000013)
