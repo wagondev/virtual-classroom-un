@@ -1,2 +1,11 @@
 Mockups 	7
 Diseño E-R	1
+
+
+
+Clase 12-10-17
+
+Implementar Will paginate
+Erreglo errores heroku mailer
+Modificaron vistas person
+Se realizaron cambios en tablas
