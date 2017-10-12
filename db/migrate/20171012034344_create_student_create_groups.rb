@@ -4,6 +4,7 @@ class CreateStudentCreateGroups < ActiveRecord::Migration[5.1]
       t.string :nombre
       t.integer :maxIntegrantes
       t.text :descripcion
+      t.string :imagen
 
       t.timestamps
     end

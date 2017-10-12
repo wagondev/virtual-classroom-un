@@ -26,6 +26,11 @@
     <%= form.text_area :descripcion, id: :student_create_group_descripcion %>
   </div>
 
+  <div class="field">
+    <%= form.label :imagen %>
+    <%= form.file_field :imagen, id: :student_create_group_imagen %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

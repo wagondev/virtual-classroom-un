@@ -17,7 +17,7 @@ class StudentCreateGroupsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create student_create_group" do
     assert_difference('StudentCreateGroup.count') do
-      post student_create_groups_url, params: { student_create_group: { descripcion: @student_create_group.descripcion, maxIntegrantes: @student_create_group.maxIntegrantes, nombre: @student_create_group.nombre } }
+      post student_create_groups_url, params: { student_create_group: { descripcion: @student_create_group.descripcion, imagen: @student_create_group.imagen, maxIntegrantes: @student_create_group.maxIntegrantes, nombre: @student_create_group.nombre } }
     end
 
     assert_redirected_to student_create_group_url(StudentCreateGroup.last)
@@ -34,7 +34,7 @@ class StudentCreateGroupsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update student_create_group" do
-    patch student_create_group_url(@student_create_group), params: { student_create_group: { descripcion: @student_create_group.descripcion, maxIntegrantes: @student_create_group.maxIntegrantes, nombre: @student_create_group.nombre } }
+    patch student_create_group_url(@student_create_group), params: { student_create_group: { descripcion: @student_create_group.descripcion, imagen: @student_create_group.imagen, maxIntegrantes: @student_create_group.maxIntegrantes, nombre: @student_create_group.nombre } }
     assert_redirected_to student_create_group_url(@student_create_group)
   end
 

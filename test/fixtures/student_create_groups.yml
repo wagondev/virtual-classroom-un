@@ -4,8 +4,10 @@ one:
   nombre: MyString
   maxIntegrantes: 1
   descripcion: MyText
+  imagen: MyString
 
 two:
   nombre: MyString
   maxIntegrantes: 1
   descripcion: MyText
+  imagen: MyString
