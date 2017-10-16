@@ -4,10 +4,25 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :correo_electrónico %><br />
-    <%= f.email_field :email, autofocus: true %>
+	<%= f.label :nombre %><br />
+	<%= f.text_field :name, autofocus: true %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :identificación %><br />
+    <%= f.text_field :identification, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :carrera %><br />
+    <%= f.text_field :career, autofocus: true %>
+  </div>  
+  
+  <div class="field">
+    <%= f.label :Estudiante %>
+    <%= f.check_box :student, autofocus: true %>
+  </div>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
