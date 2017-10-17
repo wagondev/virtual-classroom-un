@@ -1,0 +1,335 @@
+@font-face { font-family: 'Lato-Black'; src: url('Lato-Black.ttf'); }
+@font-face { font-family: 'Lato-Bold'; src: url('Lato-Bold.ttf'); } 
+@font-face { font-family: 'Lato-BlackItalic' ; src: url('Lato-BlackItalic.ttf');}
+@font-face { font-family: 'Lato-Hairline' ; src: url('Lato-Hairline.ttf');}
+@font-face { font-family: 'Lato-HairlineItalic' ; src: url('Lato-HairlineItalic.ttf');}
+@font-face { font-family: 'Lato-Heavy' ; src: url('Lato-Heavy.ttf');}
+@font-face { font-family: 'Lato-HeavyItalic' ; src: url('Lato-HeavyItalic.ttf');}
+@font-face { font-family: 'Lato-Italic' ; src: url('Lato-Italic.ttf');}
+@font-face { font-family: 'Lato-Light' ; src: url('Lato-Light.ttf');}
+@font-face { font-family: 'Lato-LightItalic' ; src: url('Lato-LightItalic.ttf');}
+@font-face { font-family: 'Lato-Medium' ; src: url('Lato-Medium.ttf');}
+@font-face { font-family: 'Lato-MediumItalic' ; src: url('Lato-MediumItalic.ttf');}
+@font-face { font-family: 'Lato-Regular' ; src: url('Lato-Regular.ttf');}
+@font-face { font-family: 'Lato-Semibold' ; src: url('Lato-Semibold.ttf');}
+@font-face { font-family: 'Lato-SemiboldItalic' ; src: url('Lato-SemiboldItalic.ttf');}
+@font-face { font-family: 'Lato-Thin' ; src: url('Lato-Thin.ttf');}
+@font-face { font-family: 'Lato-ThinItalic' ; src: url('Lato-ThinItalic.ttf');}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+
+body.container-fluid{
+    background-image: url(fondo1.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar-default{
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    height: 8rem;
+    border-style: none;
+    border-radius: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem; 
+}
+
+.navbar-default:hover{
+    background:rgba(0, 0, 0, 0.5);
+}
+
+.navbar-default .navbar-brand{
+    padding-top: 3rem;
+    font-family: 'Lato-SemiboldItalic';
+    font-size: 3rem;
+    color: white;
+}
+
+.navbar-default .navbar-brand:hover{
+    color: black;
+}
+
+.navbar-default .navbar-right li{
+    height: 8rem;
+    border-radius: 10%;   
+}
+
+.navbar-default .navbar-right a{
+    color: white !important;
+    height: 8rem;
+    padding-top: 3rem;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.navbar-default .navbar-right a:hover,
+.navbar-default .navbar-collapse ul .active a{
+    background-color: white !important;
+    color: black !important;
+    border-radius: 3rem;
+    text-align: center;
+}
+
+header{
+    position: relative;
+    height: 15%;
+    background-color: rgba(0,0,0, 0.5);
+    align-items: center;
+
+}
+
+header .list-inline{
+    position: absolute;
+    text-align: center;
+    font-size: 5rem;
+    background: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-bottom:0px;
+  }
+
+
+
+header .list-inline a{
+    padding: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    color: white;
+}
+
+header .list-inline a:hover{
+    background: black; 
+}
+
+header p{
+    color: white;
+    text-align: center;
+    padding-top: 25%;
+    font-family: 'Lato-Medium';
+    font-size: 5rem;
+    width: 60rem;
+    color: rgba(200, 160, 220, 1);
+
+}
+
+#servicios .row{
+    background-color: white;
+    padding-top: 3rem;
+}
+#servicios .fill{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#servicios #image1{
+  background-image: url(teacher.png);
+}
+
+#servicios #image2{
+  background-image: url(student.png);
+}
+
+#servicios #image3{
+  background-image: url(time.png);
+}
+#servicios #image4{
+  background-image: url(maps.png);
+}
+#servicios #image5{
+  background-image: url(email.png);
+}
+#servicios #image6{
+  background-image: url(group.png);
+}
+#verGrupos .fill{
+  background-image: url(devops.jpg);
+}
+
+#servicios p{
+    padding: 3rem;
+}
+#people .fill{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#people #image1{
+  background-image: url(people.png);
+}
+#quienSomos .row{
+    background-color: rgba(0,0,0, 0.5);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #E0F8F7;
+
+}
+#quienSomos .fill{
+
+    background-image: url(icon.png);
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 35rem;
+    width: 35rem;
+    border-radius: 50%;
+}
+
+#quienSomos .caption{
+    font-family: 'Lato-Regular';
+    font-size: 2rem;
+    padding: 3rem;
+    text-align: justify;
+    text-align-last: center;
+}
+
+
+
+#contacto .row{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: rgba(143, 143, 143, 1);
+  color: white;
+}
+
+.featurette{
+  font-family: "Lato-Thin";
+  font-size: 2.5rem;
+}
+#register-form{
+  padding-top: 2rem;
+  padding-left:  10%;
+  padding-right: 10%;
+  font-size: 2rem;
+  color: white;
+}
+
+#register-form #form-c,
+#register-form #msg{
+  border-style: hidden;
+  background: rgba(143, 143, 143, 1);
+  border-bottom: 1px solid white;
+
+}
+
+#logo .fill{
+
+    background-image: url(icon.png);
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 35rem;
+    width: 35rem;
+    border-radius: 50%;
+}
+
+#logo .row{
+    background-color: rgba(0,0,0, 0.5);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #E0F8F7;
+
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+color: white !important;
+opacity: 0.5;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: white !important;
+opacity: 0.5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: white !important;
+opacity: 0.5;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: white !important;
+opacity: 0.5;
+}
+
+
+#register-form .form-control {
+    vertical-align: top;
+    resize: vertical;
+    border-style: hidden;
+    border: 1px solid white;
+    color: white;
+}
+
+#register-form .btn-primary{
+  background: white;
+  border: 1px solid white;
+  color: black
+}
+
+footer .row{
+  font-size: 12px;
+  padding: 20px 0;
+  background-color: rgba(120, 200, 200, 1);
+  height: 7rem;
+  color: white;
+
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+footer .col-sm-8 li{
+  padding-right: 50px;
+}
+
+footer .col-sm-8 li a{
+  color: white;
+}
+
+footer .col-sm-8 li #contact{
+  border: 2px solid white;
+  padding: 5px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li img {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (max-width: 425px){
+  header p{
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  header .list-inline{
+    width: 100%
+  }
+
+  #quienSomos .fill{
+    width: 25rem;
+    height: 25rem;
+  }
+
+}
+
+

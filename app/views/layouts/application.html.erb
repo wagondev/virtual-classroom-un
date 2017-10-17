@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<meta charset="UTF-8">
+	<title>Home-VirtualClassroom</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Virtual ClassRoom UN</title>
     <%= csrf_meta_tags %>
 
-	 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
-	 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+    <%= stylesheet_link_tag 'bootstrap' %>
+	<%= stylesheet_link_tag 'main' %>
+	<%= stylesheet_link_tag 'font-awesome.min' %>
+	<%= stylesheet_link_tag 'jquery' %>
+	<%= stylesheet_link_tag 'bootstrap.min' %>
+	<%= stylesheet_link_tag 'navbar' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-	 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	   <div class="container">
-	     <div class="navbar-header">
-	       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	         <span class="sr-only">Toggle navigation</span>
-	         <span class="icon-bar"></span>
-	         <span class="icon-bar"></span>
-	         <span class="icon-bar"></span>
-	       </button>
-	       <a class="navbar-brand" href="/">Virtual Classroom UN</a>
-	     </div>
-	     <div class="collapse navbar-collapse">
-			 <p class="navbar-text pull-right">
-			 <% if user_signed_in? %>
-			   <strong><%= current_user.email %>  </strong>
-			   <%= link_to 'Editar', edit_user_registration_path, :class => 'navbar-link' %> |
-			   <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-			 <% else %>
-			   <%= link_to "Crea una cuenta", new_user_registration_path, :class => 'navbar-link'  %> |
-			   <%= link_to "Inicia Sesión", new_user_session_path, :class => 'navbar-link'  %>
-			 <% end %>
-			 </p>
-	     </div>
-	   </div>
-	 </nav>
+<body class="container-fluid" data-spy="scroll" data-target=".navbar" data-offset="20">
+	<header class="container-fluid">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="myNav">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".sidebar-navbar-collapse" aria-expanded="false" aria-controls="navbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+	 	      <%= link_to("Virtual-Classroom UN", home_index_path, class: "navbar-brand navbar-brand-centered") %>
+	 	    </div>
+	 	    <nav class="collapse navbar-collapse" role="navigation" >
+					<ul class="nav navbar-nav navbar-right">
+						<% if current_page?('/home/index') %>
+	
+						<li>
+							 <a href="#quienSomos">¿Quienes somos?</a> 
+						</li>
+						<li>
+ 							<a href="#servicios">Nuestros Servicios</a>
+ 						</li>
+						<li>
+							<a href="#contacto">
+								Contacto
+							</a>
+						</li>
+						<% end %>
+						<% if user_signed_in? %>
+						  <li>
+						  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+						  </li>
+						<% else %>
+						  <li>
+						  <%= link_to('Login', new_user_session_path)  %>  
+						  </li>
+						<% end %>
+						
+					</ul>
+				</nav>	 	   
+	 	  </div>
+	 	</nav>
+	 </header>
+
 	  
 	 <% if notice %>
 	   <p class="alert alert-success"><%= notice %></p>
@@ -45,7 +71,7 @@
 	   <p class="alert alert-danger"><%= alert %></p>
 	 <% end %>
 	 
-	 <div class="container">
+	 <div class="container-fluid">
 	   <%= yield %>
 	 </div>
 
@@ -57,8 +83,5 @@
  	  </div>
  	</footer>
 		
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
-
   </body>
 </html>
