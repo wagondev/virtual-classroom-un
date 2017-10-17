@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  max_member: 1
+  description: MyText
+  logo: MyString
+
+two:
+  name: MyString
+  max_member: 1
+  description: MyText
+  logo: MyString

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :inscriptions
+  resources :groups
+  resources :teams
+  resources :subjects
   devise_for :users
   
   root to: 'home#index'
