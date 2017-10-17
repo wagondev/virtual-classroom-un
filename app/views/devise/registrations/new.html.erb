@@ -9,6 +9,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :carrera %><br />
+    <%= f.text_field :career, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Estudiante %>
+    <%= f.check_box :student, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(mínimo <%= @minimum_password_length %> caracteres)</em>
