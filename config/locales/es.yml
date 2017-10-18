@@ -1,0 +1,31 @@
+
+es:
+  activerecord:
+    attributes:
+      user:
+        email: "Correo Electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de Contraseña"
+        current_password: "Contraseña actual"
+        encrypted_password: "Contraseña"
+        student: "Estudiante"
+        career: "Carrera"
+    errors:
+      models:
+        user: 
+          attributes:
+            email:
+              blank: "vacío"
+              taken: "ya registrado"
+            password:
+              blank: "vacía"
+              too_short: "demasiado corta"
+            password_confirmation:
+              confirmation: "no coincide"
+            current_password:
+              blank: "vacía"
+              invalid: "incorrecta"
+            career:
+              blank: "vacía"
+            encrypted_password:
+              blank: "vacía"

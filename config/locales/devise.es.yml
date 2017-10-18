@@ -62,24 +62,3 @@ es:
       not_saved:
         one: "Ha ocurrido 1 error:"
         other: "Han ocurrido %{count} errores:"
-  activerecord:
-    attributes:
-      user:
-        email: "Correo Electrónico"
-        password: "Contraseña"
-        password_confirmation: "Confirmación de Contraseña"
-        current_password: "Contraseña actual"
-    errors:
-      models:
-        user: 
-          attributes:
-            email:
-              blank: "vacío"
-            password:
-              blank: "vacía"
-              too_short: "demasiado corta"
-            password_confirmation:
-              confirmation: "no coincide"
-            current_password:
-              blank: "vacía"
-              invalid: "incorrecta"
