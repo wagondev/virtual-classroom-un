@@ -33,7 +33,7 @@
 	 	    </div>
 	 	    <nav class="collapse navbar-collapse" role="navigation" >
 					<ul class="nav navbar-nav navbar-right">
-						<% if current_page?('/home/index') %>
+						<% if (current_page?('/home/index') || current_page?(root_path) )%>
 	
 						<li>
 							 <a href="#quienSomos">¿Quienes somos?</a> 
