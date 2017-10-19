@@ -1,4 +1,4 @@
 class UsersController < ApplicationController
-  def home_user
+  def home
   end
 end
