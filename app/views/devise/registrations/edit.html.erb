@@ -21,6 +21,11 @@
   </div>  
   
   <div class="field">
+    <%= f.label :foto %><br />
+    <%= f.file_field :photo, autofocus: true %>
+  </div>
+  
+  <div class="field">
     <%= f.label :Estudiante %>
     <%= f.check_box :student, autofocus: true %>
   </div>

@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/home_user'
-
   resources :careers
   resources :inscriptions
   resources :groups
   resources :teams
   resources :subjects
+  
   devise_for :users
   get 'home/index'
   get 'users/home'
