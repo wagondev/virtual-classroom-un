@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
               devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :career, :identification,
                 :student, :password, :password_confirmation, :current_password) }
           end
+          
+  protected
+    def after_sign_in_path_for(users)
+      # request.env['omniauth.origin'] || stored_location_for(users) || root_path
+      request.env['omniauth.origin'] || users_home_user_url
+    end
 end
