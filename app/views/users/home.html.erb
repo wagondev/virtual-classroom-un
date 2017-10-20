@@ -1,4 +1,60 @@
-<h1>Users#home_user</h1>
-<p>Find me in app/views/users/home.html.erb</p>
+<% if current_user.name == nil || current_user.name == ''%>
+<% n = current_user.email.split('@') %>
+<% else %>
+<% n = current_user.name.split %>
+<% end %>
+<% n = n[0] %>
+<div class="container-fluid">
+	<div class="container">
+		<%if current_user.photo.present? == false %>
+		<% else %>
+		<div class="col-md-2">
+			<%= image_tag(current_user.photo_url) %> 
+			entre
+			<%= current_user.photo %>
+		</div>
+		<% end %>
+		<h3 class="text-right">Bienvenido <%=n%></h3>
 
-<%= current_user.email %>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+	<div class="col-md-3">
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4>Materias que tienes inscritas</h4>
+		</div>
+		<div class="panel-body">
+			
+			<div class="list-group">
+				<% @subjects.each do |subject| %>
+				<%= link_to subject.name, subject, class: "list-group-item list-group-item-info" %>
+				<%end%>
+			</div>		
+		</div>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<h1>Creo que los mensajes? Opinen</h1>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h4>Gupos libres que a los que te has unido</h4>
+			</div>
+			<div class="panel-body">
+				
+			</div>
+			
+		</div>
+	</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-8">
+			<button class="btn btn btn-success">
+				Unirse a un grupo
+			</button>
+		</div>
+	</div>
+</div>

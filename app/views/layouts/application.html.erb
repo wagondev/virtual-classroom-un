@@ -48,12 +48,19 @@
 						</li>
 						<% end %>
 						<% if user_signed_in? %>
+						<li>
+							<%userEmail = current_user.email.split('@')%>
+							<%= link_to(userEmail[0], users_home_url) %>
+						</li>
+						<li>
+							<%= link_to('Editar', edit_user_registration_path) %>
+						</li>
 						  <li>
-						  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+						  <%= link_to('Salir', destroy_user_session_path, method: :delete) %>        
 						  </li>
 						<% else %>
 						  <li>
-						  <%= link_to('Login', new_user_session_path)  %>  
+						  <%= link_to('Ingresar', new_user_session_path)  %>  
 						  </li>
 						<% end %>
 						

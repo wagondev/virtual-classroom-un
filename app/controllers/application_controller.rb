@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   protected
     def after_sign_in_path_for(users)
       # request.env['omniauth.origin'] || stored_location_for(users) || root_path
-      request.env['omniauth.origin'] || users_home_user_url
+      request.env['omniauth.origin'] || users_home_url
     end
 end
