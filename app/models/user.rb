@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates :career, presence: true
   validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true
+
+  mount_uploader :photo, ProfilePhotoUploader
 end
