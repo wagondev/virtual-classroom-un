@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20171017203221) do
     t.integer "id_group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["id_team"], name: "index_inscriptions_on_id_team"
+    t.index ["id_user"], name: "index_inscriptions_on_id_user"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -70,6 +72,9 @@ ActiveRecord::Schema.define(version: 20171017203221) do
     t.boolean "student"
     t.string "photo"
     t.string "career"
+    t.string "gender"
+    t.string "city"
+    t.text "aboutme"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
