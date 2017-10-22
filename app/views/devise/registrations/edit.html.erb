@@ -1,45 +1,62 @@
-<h3>Editar Perfil</h3>
-<strong>Correo Electrónico</strong><p>
-<%= current_user.email %> 
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<div class="container" id="editarPerfil">
+  <h4 class="text-right"><%= current_user.email %></h4> 
+  <br>
+  <h2 class="text-center">Editar Perfil</h2>
+  <br>
+  <br>
+  
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  
+  <form action="">
+    <div class="form-group">
+     <div class="row">
+       <div class="form-group col-md-3">
+        <div class="field">
+          <%= f.label :nombre , class: "control-label" %>
+         <%= f.text_field :name, autofocus: true, class: "form-control" %>
+       </div>
+          </div>
+       
+          <div class="form-group col-md-3">
+       <div class="field">
+        <%= f.label :identificación, class: "control-label" %>
+        <%= f.text_field :identification, autofocus: true, class: "form-control" %>
+         </div>
+          </div>
+       
+          <div class="form-group col-md-5">
+
+       <div class="field">
+        <%= f.label :foto, class: "control-label" %>
+        <%= f.file_field :photo, autofocus: true, class: "form-control" %>
+         </div>
+          </div>
+     </div>
 
   <div class="field">
-	<%= f.label :nombre %><br />
-	<%= f.text_field :name, autofocus: true %>
-  </div>
- 
-  <div class="field">
-    <%= f.label :identificación %><br />
-    <%= f.text_field :identification, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :carrera %><br />
-    <%= f.text_field :career, autofocus: true %>
+    <%= f.label :carrera, class: "control-label" %>
+    <%= f.text_field :career,  class: "form-control" %>
   </div>  
+
   
+
   <div class="field">
-    <%= f.label :foto %><br />
-    <%= f.file_field :photo, autofocus: true %>
+    <%= f.label :Estudiante, class: "control-label" %>
+    <%= f.check_box :student, autofocus: true, class: "form-control" %>
   </div>
-  
-  <div class="field">
-    <%= f.label :Estudiante %>
-    <%= f.check_box :student, autofocus: true %>
-  </div>
-  
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
     <%= f.label :contraseña %> <i>(deja en blanco si no deseas cambiarla)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
-      <br />
-      <em>mínimo <%= @minimum_password_length %> caracteres </em>
+    <br />
+    <em>mínimo <%= @minimum_password_length %> caracteres </em>
     <% end %>
   </div>
 
@@ -52,11 +69,16 @@
     <%= f.label :contraseña_actual %> <i>(necesitamos tu contraseña actual para confirmar los cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-	<br><br>
-  <div class="actions">
-    <%= f.submit "Actualizar" %>
-  </div>
+</div>
+</form>
+<br><br>
+<div class="actions">
+  <%= f.submit "Actualizar" %>
+</div>
+
 <% end %>
+</div>
+
 
 <h3>Cancelar mi cuenta</h3>
 
