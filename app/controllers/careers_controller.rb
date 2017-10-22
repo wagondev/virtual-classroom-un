@@ -12,6 +12,8 @@ class CareersController < ApplicationController
   def show
   end
 
+
+
   # GET /careers/new
   def new
     @career = Career.new

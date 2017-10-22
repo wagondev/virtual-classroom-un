@@ -157,6 +157,7 @@ header p{
   background-image: url(devops.jpg);
 }
 
+
 #servicios p{
     padding: 3rem;
 }
@@ -228,7 +229,7 @@ header p{
 
 #logo .fill{
 
-    background-image: url(icon.png);
+    background-image: url(sesion.png);
     background-size: auto 100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -265,7 +266,7 @@ opacity: 0.5;
 
 
 #inicioSesion {
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0,26,0, 0.7);
     padding-top: 5rem;
     padding-bottom:  5rem;
     color: #E0F8F7;
@@ -273,11 +274,40 @@ opacity: 0.5;
 }
 
 #editarPerfil {
-    background-color: rgba(6,6,20, 0.3);
+    background-color: rgba(6,6,20, 0.8);
     padding-top: 5rem;
     padding-bottom:  5rem;
     color: #E0F8F7;
 
+}
+#cancelar{
+  background-color: rgba(128,0,0, 0.8);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #E0F8F7
+}
+
+#registroNuevo{
+  background-color: rgba(0,51,51, 0.8);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #E0F8F7
+}
+
+#encabezadoBienvenida{
+  background-color: rgba(0,51,0, 0.8);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #E0F8F7
+}
+
+
+
+#cuerpoHomeUser{
+  background-color: rgba(0,0,77, 0.8);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #E0F8F7
 }
 
 #register-form .form-control {
