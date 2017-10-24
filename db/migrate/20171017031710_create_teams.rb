@@ -5,7 +5,7 @@ class CreateTeams < ActiveRecord::Migration[5.1]
       t.integer :max_member
       t.text :description
       t.string :logo
-
+      
       t.timestamps
     end
   end

@@ -32,8 +32,11 @@
 				<% @subjects.each do |subject| %>
 				<%= link_to subject.name, subject, class: "list-group-item list-group-item-info" %>
 				<%end%>
-			</div>		
+
+			</div>
+<%= will_paginate @subjects %>
 		</div>
+		
 		</div>
 	</div>
 	<div class="col-md-5">
