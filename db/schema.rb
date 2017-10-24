@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171024171641) do
     t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_groups_on_subject_id"
   end
 
   create_table "inscriptions", force: :cascade do |t|
