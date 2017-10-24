@@ -59,7 +59,7 @@ Career.create(name: 'Terapia Ocupacional')
 Career.create(name: 'Trabajo Social')
 Career.create(name: 'Zootecnia')
 
-#free_subject = Subject.create(mid: 1, name: "Materia Libre", description: "'Materia' para guardar cursos libres.") #Materia por defecto
+free_subject = Subject.create(mid: 1000000, name: "Materia Libre", description: "Materia para guardar cursos libres.") #Materia por defecto
 Subject.create(mid: 1000004, name: "Cálculo Diferencial", description: 'none')
 Subject.create(mid: 2025975, name: "Introducción a la Ingeniería de Sistemaas y Computación", description: "none")
 Subject.create(mid: 2015734, name: "Programación de Computadores", description: "none")
@@ -85,11 +85,11 @@ Subject.create(mid: 2015174, name: "Introducción a la Teoría de la Computació
 Subject.create(mid: 2025971, name: "Optimización", description: "")
 Subject.create(mid: 2015970, name: "Métodos Numéricos", description: "")
 Subject.create(mid: 2025982, name: "Sistemas de Información", description: "")
-Subject.create(mid: 2016702, name: "INGENIERIA DE SOFTWARE II", description: "")
-Subject.create(mid: 2016696, name: "ALGORITMOS", description: "")
-Subject.create(mid: 2016707, name: "SISTEMAS OPERATIVOS", description: "")
-Subject.create(mid: 2025969, name: "MODELOS ESTOCASTICOS Y SIMULACION EN COMPUTACION Y COMUNICACIONES", description: "")
-Subject.create(mid: 2025994, name: "INFORMACION Y COMUNICACIONES", description: "ninguna")
+Subject.create(mid: 2016702, name: "Ingeniería de Software II", description: "")
+Subject.create(mid: 2016696, name: "Algoritmos", description: "")
+Subject.create(mid: 2016707, name: "Sistemas Operativos", description: "")
+Subject.create(mid: 2025969, name: "Modelos ESTOCASTICOS Y SIMULACION EN COMPUTACION Y COMUNICACIONES", description: "")
+Subject.create(mid: 2025994, name: "Teoría de la Información y Sistemas de Comunicación", description: "ninguna")
 Subject.create(mid: 2016703, name: "PENSAMIENTO SISTEMICO", description: "ninguna")
 Subject.create(mid: 2016716, name: "OPTATIVA EN METODOS Y TECNOLOGIAS DE SOFTWARE", description: "ninguna")
 Subject.create(mid: 2025966, name: "LENGUAJES DE PROGRAMACION", description: "ninguna")
@@ -100,4 +100,4 @@ Subject.create(mid: 2024045, name: "TALLER DE PROYECTOS INTERDISCIPLINARIOS", de
 Subject.create(mid: 2025983, name: "ARQUITECTURA DE INFRAESTRUCTURA Y GOBIERNO DE TICS", description: "ninguna")
 Subject.create(mid: 2025972, name: "CRIPTOGRAFIA Y SEGURIDAD DE LA INFORMACION", description: "ninguna")
 
-#free_subject.Groups.create!(name: "Grupo Libre")
+free_subject.groups.create(name: "Grupo Libre")

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171024171641) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,6 +72,9 @@ ActiveRecord::Schema.define(version: 20171024171641) do
     t.boolean "student"
     t.string "photo"
     t.string "career"
+    t.string "gender"
+    t.string "city"
+    t.text "aboutme"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
