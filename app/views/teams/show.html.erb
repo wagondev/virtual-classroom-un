@@ -1,24 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
-
-<p>
-  <strong>Max member:</strong>
-  <%= @team.max_member %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @team.description %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= @team.logo %>
-</p>
+<div class="container-fluid" id="teamsFree">
+	<div class="">
+		<p id="notice"><%= notice %></p>
+	</div>
+	
+	<div>
+		<% if @team.logo.present == true %>
+		<div class="col-md-2">
+			<% image_tag(@team.logo.logo_url, class:"img-responsive img-rounded") %>
+		</div>
+		<% end %>
+		<div class="text-right">
+			  <h2 class=""><strong>Name:</strong>
+			  	<%= @team.name %></h2>
+			</div>
+		<p>
+		  <strong>Max member:</strong>
+		  <%= @team.max_member %>
+		</p>
+		
+		<p>
+		  <strong>Description:</strong>
+		  <%= @team.description %>
+		</p>
+		
+		<p>
+		  <strong>Logo:</strong>
+		  <%= @team.logo %>
+		</p>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
