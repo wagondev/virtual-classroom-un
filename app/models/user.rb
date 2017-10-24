@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,
          :validatable, :confirmable
          
-  validates :student, presence: true
+  validates_inclusion_of :student, :in => [true, false]
   validates :career, presence: true
   validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true

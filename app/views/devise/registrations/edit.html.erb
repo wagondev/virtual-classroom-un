@@ -39,10 +39,10 @@
         <div class="text-center">
           <div class="field">
             <%= f.label :rol, "Rol academico", class:"label-control" %>
-            <%= f.label :rol, "Estudiante", class:"radio-inline" %>
-            <%= f.radio_button :student, autofocus: true, class: "form-control" %>
-            <%= f.label :rol, "Profesor", class:"radio-inline" %>
-            <%= f.radio_button :student, autofocus: true, class: "form-control" %>
+            <%= label :rol, "Estudiante", class:"radio-inline", value: true %>
+            <%= f.radio_button :student, true, :checked => true, :value => true %>
+            <%= label :rol, "Profesor", class:"radio-inline", value: false %>
+            <%= f.radio_button :student, false, :value => false %>
           </div>
         </div>
       </div>
