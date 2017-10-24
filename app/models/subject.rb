@@ -5,7 +5,7 @@ class Subject < ApplicationRecord
     
     has_many :groups, :dependent => :destroy
     has_many :groups, dependent: :destroy
-    #belongs_to :Career
+ 
     
     #accepts_nested_attributes_for :groups
 end

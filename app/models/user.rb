@@ -11,5 +11,5 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
 
   mount_uploader :photo, ProfilePhotoUploader
-  has_many :Inscriptions
+  has_many :Inscriptions, dependent: :destroy
 end
