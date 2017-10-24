@@ -3,5 +3,7 @@ class Subject < ApplicationRecord
     validates :name, presence: true, length: {minimum: 3}, uniqueness: true
     validates :description, length: {maximum: 150}
     has_many :Groups
-    belongs_to :Career
+    #belongs_to :Career
+    
+    accepts_nested_attributes_for :Groups
 end
