@@ -97,6 +97,6 @@ Subject.create(mid: 2025968, name: "Computación Paralela y Distribuida", descri
 Subject.create(mid: 2025960, name: "Computación Visual", description: "ninguna")
 Subject.create(mid: 2024045, name: "Taller de Proyectos Interdisciplinarios", description: "ninguna")
 Subject.create(mid: 2025983, name: "Arquitectura de Infraestructura y Gobierno de TICs", description: "ninguna")
-Subject.create(mid: 2025972, name: "Introducción a la Ciptografía y a la Seguridad de la Información", description: "ninguna")
+Subject.create(mid: 2025972, name: "Introducción a la Ctiptografía y a la Seguridad de la Información", description: "ninguna")
 
 free_subject.groups.create(name: "Grupo Libre")
