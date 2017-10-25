@@ -5,5 +5,5 @@ class Team < ApplicationRecord
     
     mount_uploader :logo, FreeGroupImageUploader
      
-    belongs_to :Group, foreign_key: "group_id", class_name: "Group"
+    belongs_to :group, foreign_key: "group_id", class_name: "Group"
 end
