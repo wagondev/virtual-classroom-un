@@ -3,7 +3,6 @@ class Subject < ApplicationRecord
     validates :name, presence: true, length: {minimum: 3}, uniqueness: true
     validates :description, length: {maximum: 150}
     
-    has_many :groups, :dependent => :destroy
     has_many :groups, dependent: :destroy
  
     
