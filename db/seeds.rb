@@ -60,8 +60,7 @@ Career.create(name: 'Trabajo Social')
 Career.create(name: 'Zootecnia')
 
 free_subject = Subject.create(mid: 1000000, name: "Materia Libre", description: "Materia para guardar cursos libres.") #Materia por defecto
-free_subject.groups.create(name: "Grupo Libre 1")
-free_subject.groups.create(name: "Grupo Libre 2")
+free_subject.groups.create(name: "Grupos Libres") #Grupo en el que se guardarán los equipos que harán de grupos libres
 
 m1 = Subject.create(mid: 1000004, name: "Cálculo Diferencial", description: 'none')
 m1.groups.create(name: "Grupo #1")

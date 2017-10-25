@@ -6,6 +6,9 @@ class CreateTeams < ActiveRecord::Migration[5.1]
       t.text :description
       t.string :logo
       
+      t.integer :group_id
+      t.belongs_to :group, index: true
+      
       t.timestamps
     end
   end

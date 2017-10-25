@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'users/home'
   
-  post 'groups/index'
-  post 'groups/new'
+  post 'teams/index'
+  post 'teams/new'
   
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

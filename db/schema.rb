@@ -51,9 +51,11 @@ ActiveRecord::Schema.define(version: 20171024171641) do
     t.integer "max_member"
     t.text "description"
     t.string "logo"
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "type"
+    t.index ["group_id"], name: "index_teams_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|

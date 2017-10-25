@@ -4,7 +4,8 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    #@teams = Team.all
+    @teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
   end
 
   # GET /teams/1
