@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    #@groups = Group.all
+    @groups = Group.where(subject_id: 1) #Solo muestra los grupos que pertenecen a la materia 1 (es decir, los grupos libres)
   end
 
   # GET /groups/1

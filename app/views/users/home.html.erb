@@ -55,13 +55,8 @@
 	</div>
 	<div class="row">
 		<div class="col-md-3 col-md-offset-8">
-			<button class="btn btn btn-success">
-				Unirse a un grupo
-			</button>
-			
-			<button class="btn btn btn-success">
-				Crear un grupo
-			</button>
+			<%= button_to "Unirse a un grupo", groups_index_path, class: "btn btn btn-success" %>
+			<%= button_to "Crear un grupo", groups_new_path, class: "btn btn btn-success" %>
 		</div>
 	</div>
 </div>
