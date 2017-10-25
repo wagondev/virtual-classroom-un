@@ -1,0 +1,47 @@
+<%= form_with(model: member, local: true) do |form| %>
+  <% if member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_user %>
+    <%= form.text_field :id_user, id: :member_id_user %>
+  </div>
+
+  <div class="field">
+    <%= form.label :integer, %>
+    <%= form.text_field :integer,, id: :member_integer, %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id_team %>
+    <%= form.text_field :id_team, id: :member_id_team %>
+  </div>
+
+  <div class="field">
+    <%= form.label :integer, %>
+    <%= form.text_field :integer,, id: :member_integer, %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.text_field :level, id: :member_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :integer %>
+    <%= form.text_field :integer, id: :member_integer %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

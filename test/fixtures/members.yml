@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_user: MyString
+  integer,: MyString
+  id_team: MyString
+  integer,: MyString
+  level: MyString
+  integer: MyString
+
+two:
+  id_user: MyString
+  integer,: MyString
+  id_team: MyString
+  integer,: MyString
+  level: MyString
+  integer: MyString

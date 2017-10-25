@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id user:</strong>
+  <%= @member.id_user %>
+</p>
+
+<p>
+  <strong>Integer,:</strong>
+  <%= @member.integer, %>
+</p>
+
+<p>
+  <strong>Id team:</strong>
+  <%= @member.id_team %>
+</p>
+
+<p>
+  <strong>Integer,:</strong>
+  <%= @member.integer, %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @member.level %>
+</p>
+
+<p>
+  <strong>Integer:</strong>
+  <%= @member.integer %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
