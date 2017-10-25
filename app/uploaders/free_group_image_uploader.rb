@@ -1,6 +1,6 @@
-class ProfilePhotoUploader < CarrierWave::Uploader::Base
+class FreeGroupImageUploader < CarrierWave::Uploader::Base
 
-	# Include RMagick or MiniMagick support:
+  # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
@@ -45,8 +45,8 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  
-  
+
+
   def extension_whitelist
     %w(jpg jpeg png)
   end
