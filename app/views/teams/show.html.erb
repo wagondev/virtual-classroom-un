@@ -4,7 +4,7 @@
 	</div>
 	
 	<div>
-		<% if @team.logo.present == true %>
+		<% if @team.logo.present? == true %>
 		<div class="col-md-2">
 			<% image_tag(@team.logo.logo_url, class:"img-responsive img-rounded") %>
 		</div>

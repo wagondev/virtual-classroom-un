@@ -16,6 +16,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+
   end
 
   # GET /teams/1/edit
@@ -70,6 +71,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :max_member, :description, :logo, :type)
+      params.require(:team).permit(:name, :max_member, :description, :logo, :group_id)
     end
 end

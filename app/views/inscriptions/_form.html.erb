@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :id_team %>
-    <%= form.number_field :id_team, id: :inscription_id_team %>
+    <% form.label :id_team %>
+    <% form.number_field :id_team, value:nil %>
   </div>
 
   <div class="field">
-    <%= form.label :id_user %>
-    <%= form.number_field :id_user, id: :inscription_id_user %>
+    <% form.label :id_user %>
+    <% form.number_field :id_user, value:current_user.id %>
   </div>
 
   <div class="field">
