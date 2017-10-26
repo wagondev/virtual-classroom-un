@@ -46,6 +46,9 @@
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h4>Gupos libres que a los que te has unido</h4>
+				<% @freeTeamsIn.each  do |team|%>
+					<%=link_to team.name, team, class: "list-group-item list-group-item-info"%>
+				<%end%>
 			</div>
 			<div class="panel-body">
 				
@@ -55,9 +58,12 @@
 	</div>
 	<div class="row">
 		<div class="col-md-3 col-md-offset-8">
-			<%= button_to "Unirse a un grupo libre", teams_index_path, class: "btn btn btn-success" %>
-			<%= button_to "Crear un grupo libre", teams_new_path, class: "btn btn btn-success" %>
+		
+					<%= link_to "Crear un grupo libre", new_team_path, class: "btn  btn-success" %>
+					<%= link_to "Unirte a un grupo", teams_path, class: "btn btn-success" %>
+		</div>
 		</div>
 	</div>
 </div>
 	</div>
+

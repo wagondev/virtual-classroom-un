@@ -1,6 +1,11 @@
-<h1>Editing Team</h1>
+<div class="container-fluid" id="editarTeam">
+	<h1 class="text-center">Editando <%= @team.name %> ...</h1>
+	
+	<%= render 'form', team: @team %></div>
 
-<%= render 'form', team: @team %>
-
-<%= link_to 'Show', @team %> |
-<%= link_to 'Back', teams_path %>
+<div class="text-right" id="link">
+	<%= link_to @team.name, @team ,class:"btn btn-link btn-lg" %> 
+	<br>
+	<%= link_to 'Eliminar equipo', @team, method: :delete, data: { confirm: '¿Esta seguro de eliminar '+ @team.name + ' ?' } ,class:"btn btn-link btn-lg"%>
+		
+	</div>
