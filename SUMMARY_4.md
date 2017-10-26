@@ -2,7 +2,7 @@
 * Implementación del nuevo modelo de base de datos. - Omar Beltran, Carlos Guevara, David Herrera.
 * Poner la Landing Page anterior en la rama, - Carlos López.
 * Dejar funcionando el direccionamiento desde la Landing Page y después de iniciar sesión, - Carlos López, David Herrera.
-* Llenado de bases de datos mediante seeds.rb, - David Herrera, OMar Beltran.
+* Llenado de bases de datos mediante seeds.rb. - David Herrera, Omar Beltran.
 * Modificación de formularios de sign up y sign in. - Carlos López, Carlos Guevara.
 * Subir imágenes de perfil con Carrierwave. - David Herrera.
 * Modificación de vista de edición de perfil. - Carlos López.
