@@ -4,8 +4,9 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    #@teams = Team.all
-    @teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
+
+    @teams = Team.all
+    #@teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
   end
 
   # GET /teams/1
@@ -15,6 +16,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/new
   def new
+
     @team = Team.new
 
   end
@@ -71,6 +73,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :max_member, :description, :logo, :group_id)
+      params.require(:team).permit(:name, :max_member, :description, :logo, :group_id  )
     end
 end

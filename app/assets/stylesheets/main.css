@@ -317,6 +317,15 @@ opacity: 0.5;
     color: #E0F8F7
 }
 
+#newTeam{
+  background-color: rgba(51,0,51, 0.8);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #ccffcc
+}
+
+
+
 #register-form .form-control {
     vertical-align: top;
     resize: vertical;
