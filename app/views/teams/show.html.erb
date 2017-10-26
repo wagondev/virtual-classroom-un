@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid" id="teamsFree">
 	<div class="">
 		<p id="notice"><%= notice %></p>
@@ -45,7 +47,11 @@
 									</div>
 									<div class="panel-body">
 										<div class="list-group">
-											<%= @userJoin.name%>
+											<% @userJoin.each do |u| %>
+											<%= link_to u.name, {}, class: "list-group-item list-group-item-info" %>
+											<%end%>
+
+									
 										</div>
 									</div>
 								</div>
