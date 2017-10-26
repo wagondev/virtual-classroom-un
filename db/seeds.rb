@@ -168,3 +168,16 @@ user.save!
 user = User.new(email: 'e@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
 user.skip_confirmation!
 user.save! 
+
+Member.create(user_id: 1, team_id: 1, level: 1)
+Member.create(user_id: 2, team_id: 1, level: 2)
+Member.create(user_id: 3, team_id: 1, level: 2)
+Member.create(user_id: 4, team_id: 1, level: 2)
+
+Member.create(user_id: 1, team_id: 2, level: 1)
+Member.create(user_id: 2, team_id: 2, level: 2)
+
+Member.create(user_id: 1, team_id: 3, level: 1)
+Member.create(user_id: 2, team_id: 3, level: 2)
+Member.create(user_id: 3, team_id: 3, level: 2)
+Member.create(user_id: 4, team_id: 3, level: 2)
