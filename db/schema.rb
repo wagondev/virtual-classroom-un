@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025194116) do
+ActiveRecord::Schema.define(version: 20171026110726) do
 
   create_table "careers", force: :cascade do |t|
     t.string "name"
@@ -39,12 +39,9 @@ ActiveRecord::Schema.define(version: 20171025194116) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string "id_user"
-    t.string "integer"
-    t.string "id_team"
-    t.string "level"
     t.integer "user_id"
     t.integer "team_id"
+    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_members_on_team_id"

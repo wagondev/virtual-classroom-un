@@ -17,7 +17,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create member" do
     assert_difference('Member.count') do
-      post members_url, params: { member: { id_team: @member.id_team, id_user: @member.id_user, integer,: @member.integer,, integer,: @member.integer,, integer: @member.integer, level: @member.level } }
+      post members_url, params: { member: { level: @member.level, team_id: @member.team_id, user_id: @member.user_id } }
     end
 
     assert_redirected_to member_url(Member.last)
@@ -34,7 +34,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update member" do
-    patch member_url(@member), params: { member: { id_team: @member.id_team, id_user: @member.id_user, integer,: @member.integer,, integer,: @member.integer,, integer: @member.integer, level: @member.level } }
+    patch member_url(@member), params: { member: { level: @member.level, team_id: @member.team_id, user_id: @member.user_id } }
     assert_redirected_to member_url(@member)
   end
 

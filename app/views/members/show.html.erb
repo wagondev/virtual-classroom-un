@@ -1,33 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Id user:</strong>
-  <%= @member.id_user %>
+  <strong>User:</strong>
+  <%= @member.user_id %>
 </p>
 
 <p>
-  <strong>Integer,:</strong>
-  <%= @member.integer, %>
-</p>
-
-<p>
-  <strong>Id team:</strong>
-  <%= @member.id_team %>
-</p>
-
-<p>
-  <strong>Integer,:</strong>
-  <%= @member.integer, %>
+  <strong>Team:</strong>
+  <%= @member.team_id %>
 </p>
 
 <p>
   <strong>Level:</strong>
   <%= @member.level %>
-</p>
-
-<p>
-  <strong>Integer:</strong>
-  <%= @member.integer %>
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |

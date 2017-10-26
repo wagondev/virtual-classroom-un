@@ -12,33 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :id_user %>
-    <%= form.text_field :id_user, id: :member_id_user %>
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :member_user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :integer, %>
-    <%= form.text_field :integer,, id: :member_integer, %>
-  </div>
-
-  <div class="field">
-    <%= form.label :id_team %>
-    <%= form.text_field :id_team, id: :member_id_team %>
-  </div>
-
-  <div class="field">
-    <%= form.label :integer, %>
-    <%= form.text_field :integer,, id: :member_integer, %>
+    <%= form.label :team_id %>
+    <%= form.number_field :team_id, id: :member_team_id %>
   </div>
 
   <div class="field">
     <%= form.label :level %>
-    <%= form.text_field :level, id: :member_level %>
-  </div>
-
-  <div class="field">
-    <%= form.label :integer %>
-    <%= form.text_field :integer, id: :member_integer %>
+    <%= form.number_field :level, id: :member_level %>
   </div>
 
   <div class="actions">
