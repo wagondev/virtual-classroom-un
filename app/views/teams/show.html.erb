@@ -48,7 +48,10 @@
 									<div class="panel-body">
 										<div class="list-group">
 											<% @userJoin.each do |u| %>
-											<%= link_to u.name, {}, class: "list-group-item list-group-item-info" %>
+											<li class="list-group-item list-group-item-info">
+												<%= u.email %>
+													
+												</li>
 											<%end%>
 
 									

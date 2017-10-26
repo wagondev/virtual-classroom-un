@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @userJoin = User.joins("INNER JOIN members ON members.user_id = users.id INNER JOIN teams ON members.team_id = teams.id")
+    @userJoin = User.joins("INNER JOIN members ON members.user_id = users.id INNER JOIN teams ON members.team_id = teams.id AND teams.id =" + @team.id.to_s)
   end
 
   # GET /teams/new
