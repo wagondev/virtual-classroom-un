@@ -3,5 +3,7 @@
 	
 	<%= render 'form', team: @team %>
 </div>
-
-<%= link_to 'Back', teams_path %>
+<div class="text-right" id="link">
+	<%= link_to current_user.email, users_home_path, class: "btn btn-link btn-lg" %>
+		
+</div>

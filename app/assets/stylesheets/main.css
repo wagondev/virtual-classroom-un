@@ -311,7 +311,7 @@ opacity: 0.5;
 }
 
 #teamsFree{
-  background-color: rgba(34,51,0, 0.8);
+  background-color: rgba(0, 26, 26, 0.8);
     padding-top: 5rem;
     padding-bottom:  5rem;
     color: #E0F8F7
@@ -324,7 +324,25 @@ opacity: 0.5;
     color: #ccffcc
 }
 
+#editarTeam{
+  background-color: rgba(26,0,0, 0.9);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #ccffcc
+}
+#teamsAviable{
+  background-color: rgba(15, 105, 112, 0.9);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #ccffcc
+}
 
+#link{
+  background-color: rgba(0,0,51, 0.9);
+    padding-top: 1rem;
+    padding-bottom:  1rem;
+    color: #ffccff
+}
 
 #register-form .form-control {
     vertical-align: top;

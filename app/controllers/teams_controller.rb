@@ -4,14 +4,16 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    #@teams = Team.all
-    @teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
+    @teams = Team.all
+    @teamAvailable = Team.joins("INNER JOIN members ON members.team_id = teams.id INNER JOIN users ON members.user_id = users.id AND users.id != " + current_user.id.to_s)
+    #@teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
     @userJoin = User.joins("INNER JOIN members ON members.user_id = users.id INNER JOIN teams ON members.team_id = teams.id AND teams.id =" + @team.id.to_s)
+
   end
 
   # GET /teams/new
@@ -67,11 +69,6 @@ class TeamsController < ApplicationController
     end
   end
 
-  def asignarMember
-    @data = params[:user_id, :team_id, :level]
-    Member.new(@data)
-
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -83,7 +80,5 @@ class TeamsController < ApplicationController
     def team_params
       params.require(:team).permit(:name, :max_member, :description, :logo, :group_id  )
     end
-    def member_params
-      params.require(:member).permit(:user_id, :team_id, :level)
-    end
+    
 end
