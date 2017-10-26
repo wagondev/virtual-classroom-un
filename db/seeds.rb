@@ -59,11 +59,19 @@ Career.create(name: 'Terapia Ocupacional')
 Career.create(name: 'Trabajo Social')
 Career.create(name: 'Zootecnia')
 
+
+
 free_subject = Subject.create(mid: 1000000, name: "Materia Libre", description: "Materia para guardar cursos libres.") #Materia por defecto
-free_subject.groups.create(name: "Grupos Libres") #Grupo en el que se guardarán los equipos que harán de grupos libres
+free_group = free_subject.groups.create(name: "Grupos Libres") #Grupo en el que se guardarán los equipos que harán de grupos libres
+free_group.teams.create(name: "Grupo libre #1", max_member: 4, description: "Equipo libre 1", group_id: 1)
+free_group.teams.create(name: "Grupo libre #2", max_member: 2, description: "Equipo libre 2", group_id: 1)
+free_group.teams.create(name: "Grupo libre #3", max_member: 5, group_id: 1)
+
 
 m1 = Subject.create(mid: 1000004, name: "Cálculo Diferencial", description: 'none')
-m1.groups.create(name: "Grupo #1")
+g1 = m1.groups.create(name: "Grupo #1")
+g1.teams.create(name: "Equipo #1", max_member: 3, description: "Team seed", group_id: 2)
+
 m2 = Subject.create(mid: 2025975, name: "Introducción a la Ingeniería de Sistemas y Computación", description: "none")
 m2.groups.create(name: "Grupo #1")
 m3 = Subject.create(mid: 2015734, name: "Programación de Computadores", description: "none")
@@ -138,3 +146,25 @@ m37 = Subject.create(mid: 2025983, name: "Arquitectura de Infraestructura y Gobi
 m37.groups.create(name: "Grupo#1")
 m38 = Subject.create(mid: 2025972, name: "Introducción a la Criptografía y a la Seguridad de la Información", description: "ninguna")
 m38.groups.create(name: "Grupo#1")
+
+
+
+user = User.new(email: 'a@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'b@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'c@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'd@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'e@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
