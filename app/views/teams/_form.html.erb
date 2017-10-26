@@ -1,65 +1,68 @@
 <div class="container-fluid">
   <%= form_with(model: team, local: true) do |form| %>
-    <% if team.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+  <% if team.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+    <ul>
+      <% team.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
   
-        <ul>
-        <% team.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-  
-      <div class="container">
+  <div class="container">
+    <div class="form-group row">
+      <div class="col-md-2 col-md-offset-10">
         <div class="field">
-        <% form.label :group_id %>
-        <%= form.number_field :group_id, id: :team_group_id, value: 1%>
-
-            </div>
-          
-            <form action="" id="form-newTeam">
-              <div class="form-group col-md-7">
-                <div class="field">
-                        <%= form.label :name, "Nombre del equipo", class: "control-label" %>
-                        <%= form.text_field :name, id: :team_name, class: "form-control"  %>
-                </div>
-              </div>
-                        
-              <div class="form-group col-md-4 col-md-offset-1">
-                  <div class="field">
-                          <%= form.label :max_member, "Numero maximo de integrantes", class:"control-label" %>
-                          <i>Minimo 2 integrantes</i>
-                          <%= form.number_field :max_member, id: :team_max_member, class: "form-control" %>
-
-                  </div>
-              </div>
-                        
-              <div class="form-group col-md-12">
-                <div class="field">
-                        <%= form.label :description, "Descripcion", class:"control-label" %> 
-                        <i>Recuerda que debe llamar la atencion ;)</i>
-                        <%= form.text_area :description, id: :team_description, class: "form-control" %>
-                </div>
-              </div>
-                        
-              <div class="form-group col-md-5">
-                <div class="field">
-                        <%= form.label :logo, "Avatar del equipo",  class:"control-label" %>
-                        <%= form.file_field :logo, autofocus: true %>
-                </div>
-              </div>
-                   <br>     
-             <div class="form-group col-md-offset-8 col-md-5">
-                <div class="actions">
-                      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-                      <i class="icon-ok icon-white">Crear equipo</i><% end %>
-               </div>
-             </div>
-            </form>
-
-        
+          <% form.label :group_id %>
+          <%= form.select :group_id, options_for_select(Group.where(id: 1).map{|s|[s.name, s.id]}),{},class:"form-control"%>
+        </div>
       </div>
+    </div>
+
+    <form action="" id="form-newTeam">
+      <div class="form-group col-md-7">
+        <div class="field">
+          <%= form.label :name, "Nombre del equipo", class: "control-label" %>
+          <%= form.text_field :name, id: :team_name, class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="form-group col-md-4 col-md-offset-1">
+        <div class="field">
+          <%= form.label :max_member, "Numero maximo de integrantes", class:"control-label" %>
+          <i>Minimo 2 integrantes</i>
+          <%= form.number_field :max_member, id: :team_max_member, class: "form-control" %>
+
+        </div>
+      </div>
+
+      <div class="form-group col-md-12">
+        <div class="field">
+          <%= form.label :description, "Descripcion", class:"control-label" %> 
+          <i>Recuerda que debe llamar la atencion ;)</i>
+          <%= form.text_area :description, id: :team_description, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group col-md-5">
+        <div class="field">
+          <%= form.label :logo, "Avatar del equipo",  class:"control-label" %>
+          <%= form.file_field :logo, autofocus: true %>
+        </div>
+      </div>
+      <br>     
+      <div class="form-group col-md-offset-8 col-md-5">
+        <div class="actions">
+          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          <i class="icon-ok icon-white">Crear equipo</i><% end %>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
   <% end %>
 </div>

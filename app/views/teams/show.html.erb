@@ -3,10 +3,11 @@
 		<p id="notice"><%= notice %></p>
 	</div>
 	
-	<div>
+	<div class="">
 		<% if @team.logo.present? == true %>
 		<div class="col-md-2">
-			<% image_tag(@team.logo.logo_url, class:"img-responsive img-rounded") %>
+
+			<%= image_tag( @team.logo_url, class:"img-responsive img-rounded") %>
 		</div>
 		<% end %>
 		<div class="text-right">
@@ -22,11 +23,7 @@
 		  <strong>Description:</strong>
 		  <%= @team.description %>
 		</p>
-		
-		<p>
-		  <strong>Logo:</strong>
-		  <%= @team.logo %>
-		</p>
+	
 	</div>
 </div>
 
