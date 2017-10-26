@@ -30,11 +30,13 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(team_params)
-
+        
     respond_to do |format|
       if @team.save
+        Member.create(user_id: current_user.id, team_id: @team.id, level: 0)
         format.html { redirect_to @team, notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
+
       else
         format.html { render :new }
         format.json { render json: @team.errors, status: :unprocessable_entity }
@@ -66,6 +68,12 @@ class TeamsController < ApplicationController
     end
   end
 
+  def asignarMember
+    @data = params[:user_id, :team_id, :level]
+    Member.new(@data)
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
@@ -75,5 +83,8 @@ class TeamsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:name, :max_member, :description, :logo, :group_id  )
+    end
+    def member_params
+      params.require(:member).permit(:user_id, :team_id, :level)
     end
 end
