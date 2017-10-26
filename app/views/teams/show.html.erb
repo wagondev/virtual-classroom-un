@@ -45,9 +45,12 @@
 									</div>
 									<div class="panel-body">
 										<div class="list-group">
-											<%= @userJoin.name%>
+											<% @userJoin.where(user_id: @team.id).each do |u|%>
+											
+											<%= u.name%>
+											<%end%>
 												
-										</div>
+											</div>
 									</div>
 								</div>
 							</div>

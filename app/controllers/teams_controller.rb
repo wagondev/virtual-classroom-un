@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @userJoin = User.joins(:members, :teams)
+    @userJoin = User.joins(:member, :team)
   end
 
   # GET /teams/new
