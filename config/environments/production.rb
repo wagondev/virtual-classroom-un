@@ -110,4 +110,7 @@ Rails.application.configure do
   config.assets.digest = true
   
   config.action_mailer.default_url_options = { host: 'https://virtual-classroom-un.herokuapp.com' }
+  
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 end
