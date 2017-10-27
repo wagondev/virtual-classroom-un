@@ -71,7 +71,7 @@ Rails.application.configure do
     
     #address:              'smtp.gmail.com',
     #port:                 587,
-    domain:               'https://virtual-classroom-un.herokuapp.com',
+    domain:                'https://virtual-classroom-un.herokuapp.com',
     #user_name:            'wagondev',
     #password:             '0wagon1',
     authentication:       'plain',
