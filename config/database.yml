@@ -23,3 +23,5 @@ test:
 production:
   adapter: postgresql
   database: db/production.sqlite3
+  host: https://virtual-classroom-un.herokuapp.com
+  port: 5342
