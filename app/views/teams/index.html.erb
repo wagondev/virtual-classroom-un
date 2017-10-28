@@ -19,12 +19,12 @@
           <td class="text-center"><%= team.name %></td>
           <td class="text-center"><%= team.description %></td>
           <td class="text-center"><%= image_tag(team.logo_url, :width => 65, :height => 75) if team.logo.present? %></td>
-          <td><%= button_to 'Unirse',{:controller => "members", :action => 'create', :user_id => current_user.id, :team_id => team.id, :level => 2}, :method=>:post%></td>
+          <td><%= button_to 'Unirse', members_path, method: :post, params:{ member:{user_id: current_user.id, team_id: team.id, level: 2}} , class:"btn btn-success btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-<br>
 
-<%= link_to 'New Team', new_team_path %>
+
+<div class="text-right" id="link"><%= link_to 'Crear equipo', new_team_path , class:"btn btn-link"%></div>
