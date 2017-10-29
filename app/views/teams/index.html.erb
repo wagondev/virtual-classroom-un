@@ -19,11 +19,11 @@
           <td class="text-center"><%= team.name %></td>
           <td class="text-center"><%= team.description %></td>
           <td class="text-center"><%= image_tag(team.logo_url, :width => 65, :height => 75) if team.logo.present? %></td>
-          <td><%= button_to 'Unirse', members_path, method: :post, params:{ member:{user_id: current_user.id, team_id: team.id, level: 2}} , class:"btn btn-success btn-sm" %></td>
+          <td><%= button_to 'Enviar solicitud', members_path, method: :post, params:{ member:{user_id: current_user.id, team_id: team.id, level: -1}},data: { confirm: "Esta seguro de enviar la peticion a "+ team.name + "?" } , class:"btn btn-success btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>
-  </table>
+  </table }>
 </div>
 
 

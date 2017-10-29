@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
+    @members = Member.order(user_id: :desc)
   end
 
   # GET /members/1
@@ -28,7 +28,7 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
+        format.html { redirect_to teams_path ,notice: 'Peticion Enviada' }
         format.json { render :show, status: :created, location: @member }
       else
         format.html { render :new }

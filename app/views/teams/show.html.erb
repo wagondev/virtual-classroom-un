@@ -1,30 +1,28 @@
 
-
+<div class="alert alert-info">
+		<p id="notice"><%= notice %></p>
+</div>
 <div class="container-fluid" id="teamsFree">
 	<div class="">
-		<p id="notice"><%= notice %></p>
-	</div>
-	
-	<div class="">
-		<div class="row">
+		<div class="col-md-4 col-md-offset-1">
+			<h1 class="">
+				<strong><%= @team.name %></strong>
+			</h1>
 			<% if @team.logo.present? == true %>
-			<div class="col-md-2">
-			
-				<%= image_tag( @team.logo_url, class:"img-responsive img-rounded") %>
+			<div class="col-md-8 ">
+				<%= image_tag( @team.logo_url, class:"img-responsive img-circle") %>
 			</div>
 			<% end %>
-			<div class="col-md-4 col-md-offset-6">
-				<h1 class="">
-					<strong><%= @team.name %></strong></h1>
-					<p class="text-right">
-					Numero de integrantes:
-					<strong><%= @team.max_member %></strong>
-				</p>
-			</div>
+
 		</div>
-		<div class="row">
+		<div class="">
 			<h3 class="text-center"><kbd> Somos: <%= @team.description%></kbd></h3>
+		</div>	
+		<div class="row">
+			
+			
 		</div>
+		
 		<br>
 		<br>
 		<div class="">
@@ -40,31 +38,67 @@
 				<div class="col-md-4">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="panel panel-info">
-									<div class="panel-heading">
-										<h5 class="text-center">Integrantes</h5>
-									</div>
-									<div class="panel-body">
-										<div class="list-group">
-											<% @userJoin.each do |u| %>
-											<li class="list-group-item list-group-item-info">
-												<%= u.email %>
-													
-												</li>
-											<%end%>
-
-									
+								<div class="panel-group">
+									<div class="panel panel-info">
+										<div class="panel-heading">
+											<h5 class="text-center">
+												<a data-toggle="collapse" href="#integrantes">
+													<%i = 0%>
+													<% @userMembers.each do |u| %>
+														<%i=i+1%>
+													<%end%>
+												Integrantes: <%=i%>
+												</a>
+											</h5>
+										</div>
+										<div class="panel-collapse collapse" id="integrantes">
+											<div class="panel-body">
+												<div class="list-group">
+													<% @userMembers.each do |u| %>
+													<li class="list-group-item list-group-item-info">
+														<%= u.email %>	
+														</li>
+													<%end%>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
-								<div class="panel panel-success">
-									<div class="panel-heading">
-										<h5 class="text-center">Invitaciones pendientes</h5>
-									</div>
-									<div class="panel-body">
-										
+								<div class="panel-group">
+									<div class="panel panel-success">
+										<div class="panel-heading">
+											<h5 class="text-center ">
+											<a data-toggle="collapse" href="#invitacionesPendientes" >Invitaciones pendientes</a>
+										</h5>
+										</div>
+										<div id="invitacionesPendientes" class="panel-collapse collapse">
+											<div class="panel-body">
+												<div class="btn-group-vertical btn-block">
+													<%@userInscription.each do |i| %>
+													<div class="dropdown">
+														<button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+															<%= i.email%>
+															<span class="caret"></span>
+														</button>
+														<% @memberInscription.each do |member| %>
+														<%if  member.user_id == i.id%>
+														<ul class="dropdown-menu">
+															<li>
+															<%= button_to 'Por supuesto', members_path, method: :put, id: member.id, level: 2 %></li>
+															<li>
+																<%= button_to 'No gracias' %>
+																
+															</li>
+														</ul>
+														<% end %>
+														<% end %>
+													</div>
+													<%end%>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -76,6 +110,10 @@
 
 		
 		</div>
+		<p class="text-right">
+					Numero de integrantes:
+					<strong><%= @team.max_member %></strong>
+				</p>
 	</div>
 
 	<div class="text-right" id="link"> 
