@@ -34,7 +34,12 @@ gem 'sprockets-rails', '~> 2.3.3'
 gem 'will_paginate', '~> 3.1.0'
 # Para subir imágenes
 gem 'carrierwave'
-##############33
+#Para google-maps
+gem 'gmaps4rails'
+##############
+#
+#
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,3 +1,7 @@
+<script src="//maps.google.com/maps/api/js?key=AIzaSyATRUzirFftJGK94gjB8HUN3MuHLu4QgAw
+"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
 <div class="alert alert-info">
 	<p id="notice"><%= notice %></p>
@@ -46,7 +50,8 @@
 						<div class="btn-group btn-group-justified">
 							<%= link_to 'Enviar mensaje', {}, class:"btn btn-info" %>
 							<%= link_to 'Enviar documento',{}, class:"btn btn-warning" %>
-							<%= link_to 'Programar reunion',{}, class:"btn btn-success" %>
+							<a href="#reunion" class="btn btn-success" data-toggle="modal" ">Programar reunion</a>
+							
 						</div>
 					</div>
 				</div>
@@ -137,3 +142,79 @@
 	<%= link_to 'Editar..', edit_team_path(@team), class:"btn btn-link btn-lg" %> 
 </div>
 
+
+
+
+<div class="modal fade" id="reunion" role="">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="">&times;</button>
+      <h4 class="modal-title text-center">Programa una reunion para hacerla publica al grupo</h4>
+    </div>
+	<div class="modal-body">
+<div >
+    <div id="geolocation" ></div>
+  </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+  
+</div>
+</div>
+  
+
+
+      	
+
+<script type="text/javascript">
+	// var handler = Gmaps.build('Google');
+	// handler.buildMap({ internal: {id: 'geolocation'} }, function(){
+	//   // be aware chrome >= 50 requires https for geolocation to work
+	//   if(navigator.geolocation)
+	//     navigator.geolocation.getCurrentPosition(displayOnMap);
+	// });
+var storeArray = new Array(
+     ["23.589242", "58.412586", "<p style='background:blue;color:white;padding:10px'> inner html in the page</p>"],["23.628695", "58.266483","ST2"],["23.622155", "58.488977","ST3"],
+     ["23.239333", "58.312586", "ST4"],["23.151933", "58.312586", "ST5"],["23.609027", "58.538858", "ST6"],["23.608280", "58.538343", "ST7"],["23.607789", "58.538021", "ST8"],["23.606412", "58.537399", "ST9"]);
+
+var myOptions = {
+  center: new google.maps.LatLng(storeArray[0][0], storeArray[0][1]),
+  zoom: 9,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var map = new google.maps.Map(document.getElementById("geolocation"), myOptions); 
+
+  function testmap() {
+      for (i = 0; i < storeArray.length; i++) {  
+    		marker = new google.maps.Marker({
+        	position: new google.maps.LatLng(storeArray[i][0], storeArray[i][1]),
+        	map: map
+         });
+		 
+		
+    var infowindow = new google.maps.InfoWindow({
+		content: storeArray[i][2]
+		
+	});
+	
+  
+      }
+        
+  }
+  google.maps.event.addDomListener(window, 'load', testmap);
+
+
+
+$('#reunion').on('shown.bs.modal', function () {
+  var mapNode = map.getDiv();
+      $('#geolocation').append(mapNode);
+});
+
+
+</script>

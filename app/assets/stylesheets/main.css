@@ -357,15 +357,10 @@ opacity: 0.5;
   border: 1px solid white;
   color: black
 }
-
-/*footer .row{
-  font-size: 12px;
-  padding: 20px 0;
-  background-color: rgba(120, 200, 200, 1);
-  height: 7rem;
-  color: white;
-
-}*/
+#geolocation{
+  width:500px;
+  height:300px;
+  padding-bottom:5px}
 
 footer .col-sm-8 {
   display: flex;
