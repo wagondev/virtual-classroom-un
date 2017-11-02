@@ -63,14 +63,14 @@ Career.create(name: 'Zootecnia')
 
 free_subject = Subject.create(mid: 1000000, name: "Materia Libre", description: "Materia para guardar cursos libres.") #Materia por defecto
 free_group = free_subject.groups.create(name: "Grupos Libres") #Grupo en el que se guardarán los equipos que harán de grupos libres
-free_group.teams.create(name: "Grupo libre #1", max_member: 4, description: "Equipo libre 1", group_id: 1)
-free_group.teams.create(name: "Grupo libre #2", max_member: 2, description: "Equipo libre 2", group_id: 1)
-free_group.teams.create(name: "Grupo libre #3", max_member: 5, group_id: 1)
+free_group.teams.create(name: "Grupo libre #1", max_member: 4, description: "Equipo libre 1", group_id: 1, min_member: 2)
+free_group.teams.create(name: "Grupo libre #2", max_member: 2, description: "Equipo libre 2", group_id: 1, min_member: 2)
+free_group.teams.create(name: "Grupo libre #3", max_member: 5, group_id: 1, min_member: 2)
 
 
 m1 = Subject.create(mid: 1000004, name: "Cálculo Diferencial", description: 'none')
 g1 = m1.groups.create(name: "Grupo #1")
-g1.teams.create(name: "Equipo #1", max_member: 3, description: "Team seed", group_id: 2)
+g1.teams.create(name: "Equipo #1", max_member: 3, description: "Team seed", group_id: 2, min_member: 2)
 
 m2 = Subject.create(mid: 2025975, name: "Introducción a la Ingeniería de Sistemas y Computación", description: "none")
 m2.groups.create(name: "Grupo #1")

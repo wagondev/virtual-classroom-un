@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026110726) do
+ActiveRecord::Schema.define(version: 20171102134218) do
 
   create_table "careers", force: :cascade do |t|
     t.string "name"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20171026110726) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "type"
+    t.integer "min_member"
     t.index ["group_id"], name: "index_teams_on_group_id"
   end
 
