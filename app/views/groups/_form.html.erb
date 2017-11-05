@@ -15,6 +15,13 @@
     <%= form.label :name %>
     <%= form.text_field :name, id: :group_name %>
   </div>
+  
+  <div class="form-group ">
+    <div class="field">
+      <%= form.label :materia,"Materia a la que se vincula el grupo", class:"label-control" %><br />
+      <%= form.select(:subject, Subject.all.collect {|a| [a.name, a.id]}, {},{class:"form-control"})%>
+    </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

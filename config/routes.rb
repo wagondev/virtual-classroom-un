@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
   get 'users/home'
-  get 'users/home_teacher'
+  
+  post 'groups/index'
+  post 'groups/new'
   
   post 'teams/index'
   post 'teams/new'
