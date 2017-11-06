@@ -5,6 +5,11 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
   def index
     @meetings = Meeting.all
+    @hash = Gmaps4rails.build_markers(@meetings) do |meeting, marker|
+      marker.lat meeting.latitude
+      marker.lng meeting.longitude
+      marker.infowindow meeting.decription
+end
   end
 
   # GET /meetings/1

@@ -36,6 +36,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave'
 #Para google-maps
 gem 'gmaps4rails'
+gem 'geocoder'
 #Para hacerla internacional
 gem 'rails-i18n', '~> 5.0.0'
 ##############
