@@ -5,8 +5,8 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all
-    @teamAvailableOpen = Team.joins("INNER JOIN members ON members.team_id = teams.id INNER JOIN users ON members.user_id = users.id AND users.id != " + current_user.id.to_s)
-    
+    #@teamAvailableOpen = Team.joins("INNER JOIN members ON members.team_id = teams.id INNER JOIN users ON members.user_id = users.id AND users.id != " + current_user.id.to_s)
+    @teamAvailableOpen =Team.joins([{members: :user},group: :teams]).where.not(users:{id: current_user.id}, groups: {id: 2}).order(created_at: :desc)
     #@teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
   end
 
