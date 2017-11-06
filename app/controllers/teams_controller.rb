@@ -6,6 +6,7 @@ class TeamsController < ApplicationController
   def index
     @teams = Team.all
     @teamAvailable = Team.joins("INNER JOIN members ON members.team_id = teams.id INNER JOIN users ON members.user_id = users.id AND users.id != " + current_user.id.to_s)
+    
     #@teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
   end
 

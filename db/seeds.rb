@@ -149,23 +149,23 @@ m38.groups.create(name: "Grupo#1")
 
 
 
-user = User.new(email: 'a@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user = User.new(email: 'a@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
 user.skip_confirmation!
 user.save! 
 
-user = User.new(email: 'b@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user = User.new(email: 'b@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
 user.skip_confirmation!
 user.save! 
 
-user = User.new(email: 'c@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user = User.new(email: 'c@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
 user.skip_confirmation!
 user.save! 
 
-user = User.new(email: 'd@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user = User.new(email: 'd@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.first.name)
 user.skip_confirmation!
 user.save! 
 
-user = User.new(email: 'e@mail.com', password: '123456', password_confirmation: '123456', student: :true, career: Career.first.name)
+user = User.new(email: 'e@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
 user.skip_confirmation!
 user.save! 
 
