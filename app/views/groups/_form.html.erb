@@ -18,7 +18,7 @@
   
   <div class="form-group ">
     <div class="field">
-      <%= form.label :materia,"Materia a la que se vincula el grupo", class:"label-control" %><br />
+      <%= form.label :subject,"Materia a la que se vincula el grupo", class:"label-control" %><br />
       <%= form.select(:subject, Subject.all.collect {|a| [a.name, a.id]}, {},{class:"form-control"})%>
     </div>
   </div>
