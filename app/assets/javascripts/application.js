@@ -11,6 +11,7 @@
 // about supported directives.
 //
 
+//= require navbar
 //= require bootstrap
 //= require jquery
 //= require rails-ujs
@@ -18,4 +19,5 @@
 //= require_tree .
 //= require underscore
 //= require gmaps/google
+
 

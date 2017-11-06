@@ -86,7 +86,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12">
+					<% @myLevel.each do |level|  %>
+					<%if  level.level >1 %>
+							<div class="col-md-12">
 							<div class="panel-group">
 								<div class="panel panel-success">
 									<div class="panel-heading">
@@ -107,8 +109,8 @@
 													<%if  member.user_id == i.id%>
 													<ul class="dropdown-menu dropdown-menu-right">
 														<li>
-															<%member.level = 1 %>
-														<%= button_to 'Por supuesto', member_path(member), method: :put,class: "btn btn-block btn-primary"%>
+															
+														<%= button_to 'Por supuesto', member_path( :id => member.id, 'member[level]' => 1), method: :put, class: "btn btn-block btn-primary"%>
 														</li>
 														<li>
 															<%= button_to 'No gracias', member_path(member), method: :delete, class: "btn btn-block btn-danger "%>
@@ -117,13 +119,15 @@
 													<% end %>
 														<% end %>
 												</div>
-												<%end%>
+												<% end %>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+						<% end %>
+					<% end %>
 					</div>
 				</div>
 		</div>
