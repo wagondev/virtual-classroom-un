@@ -14,4 +14,11 @@ class User < ApplicationRecord
   
   has_many :inscriptions, dependent: :destroy
   has_many :members, dependent: :destroy
+
+  def self.subjectsUser ##Pendiente query para verificar materias inscritas
+    Subject.all
+  end
+  def self.freeTeamsIn(user_id)
+    Team.includes([{members: :user},group: :teams]).where(users:{id: user_id}, groups: {id: 1}).order(created_at: :asc)
+  end
 end
