@@ -13,6 +13,21 @@ class Team < ApplicationRecord
         self.description ||= "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo architecto cum neque eligendi tenetur, earum libero iste eum similique aliquam provident. Nulla commodi velit deserunt adipisci veritatis, rerum ratione molestias!"
     end
     def self.teamAvailableOpen(user_id)
-        Team.includes([{members: :user},group: :teams]).where.not(users:{id: user_id}).where( groups: {id: 1}).order(created_at: :desc)
+        Team.includes([{members: :user},group: :teams]).where.not(users:{id: user_id}, members:{user_id: user_id}).where( groups: {id: 1}).order(created_at: :desc)
+    end
+    def self.myTeams(user_id)
+        Member.where(user_id: user_id)
+    end
+    def self.userMembers(team_id)
+        User.joins(members: :team).where.not(members:{level: 0}).where(teams:{id: team_id}).order(:id)
+    end
+    def self.userInscription(team_id)
+        User.joins(members: :team).where(members:{level: 0}, teams:{id: team_id}).order(:id)
+    end
+    def self.myLevel(user_id, team_id)
+        Member.where(user_id: user_id , team_id: team_id)
+    end
+    def self.memberInscription(team_id)
+        Member.where(team_id: team_id, level: 0)
     end
 end

@@ -5,19 +5,18 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all
-    #@teamAvailableOpen = Team.joins("INNER JOIN members ON members.team_id = teams.id INNER JOIN users ON members.user_id = users.id AND users.id != " + current_user.id.to_s)
-    @teamAvailableOpen =Team.includes([{members: :user},group: :teams]).where.not(users:{id: current_user.id}).where( groups: {id: 1}).order(created_at: :desc)
-    @teamPrueba = Team.teamAvailableOpen
-    #@teams = Team.where(group_id: 1) #Solo muestra los los equipos que pertenecen al grupo 1 (es decir, los grupos libres)
+   
+    @teamAvailableOpen = Team.teamAvailableOpen(current_user.id)
+    @myTeams = Team.myTeams(current_user.id)
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @userMembers = User.joins("INNER JOIN members ON members.user_id = users.id  AND members.level >= 1 INNER JOIN teams ON members.team_id = teams.id AND teams.id =" + @team.id.to_s ).order(:id).paginate(:page => params[:page], :per_page => 10)
-    @userInscription = User.joins("INNER JOIN members ON members.user_id = users.id AND members.level == 0 INNER JOIN teams ON members.team_id = teams.id AND teams.id =" + @team.id.to_s)
-    @myLevel = Member.where(user_id: current_user.id , team_id: @team.id)
-    @memberInscription = Member.where(team_id: @team.id, level: 0)
+    @userMembers = Team.userMembers(@team.id).paginate(:page => params[:page], :per_page => 10)
+    @userInscription = Team.userInscription(@team.id)
+    @myLevel = Team.myLevel(current_user.id, @team.id )
+    @memberInscription = Team.memberInscription(@team.id)
   end
 
   # GET /teams/new
