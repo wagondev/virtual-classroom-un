@@ -21,7 +21,7 @@
           <% enter = true %>
         <% end %>
         <% end %>
-        <% if !enter %>
+        <% if !enter && @numberOfMemberIn[team.id] < team.max_member %>
           <tr>
             <td class="text-center"><%= team.name %></td>
             <td class="text-center"><%= team.description %></td>

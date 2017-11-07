@@ -4,64 +4,62 @@
 <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 <% myLevel = -1 %>
 <% @myLevel.each do |level|  %>
-	<%myLevel = level.level %>
+<%myLevel = level.level %>
 <%end%>
 <div class="alert alert-info">
 	<p id="notice"><%= notice %></p>
 </div>
 <div class="container-fluid" id="teamsFree">
-<div class="">
-	<div class="col-md-4 col-md-offset-1">
-		<h1 class="">
-			<strong><%= @team.name %></strong>
-		</h1>
-		<% if @team.logo.present? == true %>
-		<div class="col-md-8 ">
-			<%= image_tag( @team.logo_url, class:"img-responsive img-circle") %>
+	<% if myLevel >= 0%>
+	<div class="">
+		<div class="col-md-4 col-md-offset-1">
+			<h1 class="">
+				<strong><%= @team.name %></strong>
+			</h1>
+			<% if @team.logo.present? == true %>
+			<div class="col-md-8 ">
+				<%= image_tag( @team.logo_url, class:"img-responsive img-circle") %>
+			</div>
+			<% end %>
+
 		</div>
-		<% end %>
-
-	</div>
-	<div class="">
-		<h3 class="text-center"><kbd> Somos: <%= @team.description%></kbd></h3>
-	</div>	
-	<div class="row">
-		
-		
-	</div>
-	
-	<br>
-	<br>
-	<div class="">
+		<div class="">
+			<h3 class="text-center"><kbd> Somos: <%= @team.description%></kbd></h3>
+		</div>	
 		<div class="row">
-			<div class="col-md-8">
-				<div class="panel panel-danger">
-					<div class="panel-heading">
-						<h4 class="text-center">Notificaciones y mensajes</h4>
-					</div>
-					<div class="panel panel-body">
-						<pre class="pre-scrollable">
-							<blockquote>Citas, mensajes y archivos enviados o recibidos
+		</div>
+		<br>
+		<br>
+		<div class="">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h4 class="text-center">Notificaciones y mensajes</h4>
+						</div>
+						<div class="panel panel-body">
+							<pre class="pre-scrollable">
+								<blockquote>Citas, mensajes y archivos enviados o recibidos
 
 
 
 
 
-							;)
-							</blockquote>
-						</pre>
-						<%if myLevel > 0%>
+									;)
+								</blockquote>
+							</pre>
+							<%if myLevel > 0%>
 							<div class="btn-group btn-group-justified">
 								<%= link_to 'Enviar mensaje', {}, class:"btn btn-info" %>
 								<%= link_to 'Enviar documento',{}, class:"btn btn-warning" %>
 								<a href="#reunion" class="btn btn-success" data-toggle="modal" ">Programar reunion</a>
-								
+
 							</div>
-						<%end%>
+							<%end%>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
+				<div class="col-md-4">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="panel-group">
@@ -69,11 +67,8 @@
 									<div class="panel-heading">
 										<h5 class="text-center">
 											<a data-toggle="collapse" href="#integrantes">
-												<%i = 0%>
-												<% @userMembers.each do |u| %>
-													<%i=i+1%>
-												<%end%>
-											Integrantes: <%=i%>
+												
+												Integrantes <span class="badge"><%= @numberOfMemberIn[@team.id]%></span>
 											</a>
 										</h5>
 									</div>
@@ -83,7 +78,7 @@
 												<% @userMembers.each do |u| %>
 												<li class="list-group-item list-group-item-info">
 													<%= u.email %>	
-													</li>
+												</li>
 												<%end%>
 											</div>
 										</div>
@@ -91,15 +86,14 @@
 								</div>
 							</div>
 						</div>
-
-					<%if  myLevel >1 %>
-							<div class="col-md-12">
+						<%if  myLevel  > 1  && @numberOfMemberIn[@team.id] <= @team.max_member %>
+						<div class="col-md-12">
 							<div class="panel-group">
 								<div class="panel panel-success">
 									<div class="panel-heading">
 										<h5 class="text-center ">
-										<a data-toggle="collapse" href="#invitacionesPendientes" >Invitaciones pendientes</a>
-									</h5>
+											<a data-toggle="collapse" href="#invitacionesPendientes" >Invitaciones pendientes  <span class="badge"> <%= @numberOfMember[@team.id] -@numberOfMemberIn[@team.id] %></span></a>
+										</h5>
 									</div>
 									<div id="invitacionesPendientes" class="panel-collapse collapse">
 										<div class="panel-body">
@@ -114,15 +108,15 @@
 													<%if  member.user_id == i.id%>
 													<ul class="dropdown-menu dropdown-menu-right">
 														<li>
-															
-														<%= button_to 'Por supuesto', member_path( :id => member.id, 'member[level]' => 1), method: :put, class: "btn btn-block btn-primary"%>
+
+															<%= button_to 'Por supuesto', member_path( :id => member.id, 'member[level]' => 1), method: :put, class: "btn btn-block btn-primary"%>
 														</li>
 														<li>
 															<%= button_to 'No gracias', member_path(member), method: :delete, class: "btn btn-block btn-danger "%>
 														</li>
 													</ul>
 													<% end %>
-														<% end %>
+													<% end %>
 												</div>
 												<% end %>
 											</div>
@@ -132,99 +126,98 @@
 							</div>
 						</div>
 						<% end %>
-
 					</div>
 				</div>
+			</div>
 		</div>
 	</div>
-		
-
-	
-	</div>
 	<p class="text-right">
-				Numero de integrantes:
-				<strong><%= @team.max_member %></strong>
-			</p>
+		Numero de integrantes:
+		<strong><%= @team.max_member %></strong>
+	</p>
+	<%else%>
+	<h2 class="text-center">No tienes acceso a este grupo</h2>
+	<%end%>
 </div>
 <% if myLevel > 1%>
-	
-	<div class="text-right" id="link"> 
-		<%= link_to 'Editar..', edit_team_path(@team), class:"btn btn-link btn-lg" %> 
-	</div>
+
+<div class="text-right" id="link"> 
+	<%= link_to 'Editar..', edit_team_path(@team), class:"btn btn-link btn-lg" %> 
+</div>
 <% end %>
 
 
 
 
 <div class="modal fade" id="reunion" role="">
-<div class="modal-dialog">
+	<div class="modal-dialog">
 
-  <!-- Modal content-->
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="">&times;</button>
-      <h4 class="modal-title text-center">Programa una reunion para hacerla publica al grupo</h4>
-    </div>
-	<div class="modal-body">
-<div >
-    <div id="geolocation" ></div>
-  </div>
-      </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    </div>
-  </div>
-  
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="">&times;</button>
+				<h4 class="modal-title text-center">Programa una reunion para hacerla publica al grupo</h4>
+			</div>
+			<div class="modal-body">
+				<div >
+					<div id="geolocation" ></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
 </div>
-</div>
-  
 
 
-      	
+
+
 
 <script type="text/javascript">
-	// var handler = Gmaps.build('Google');
-	// handler.buildMap({ internal: {id: 'geolocation'} }, function(){
-	//   // be aware chrome >= 50 requires https for geolocation to work
-	//   if(navigator.geolocation)
-	//     navigator.geolocation.getCurrentPosition(displayOnMap);
-	// });
+// var handler = Gmaps.build('Google');
+// handler.buildMap({ internal: {id: 'geolocation'} }, function(){
+//   // be aware chrome >= 50 requires https for geolocation to work
+//   if(navigator.geolocation)
+//     navigator.geolocation.getCurrentPosition(displayOnMap);
+// });
 var storeArray = new Array(
-     ["23.589242", "58.412586", "<p style='background:blue;color:white;padding:10px'> inner html in the page</p>"],["23.628695", "58.266483","ST2"],["23.622155", "58.488977","ST3"],
-     ["23.239333", "58.312586", "ST4"],["23.151933", "58.312586", "ST5"],["23.609027", "58.538858", "ST6"],["23.608280", "58.538343", "ST7"],["23.607789", "58.538021", "ST8"],["23.606412", "58.537399", "ST9"]);
+	["23.589242", "58.412586", "<p style='background:blue;color:white;padding:10px'> inner html in the page</p>"],["23.628695", "58.266483","ST2"],["23.622155", "58.488977","ST3"],
+	["23.239333", "58.312586", "ST4"],["23.151933", "58.312586", "ST5"],["23.609027", "58.538858", "ST6"],["23.608280", "58.538343", "ST7"],["23.607789", "58.538021", "ST8"],["23.606412", "58.537399", "ST9"]);
 
 var myOptions = {
-  center: new google.maps.LatLng(storeArray[0][0], storeArray[0][1]),
-  zoom: 9,
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+	center: new google.maps.LatLng(storeArray[0][0], storeArray[0][1]),
+	zoom: 9,
+	mapTypeId: google.maps.MapTypeId.ROADMAP
+};
 
-  var map = new google.maps.Map(document.getElementById("geolocation"), myOptions); 
+var map = new google.maps.Map(document.getElementById("geolocation"), myOptions); 
 
-  function testmap() {
-      for (i = 0; i < storeArray.length; i++) {  
-    		marker = new google.maps.Marker({
-        	position: new google.maps.LatLng(storeArray[i][0], storeArray[i][1]),
-        	map: map
-         });
-		 
-		
-    var infowindow = new google.maps.InfoWindow({
-		content: storeArray[i][2]
-		
-	});
-	
-  
-      }
-        
-  }
-  google.maps.event.addDomListener(window, 'load', testmap);
+function testmap() {
+	for (i = 0; i < storeArray.length; i++) {  
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(storeArray[i][0], storeArray[i][1]),
+			map: map
+		});
+
+
+		var infowindow = new google.maps.InfoWindow({
+			content: storeArray[i][2]
+
+		});
+
+
+	}
+
+}
+google.maps.event.addDomListener(window, 'load', testmap);
 
 
 
 $('#reunion').on('shown.bs.modal', function () {
-  var mapNode = map.getDiv();
-      $('#geolocation').append(mapNode);
+	var mapNode = map.getDiv();
+	$('#geolocation').append(mapNode);
 });
 
 

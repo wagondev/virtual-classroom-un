@@ -8,6 +8,8 @@ class TeamsController < ApplicationController
    
     @teamAvailableOpen = Team.teamAvailableOpen(current_user.id)
     @myTeams = Team.myTeams(current_user.id)
+    @numberOfMember =Team.numberOfMember
+    @numberOfMemberIn =Team.numberOfMemberIn
   end
 
   # GET /teams/1
@@ -17,6 +19,8 @@ class TeamsController < ApplicationController
     @userInscription = Team.userInscription(@team.id)
     @myLevel = Team.myLevel(current_user.id, @team.id )
     @memberInscription = Team.memberInscription(@team.id)
+    @numberOfMemberIn =Team.numberOfMemberIn
+    @numberOfMember =Team.numberOfMember
   end
 
   # GET /teams/new

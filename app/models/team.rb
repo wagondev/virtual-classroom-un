@@ -30,4 +30,10 @@ class Team < ApplicationRecord
     def self.memberInscription(team_id)
         Member.where(team_id: team_id, level: 0)
     end
+    def self.numberOfMemberIn
+        Member.where.not(level:0).group(:team_id).count
+    end
+    def self.numberOfMember
+        Member.group(:team_id).count
+    end
 end
