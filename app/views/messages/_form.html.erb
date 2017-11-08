@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_field :body, id: :message_body %>
+    <%= form.text_area :body, id: :message_body %>
   </div>
 
   <div class="field">
@@ -48,7 +48,7 @@
 
   <div class="field">
     <%= form.label :document %>
-    <%= form.text_field :document, id: :message_document %>
+    <%= form.file_field :document, id: :message_document, multiple: true %>
   </div>
 
   <div class="field">

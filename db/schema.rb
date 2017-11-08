@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106220622) do
+ActiveRecord::Schema.define(version: 20171108044655) do
 
   create_table "careers", force: :cascade do |t|
     t.string "name"
@@ -61,16 +61,17 @@ ActiveRecord::Schema.define(version: 20171106220622) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "member_id"
+    t.string "title"
+    t.text "body"
+    t.float "latutude"
+    t.float "longitude"
+    t.string "address"
+    t.datetime "meeting"
+    t.string "document"
     t.integer "type"
-    t.integer "meeting_id"
-    t.integer "document_id"
-    t.integer "notebook_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["document_id"], name: "index_messages_on_document_id"
-    t.index ["meeting_id"], name: "index_messages_on_meeting_id"
     t.index ["member_id"], name: "index_messages_on_member_id"
-    t.index ["notebook_id"], name: "index_messages_on_notebook_id"
   end
 
   create_table "subjects", force: :cascade do |t|

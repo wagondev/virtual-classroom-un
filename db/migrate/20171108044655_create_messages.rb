@@ -3,13 +3,13 @@ class CreateMessages < ActiveRecord::Migration[5.1]
     create_table :messages do |t|
       t.references :member, foreign_key: true
       t.string :title
-      t.string :body
+      t.text :body
       t.float :latutude
       t.float :longitude
       t.string :address
       t.datetime :meeting
       t.string :document
-      t.int :type
+      t.integer :type
 
       t.timestamps
     end
