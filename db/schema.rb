@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108044655) do
+ActiveRecord::Schema.define(version: 20171108193513) do
 
   create_table "careers", force: :cascade do |t|
     t.string "name"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20171108044655) do
   create_table "messages", force: :cascade do |t|
     t.integer "member_id"
     t.string "title"
-    t.text "body"
+    t.string "body"
     t.float "latutude"
     t.float "longitude"
     t.string "address"

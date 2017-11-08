@@ -31,12 +31,12 @@
 			<div class="panel-body">
 				
 				<div class="list-group">
-					<% @subjects.each do |subject| %>
+					<% @subjectsUser.each do |subject| %>
 					<%= link_to subject.name, subject, class: "list-group-item list-group-item-info" %>
 					<%end%>
 	
 				</div>
-	<%= will_paginate @subjects %>
+	<%= will_paginate @subjectsUser %>
 			</div>
 			
 			</div>
