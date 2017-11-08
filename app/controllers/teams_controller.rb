@@ -42,6 +42,7 @@ class TeamsController < ApplicationController
     respond_to do |format|
       if @team.save
         Member.create(user_id: current_user.id, team_id: @team.id, level: 3)
+        UserMailer.free_group_created_email(current_user, @team).deliver
         format.html { redirect_to @team, notice: 'El equipo fue creado con exito.' }
         format.json { render :show, status: :created, location: @team }
 
