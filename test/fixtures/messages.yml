@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member: one
+  title: MyString
+  body: MyString
+  latutude: 1.5
+  longitude: 1.5
+  address: MyString
+  meeting: 2017-11-07 23:46:55
+  document: MyString
+  type: 
+
+two:
+  member: two
+  title: MyString
+  body: MyString
+  latutude: 1.5
+  longitude: 1.5
+  address: MyString
+  meeting: 2017-11-07 23:46:55
+  document: MyString
+  type: 
