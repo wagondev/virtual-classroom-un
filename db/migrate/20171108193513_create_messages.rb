@@ -11,6 +11,9 @@ class CreateMessages < ActiveRecord::Migration[5.1]
       t.string :document
       t.integer :type
 
+      t.integer :member_id
+      t.belongs_to :member, index: true
+
       t.timestamps
     end
   end
