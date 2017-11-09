@@ -21,7 +21,11 @@ class TeamsController < ApplicationController
     @memberInscription = Team.memberInscription(@team.id)
     @numberOfMemberIn =Team.numberOfMemberIn
     @numberOfMember =Team.numberOfMember
+    @teamMessage= Member.includes(:messages).find_by(id: params[:id])
+    @message = Message.new
   end
+
+  
 
   # GET /teams/new
   def new

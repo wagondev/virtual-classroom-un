@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
     @memberId = Message.memberId(current_user.id, @team)
   end
 
+
   # GET /messages/1/edit
   def edit
   end
