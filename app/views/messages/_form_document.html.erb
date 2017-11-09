@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row col-md-6"><%= form_with(model: message, local: true) do |form| %>
+      <% if message.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+    
+          <ul>
+          <% message.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+    
+     <div class="form-group">
+        <div class="field">
+         <%= form.label :title,"Ingresa el titulo", class:"control-label" %>
+         <em>Recuerde que el tamaño maximo es de 140 caracteres</em>
+         <%= form.text_field :title, id: :message_title, class:"form-control" %>
+       </div>
+     </div>
+    
+      
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :document, "Ingresa los documentos o imagenes", class:"control-label" %>
+          <%= form.file_field :document, id: :message_document, multiple: true, class:"form-control" %>
+        </div>
+      </div>
+    
+      
+    
+      <div class="actions">
+      <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+          <i class="icon-ok icon-white">ENVIAR</i><% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
