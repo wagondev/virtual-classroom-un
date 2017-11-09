@@ -51,8 +51,9 @@
 							</pre>
 							<%if myLevel > 0%>
 							<div class="btn-group btn-group-justified">
-								<a href=#texto  class="btn btn-info" data-toggle="modal">Enviar mensaje</a>
-								<%= link_to 'Enviar documento',{}, class:"btn btn-warning" %>
+								<a href="#texto"  class="btn btn-info" data-toggle="modal">Enviar mensaje</a>
+								<a href="#documento" class="btn btn-warning" data-toggle="modal">Enviar documento(s)</a>
+								
 								<a href="#reunion" class="btn btn-success" data-toggle="modal" ">Programar reunion</a>
 
 							</div>
@@ -170,8 +171,8 @@
 		</div>
 
 	</div>
-	</div>
-	<div class="modal fade" id="texto" role="">
+</div>
+<div class="modal fade" id="texto" role="">
 	<div class="modal-dialog">
 
 		<!-- Modal content-->
@@ -189,9 +190,29 @@
 				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="documento" role="">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="">&times;</button>
+				<h4 class="modal-title text-center">Ingresa archivos para compartir en el grupo</h4>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row col-md-6"><%=render "messages/form_document",  message: @message%></div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+			</div>
+		</div>
 
 	</div>
-
 </div>
 
 
