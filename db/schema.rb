@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108193513) do
+ActiveRecord::Schema.define(version: 20171109185152) do
 
   create_table "careers", force: :cascade do |t|
     t.string "name"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20171108193513) do
     t.string "address"
     t.datetime "meeting"
     t.string "document"
-    t.integer "type"
+    t.integer "type_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_messages_on_member_id"
