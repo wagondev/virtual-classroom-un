@@ -39,8 +39,8 @@
 
   <div class="field">
     <%= form.label :time %>
-    <%= form.datetime_select :time, id: :meeting_time %>
-    <%= l Time.now%>
+    <%= (form.datetime_select :time, id: :meeting_time) %>
+
   </div>
 
   <div class="actions">

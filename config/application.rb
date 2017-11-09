@@ -21,6 +21,8 @@ module VirtualClassroomUn
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
-
-
+  
+def default_url_options
+  { locale: I18n.locale }
+end
 end
