@@ -44,11 +44,16 @@
 										<% @teamMessages.each do |m| %>
 											<% if i % 2 == 0 %>
 												<div class="col-md-6">
-													
 													<div class="well well-sm">
 														<h4 class="text-primary text-center text-uppercase"><%= m.title%></h4>				
-														<h5 class="text-justify text-success"><%= m.body%></h5>							
-														
+														<%if m.type_message == 1%>
+															<h5 class="text-justify text-success"><%= m.body%></h5>
+														<%elsif m.type_message == 2%>
+															<%m.document.each do |document|%>
+															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn-warning" %></p>
+															<%end%>
+
+														<%end%>
 														<p class="text-muted small">Mensaje de:<%= User.includes(:members).where(members:{id: m.member_id}).pluck(:email)[0]%></p>
 															
 													</div>
@@ -57,7 +62,14 @@
 												<div class="col-md-6 col-md-offset-2">
 													<div class="well well-sm text-right">
 													<h4 class="text-primary text-center text-uppercase"><%= m.title%></h4>
-													<h5 class="text-justify text-success"><%= m.body%></h5>
+													<%=m.type_message %>
+													<%if m.type_message == 1%>
+														<h5 class="text-justify text-success"><%= m.body%></h5>
+													<%elsif m.type_message == 2%>
+														<%m.document.each do |document|%>
+															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn-warning" %></p>
+															<%end%>
+													<%end%>
 													<p class="text-muted small">Mensaje de: <%= User.includes(:members).where(members:{id: m.member_id}).pluck(:email)[0]%></p>
 													</div>
 												</div>
