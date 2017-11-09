@@ -15,12 +15,13 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
-    @memberId = Message.memberId(current_user.id, @team)
+    #@memberId = Message.memberId(current_user.id, @team)
     @hash = Gmaps4rails.build_markers(@meetings) do |meeting, marker|
       marker.lat meeting.latitude
       marker.lng meeting.longitude
       marker.infowindow meeting.decription
     end
+
   end
 
 

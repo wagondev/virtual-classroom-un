@@ -14,8 +14,8 @@
   
     <div class="form-group">
       <div class="field">
-        <%= form.label :title, "Ingresa el titulo", class:"control-label"%>
-        <em>Recuerde que el tamaño maximo es de 140 caracteres</em>
+        <%= form.label :title, "Ingresa el tìtulo", class:"control-label"%>
+        <em>Recuerde que el tamaño máximo es de 140 caracteres</em>
         <%= form.text_field :title, id: :message_title, class:"form-control"%>
       </div>
     </div>
@@ -24,6 +24,13 @@
       <div class="field">
         <%= form.label :body , "Ingresa el mensaje", class:"control-label"%>
         <%= form.text_area :body, id: :message_body, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="field">
+        <%= form.label :member_id , "", class:"control-label"%>
+        <%= form.select(:member_id, options_for_select(Member.where(user_id: current_user.id, team_id: @team.id).map{|s|[s.team_id]}),{},{class:"form-control"})%>
       </div>
     </div>
   
