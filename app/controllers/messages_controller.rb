@@ -37,7 +37,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         team = Message.getTeam(@message.member_id)
-        format.html { redirect_to member_url team}
+        format.html { redirect_to team_url team}
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
