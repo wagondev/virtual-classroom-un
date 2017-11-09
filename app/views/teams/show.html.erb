@@ -47,6 +47,7 @@
 
 									;)
 								</blockquote>
+								<%=render @teamMessage.messages %>
 							</pre>
 							<%if myLevel > 0%>
 							<div class="btn-group btn-group-justified">
@@ -164,10 +165,11 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 
+	</div>
 	</div>
 	<div class="modal fade" id="texto" role="">
 	<div class="modal-dialog">
@@ -176,21 +178,21 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="">&times;</button>
-				<h4 class="modal-title text-center">Programa una reunion para hacerla publica al grupo</h4>
+				<h4 class="modal-title text-center">Ingresa un mensaje para el grupo</h4>
 			</div>
 			<div class="modal-body">
-				<div >
-					<%=render 'form_text',messages_url, message: @message %>
+				<div class="container">
+					<div class="row col-md-4"><%=render "messages/form_text",  message: @message%></div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 
 	</div>
-</div>
 
+</div>
 
 
 
