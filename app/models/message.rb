@@ -9,4 +9,8 @@ class Message < ApplicationRecord
   
   mount_uploaders :document, FileUploader
   serialize :document, JSON # If you use SQLite, add this line.
+
+  def self.getTeam(member_id)
+  	Team.includes(:members).where(members:{ id: member_id}) 	
+  end
 end

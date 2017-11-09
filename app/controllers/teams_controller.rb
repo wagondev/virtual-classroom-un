@@ -23,6 +23,7 @@ class TeamsController < ApplicationController
     @numberOfMember =Team.numberOfMember
     @teamMessage= Member.includes(:messages).find_by(id: params[:id])
     @message = Message.new
+    @memberId = Team.memberId(current_user.id, @team.id)
   end
 
   

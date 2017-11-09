@@ -1,5 +1,8 @@
 <div class="container">
-<div class="row col-md-6"><%= form_with(model: message, local: true) do |form| %>
+<div class="row col-md-6">
+ 
+  
+  <%= form_with(model: message, local: true) do |form| %>
     <% if message.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -11,14 +14,8 @@
         </ul>
       </div>
     <% end %>
+<%= form.hidden_field :member_id, :value => @memberId[0].id %>
 
-  <div class="form-group">
-      <div class="field">
-       
-        <% form.text_field :member_id, id: :message_member_id,:value => "6" , class:"form-control"%>
-        <%=  @memberId.nil?%>
-      </div>
-    </div>
 
 
     <div class="form-group">
@@ -36,17 +33,14 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <div class="field">
-        <%= form.label :member_id , "", class:"control-label"%>
-        <%= form.select(:member_id, options_for_select(Member.where(user_id: current_user.id, team_id: @team.id).map{|s|[s.team_id]}),{},{class:"form-control"})%>
-      </div>
-    </div>
   
     <div class="actions">
       <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
           <i class="icon-ok icon-white">ENVIAR</i><% end %>
     </div>
+    
+  
+
   <% end %>
 </div>
 </div>

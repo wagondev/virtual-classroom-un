@@ -36,4 +36,7 @@ class Team < ApplicationRecord
     def self.numberOfMember
         Member.group(:team_id).count
     end
+    def self.memberId(user_id, team_id)
+        Member.where(user_id: user_id, team_id: team_id)
+    end
 end
