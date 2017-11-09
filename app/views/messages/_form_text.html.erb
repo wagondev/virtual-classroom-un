@@ -11,7 +11,16 @@
         </ul>
       </div>
     <% end %>
-  
+
+  <div class="form-group">
+      <div class="field">
+       
+        <% form.text_field :member_id, id: :message_member_id,:value => "6" , class:"form-control"%>
+        <%=  @memberId.nil?%>
+      </div>
+    </div>
+
+
     <div class="form-group">
       <div class="field">
         <%= form.label :title, "Ingresa el titulo", class:"control-label"%>
