@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20171108193513) do
   create_table "messages", force: :cascade do |t|
     t.integer "member_id"
     t.string "title"
-    t.string "body"
+    t.text "body"
     t.float "latutude"
     t.float "longitude"
     t.string "address"
