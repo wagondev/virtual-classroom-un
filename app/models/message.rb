@@ -11,6 +11,6 @@ class Message < ApplicationRecord
   serialize :document, JSON # If you use SQLite, add this line.
 
   def self.getTeam(member_id)
-  	Team.includes(:members).where(members:{ id: member_id}).first	
+  	Team.includes(:members).where(members:{ id: member_id}).first
   end
 end

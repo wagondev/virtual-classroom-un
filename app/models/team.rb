@@ -39,4 +39,7 @@ class Team < ApplicationRecord
     def self.memberId(user_id, team_id)
         Member.where(user_id: user_id, team_id: team_id)
     end
+    def self.getMessages(team_id)
+        Message.includes(:member).where(members:{team_id: team_id}).order(created_at: :desc)       
+    end
 end

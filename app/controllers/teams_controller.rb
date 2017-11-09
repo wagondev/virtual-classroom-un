@@ -21,7 +21,7 @@ class TeamsController < ApplicationController
     @memberInscription = Team.memberInscription(@team.id)
     @numberOfMemberIn =Team.numberOfMemberIn
     @numberOfMember =Team.numberOfMember
-    @teamMessage= Member.includes(:messages).find_by(id: params[:id])
+    @teamMessages= Team.getMessages(@team.id)
     @message = Message.new
     @memberId = Team.memberId(current_user.id, @team.id)
   end
