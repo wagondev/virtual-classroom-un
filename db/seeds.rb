@@ -59,45 +59,180 @@ Career.create(name: 'Terapia Ocupacional')
 Career.create(name: 'Trabajo Social')
 Career.create(name: 'Zootecnia')
 
+user = User.new(email: 'caralopezrom@unal.edu.co', password: '123456', password_confirmation: '123456', student: 0, career: Career.find(32).name)
+user.skip_confirmation!
+user.save! 
+user = User.new(email: 'calopezro@unal.edu.co', password: '123456', password_confirmation: '123456', student: 1, career: Career.find(32).name)
+user.skip_confirmation!
+user.save! 
+user = User.new(email: 'dacherreragu@unal.edu.co ', password: '123456', password_confirmation: '123456', student: 0, career: Career.find(32).name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'a@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'b@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'c@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'd@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.first.name)
+user.skip_confirmation!
+user.save! 
+
+user = User.new(email: 'e@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+
+user = User.new(email: 'f@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'g@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'h@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'i@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'j@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'k@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'l@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'm@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'n@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'o@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'p@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'q@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'r@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.last.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 's@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.last.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 't@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.last.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'v@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.last.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'w@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.last.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'x@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.last.name)
+user.skip_confirmation!
+user.save!
+
+user = User.new(email: 'y@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.last.name)
+user.skip_confirmation!
+user.save!
+
+
+user = User.new(email: 'z@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
+user.skip_confirmation!
+user.save!
 
 
 free_subject = Subject.create(mid: 1000000, name: "Materia Libre", description: "Materia para guardar cursos libres.") #Materia por defecto
 free_group = free_subject.groups.create(name: "Grupos Libres") #Grupo en el que se guardarán los equipos que harán de grupos libres
-free_group.teams.create(name: "Grupo libre #1", max_member: 4, description: "Equipo libre 1", group_id: 1, min_member: 2)
-free_group.teams.create(name: "Grupo libre #2", max_member: 2, description: "Equipo libre 2", group_id: 1, min_member: 2)
-free_group.teams.create(name: "Grupo libre #3", max_member: 5, group_id: 1, min_member: 2)
+free_group.teams.create(name: "Wagon-dev", max_member: 4, description: "Equipo libre 1", group_id: 1, min_member: 2)
+free_group.teams.create(name: "Rails s", max_member: 2, description: "Equipo libre 2", group_id: 1, min_member: 2)
+free_group.teams.create(name: "ITs OK", max_member: 5, group_id: 1, min_member: 2)
+
+Member.create(user_id: 1, team_id: 1, level: 3)
+Member.create(user_id: 2, team_id: 1, level: 2)
+Member.create(user_id: 3, team_id: 1, level: 1)
+Member.create(user_id: 4, team_id: 1, level: 1)
+
+Member.create(user_id: 1, team_id: 2, level: 3)
+Member.create(user_id: 2, team_id: 2, level: 1)
+
+Member.create(user_id: 1, team_id: 3, level: 1)
+Member.create(user_id: 2, team_id: 3, level: 1)
+Member.create(user_id: 3, team_id: 3, level: 3)
+Member.create(user_id: 4, team_id: 3, level: 2)
 
 
-m1 = Subject.create(mid: 1000004, name: "Cálculo Diferencial", description: 'none')
-g1 = m1.groups.create(name: "Grupo #1")
-g1.teams.create(name: "Equipo #1", max_member: 3, description: "Team seed", group_id: 2, min_member: 2)
+
 
 m2 = Subject.create(mid: 2025975, name: "Introducción a la Ingeniería de Sistemas y Computación", description: "none")
 m2.groups.create(name: "Grupo #1")
+m2.groups.create(name: "Grupo #2")
 m3 = Subject.create(mid: 2015734, name: "Programación de Computadores", description: "none")
 m3.groups.create(name: "Grupo #1")
+m3.groups.create(name: "Grupo #2")
 m4 = Subject.create(mid: 1000019, name: "Fundamentos de Mecánica", description: "none")
 m4.groups.create(name: "Grupo #1")
+m4.groups.create(name: "Grupo #2")
 m5 = Subject.create(mid: 1000005, name: "Cálculo Integral", description: "none")
 m5.groups.create(name: "Grupo #1")
+m5.groups.create(name: "Grupo #2")
 m6 = Subject.create(mid: 1000003, name: "Álgebra Lineal", description: "none")
 m6.groups.create(name: "Grupo #1")
+m6.groups.create(name: "Grupo #2")
 m7 = Subject.create(mid: 2016375, name: "Programación Orientada a Objetos", description: "N.A")
 m7.groups.create(name: "Grupo #1")
+m7.groups.create(name: "Grupo #2")
 m8 = Subject.create(mid: 1000013, name: "Probabilidad y Estadística Fundamental", description: "N.A")
 m8.groups.create(name: "Grupo #1")
+m8.groups.create(name: "Grupo #2")
 m9 = Subject.create(mid: 1000006, name: "Cálculo en Varias Variables", description: "N.A")
 m9.groups.create(name: "Grupo #1")
+m9.groups.create(name: "Grupo #2")
 m10 = Subject.create(mid: 2025963, name: "Matemáticas Discretas I", description: "N.A")
 m10.groups.create(name: "Grupo #1")
+m10.groups.create(name: "Grupo #2")
 m11 = Subject.create(mid: 2016353, name: "Bases de Datos", description: "N.A")
 m11.groups.create(name: "Grupo #1")
+m11.groups.create(name: "Grupo #2")
 m12 = Subject.create(mid: 2016698, name: "Elementos de Computadores", description: "N.A")
 m12.groups.create(name: "Grupo #1")
+m12.groups.create(name: "Grupo #2")
 m13 = Subject.create(mid: 1000017, name: "Fundamentos de Electricidad y Magnetismo", description: "N.A")
 m13.groups.create(name: "Grupo #1")
+m13.groups.create(name: "Grupo #2")
 m14 = Subject.create(mid: 2015703, name: "Ingeniería Económica", description: "N.A")
 m14.groups.create(name: "Grupo #1")
+m14.groups.create(name: "Grupo #2")
 m15 = Subject.create(mid: 2025964, name: "Matemáticas Discretas II", description: "N.A")
 m15.groups.create(name: "Grupo #1")
 m16 = Subject.create(mid: 2016699, name: "Estructuras de Datos", description: "N.A")
@@ -147,37 +282,64 @@ m37.groups.create(name: "Grupo#1")
 m38 = Subject.create(mid: 2025972, name: "Introducción a la Criptografía y a la Seguridad de la Información", description: "ninguna")
 m38.groups.create(name: "Grupo#1")
 
+m1 = Subject.create(mid: 1000004, name: "Cálculo Diferencial", description: 'none')
+g1 = m1.groups.create(name: "Grupo #1")
+g1.teams.create(name: "Equipo #1", max_member: 3, description: "Team seed", group_id: 2, min_member: 2)
 
 
-user = User.new(email: 'a@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
-user.skip_confirmation!
-user.save! 
 
-user = User.new(email: 'b@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
-user.skip_confirmation!
-user.save! 
-
-user = User.new(email: 'c@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
-user.skip_confirmation!
-user.save! 
-
-user = User.new(email: 'd@mail.com', password: '123456', password_confirmation: '123456', student: 0, career: Career.first.name)
-user.skip_confirmation!
-user.save! 
-
-user = User.new(email: 'e@mail.com', password: '123456', password_confirmation: '123456', student: 1, career: Career.first.name)
-user.skip_confirmation!
-user.save! 
-
-Member.create(user_id: 1, team_id: 1, level: 1)
-Member.create(user_id: 2, team_id: 1, level: 2)
-Member.create(user_id: 3, team_id: 1, level: 2)
-Member.create(user_id: 4, team_id: 1, level: 2)
-
-Member.create(user_id: 1, team_id: 2, level: 1)
-Member.create(user_id: 2, team_id: 2, level: 2)
-
-Member.create(user_id: 1, team_id: 3, level: 1)
-Member.create(user_id: 2, team_id: 3, level: 2)
-Member.create(user_id: 3, team_id: 3, level: 2)
-Member.create(user_id: 4, team_id: 3, level: 2)
+Inscription.create(user_id:1 , group_id:2 )
+Inscription.create(user_id:1 , group_id:4 )
+Inscription.create(user_id:1 , group_id:6 )
+Inscription.create(user_id:1 , group_id:9 )
+Inscription.create(user_id:1 , group_id:11 )
+Inscription.create(user_id:1 , group_id:13 )
+Inscription.create(user_id:1 , group_id:15 )
+Inscription.create(user_id:2 , group_id:2 )
+Inscription.create(user_id:2 , group_id:4 )
+Inscription.create(user_id:2 , group_id:6 )
+Inscription.create(user_id:2 , group_id:9 )
+Inscription.create(user_id:2 , group_id:11 )
+Inscription.create(user_id:2 , group_id:13 )
+Inscription.create(user_id:2 , group_id:15 )
+Inscription.create(user_id:3 , group_id:1 )
+Inscription.create(user_id:3 , group_id:3 )
+Inscription.create(user_id:3 , group_id:5 )
+Inscription.create(user_id:3 , group_id:7 )
+Inscription.create(user_id:3 , group_id:8 )
+Inscription.create(user_id:3 , group_id:10 )
+Inscription.create(user_id:3 , group_id:12 )
+Inscription.create(user_id:4 , group_id:2 )
+Inscription.create(user_id:4 , group_id:3 )
+Inscription.create(user_id:5 , group_id:1 )
+Inscription.create(user_id:5 , group_id:2 )
+Inscription.create(user_id:6 , group_id:1 )
+Inscription.create(user_id:6 , group_id:2 )
+Inscription.create(user_id:7 , group_id:1 )
+Inscription.create(user_id:7 , group_id:2 )
+Inscription.create(user_id:8 , group_id:1 )
+Inscription.create(user_id:8 , group_id:2 )
+Inscription.create(user_id:9 , group_id:1 )
+Inscription.create(user_id:9 , group_id:2 )
+Inscription.create(user_id:10 , group_id:1 )
+Inscription.create(user_id:10 , group_id:2 )
+Inscription.create(user_id:11 , group_id:1 )
+Inscription.create(user_id:11 , group_id:2 )
+Inscription.create(user_id:12 , group_id:1 )
+Inscription.create(user_id:12 , group_id:2 )
+Inscription.create(user_id:13 , group_id:1 )
+Inscription.create(user_id:13 , group_id:2 )
+Inscription.create(user_id:14 , group_id:1 )
+Inscription.create(user_id:14 , group_id:2 )
+Inscription.create(user_id:15 , group_id:1 )
+Inscription.create(user_id:15 , group_id:2 )
+Inscription.create(user_id:16 , group_id:1 )
+Inscription.create(user_id:16 , group_id:2 )
+Inscription.create(user_id:17 , group_id:1 )
+Inscription.create(user_id:17 , group_id:2 )
+Inscription.create(user_id:18 , group_id:1 )
+Inscription.create(user_id:18 , group_id:2 )
+Inscription.create(user_id:19 , group_id:1 )
+Inscription.create(user_id:19 , group_id:2 )
+Inscription.create(user_id:20 , group_id:1 )
+Inscription.create(user_id:20 , group_id:2 )
