@@ -15,9 +15,8 @@
   <tbody>
     <% @inscriptions.each do |inscription| %>
       <tr>
-        <td><%= inscription.id_team %></td>
-        <td><%= inscription.id_user %></td>
-        <td><%= inscription.id_group %></td>
+        <td><%= inscription.user_id %></td>
+        <td><%= inscription.group_id %></td>
         <td><%= link_to 'Show', inscription %></td>
         <td><%= link_to 'Edit', edit_inscription_path(inscription) %></td>
         <td><%= link_to 'Destroy', inscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
