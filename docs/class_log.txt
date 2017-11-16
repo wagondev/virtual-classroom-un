@@ -1,0 +1,6 @@
+Estilar vistas de grupo
+Direccionar desde home_user a gupo y no a materia
+Querry groups
+Imagen default para estudiante y profesor
+
+Carlos Arturo Lopez 
