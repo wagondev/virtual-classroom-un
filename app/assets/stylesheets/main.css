@@ -337,6 +337,20 @@ opacity: 0.5;
     color: #ccffcc
 }
 
+#grupo{
+  background-color: rgba(0, 0, 51, 0.9);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #ccffcc
+}
+
+#tituloGrupo{
+  background-color: rgba(26, 0, 26, 0.9);
+    padding-top: 5rem;
+    padding-bottom:  5rem;
+    color: #ccffcc
+}
+
 #link{
   background-color: rgba(0,0,51, 0.9);
     padding-top: 1rem;

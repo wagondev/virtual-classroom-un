@@ -4,4 +4,11 @@ class Group < ApplicationRecord
     
     has_many :inscriptions, dependent: :destroy
     has_many :teams, dependent: :destroy
+
+    def self.subjectGroup(group_id)
+    	Subject.includes(:groups).where(groups:{id: group_id})
+    end
+    def self.inscriptionGroup(group_id)
+    	Inscription.includes(:group).where(groups:{id:group_id})   	
+    end
 end
