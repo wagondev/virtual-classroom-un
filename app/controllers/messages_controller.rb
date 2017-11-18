@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
         format.html { redirect_to team_url team}
         format.json { render :show, status: :created, location: @message }
       else
-        format.html { render :new }
+        format.html { render :new }   
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end

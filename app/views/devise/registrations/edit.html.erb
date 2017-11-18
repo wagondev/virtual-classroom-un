@@ -46,31 +46,33 @@
           </div>
         </div>
       </div>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-      <div class="row">
-        <div class="form-group col-md-8 col-md-offset-2">
-          <div class="field">
-            <%= f.label :contraseña, class: "control-label" %> <i>(Déjalo en blanco si no deseas cambiarla)</i><br />
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-            <% if @minimum_password_length %>
-            <br />
-            <em>mínimo <%= @minimum_password_length %> caracteres </em>
-            <% end %>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <div class="col-md-8 col-md-offset-2">
-            <div class="field">
-              <%= f.label :confirmación_de_contraseña, "Confirma la contraseña", class: "control-label"%>
-              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <br>
+     <div class="">
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+       <% end %>
+       <div class="row">
+         <div class="form-group col-md-8 col-md-offset-2">
+           <div class="field">
+             <%= f.label :contraseña, class: "control-label" %> <i>(Déjalo en blanco si no deseas cambiarla)</i><br />
+             <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+             <% if @minimum_password_length %>
+             <br>
+             <em>mínimo <%= @minimum_password_length %> caracteres </em>
+             <% end %>
+           </div>
+         </div>
+         
+         <div class="form-group">
+           <div class="col-md-8 col-md-offset-2">
+             <div class="field">
+               <%= f.label :confirmación_de_contraseña, "Confirma la contraseña", class: "control-label"%>
+               <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
 
     </div>
 
@@ -99,7 +101,7 @@
     <div class="alert alert-info">
       <div class="field">
         <%= f.label :contraseña_actual ,"Ingresa tu contraseña actual" %> <i>(necesitamos tu contraseña actual para confirmar los cambios)</i>
-        <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+        <%= f.password_field :current_password, autocomplete: "off", :required => true, class: "form-control" %>
       </div>
     </div>
   </div>

@@ -24,6 +24,7 @@ class TeamsController < ApplicationController
     @teamMessages= Team.getMessages(@team.id)
     @message = Message.new
     @memberId = Team.memberId(current_user.id, @team.id)
+    @memberIn = Team.memberIn(@team.id)
   end
 
   
@@ -91,7 +92,7 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :max_member, :description, :logo, :group_id  )
+      params.require(:team).permit(:name, :max_member, :description, :logo, :group_id, :min_member )
     end
     
 end
