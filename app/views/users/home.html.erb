@@ -15,9 +15,9 @@
 				<%= image_tag(current_user.photo_url, class:"img-responsive img-thumbnail") %> 
 			<% else %>
 				<% if current_user.student == false %>
-					<%= image_tag("teacher.png", class:"img-responsive img-rounded") %>
+					<%= image_tag("teacher512.png", class:"img-responsive img-rounded") %>
 				<%else%>
-					<%= image_tag("student.png", class:"img-responsive img-rounded") %>
+					<%= image_tag("student512.png", class:"img-responsive img-rounded") %>
 				<%end%>
 			<% end %>
 			</div>
