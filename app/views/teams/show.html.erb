@@ -43,7 +43,9 @@
 						<div class="panel panel-body">
 							<pre class="pre-scrollable">
 								<div class="container row">
-									<div class=""><%i = 0%>
+									<%if myLevel > 0%>
+									<div class="">
+										<%i = 0%>
 										<% @teamMessages.each do |m| %>
 											<% if i % 2 == 0 %>
 												<div class="col-md-6">
@@ -79,6 +81,16 @@
 											<% end %>
 											<% i = i +1 %>
 										<% end %></div>
+										<%else%>
+										<p>Aca encontraras los mensajes
+
+
+
+
+											:)
+											
+										</p>
+										<%end%>
 								</div>
 							</pre>
 							<%if myLevel > 0%>
@@ -124,13 +136,33 @@
 															</button>
 															<%@memberIn.each do |m|%>
 															<%if m.user_id == u.id%>
-															<ul class="dropdown-menu dropdown-menu-right">
-																<% if myLevel > m.level%>
+															<% if myLevel > m.level%>
+															<ul class="dropdown-menu dropdown-menu-left">
+																
 																	<li>
 																		<%= button_to 'Eliminar del grupo', member_path(m), method: :delete, data: { confirm: '¿Esta seguro de eliminar '+ u.email + ' ?' }, class: "btn btn-block btn-danger "%>
 																	</li>
-																<%end%>
+																<li class="dropdown-submenu dropdown-menu-right">
+																	<a href="" class="test btn btn-block btn-warning"> Cambia el nivel <span class="caret"></a>
+																		<ul class="dropdown-menu">
+																			<% for x in (1..myLevel-1)%>
+																				<li>
+																					<% if x != m.level %>
+																						<% case x %>
+																							<%when 1 %>
+																								<%= button_to 'Usuario',member_path( :id => m.id, 'member[level]' => 1), method: :put, class: "btn btn-block btn-info"%>
+																							<%when 2 %>
+																								<%= button_to 'Monitor',member_path( :id => m.id, 'member[level]' => 2), method: :put, class: "btn btn-block btn-primary 	"%>
+																							<%when 3 %>
+																								<%= button_to 'Propietario',member_path( :id => m.id, 'member[level]' => 3), method: :put, class: "btn btn-block btn-warning"%>
+																							<%end%>
+																					<%end%>
+																				</li>
+																			<%end%>
+																		</ul>
+																</li>
 															</ul>
+															<%end%>
 															<%end%>
 														<%end%>
 														</div>
@@ -322,4 +354,14 @@ $('#reunion').on('shown.bs.modal', function () {
 });
 
 
+</script>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
 </script>
