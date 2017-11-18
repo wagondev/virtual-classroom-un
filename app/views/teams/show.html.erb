@@ -106,15 +106,37 @@
 									</div>
 									<div class="panel-collapse collapse" id="integrantes">
 										<div class="panel-body">
+											<%if myLevel < 2%>
 											<div class="list-group">
 												<% @userMembers.each do |u| %>
 												<li class="list-group-item list-group-item-info">
-													<%if myLevel > 1%>
-														<%= u.email %>
-													<%end%>
+													<%= u.email %>	
 												</li>
 												<%end%>
 											</div>
+											<%else%>
+												<div class="btn-group-vertical btn-block">
+													<% @userMembers.each do |u| %>
+														<div class="dropdown">
+															<button class="btn btn-info dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+																<%= u.email %>
+																<span class="caret"></span>
+															</button>
+															<%@memberIn.each do |m|%>
+															<%if m.user_id == u.id%>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<% if myLevel > m.level%>
+																	<li>
+																		<%= button_to 'Eliminar del grupo', member_path(m), method: :delete, data: { confirm: '¿Esta seguro de eliminar '+ u.email + ' ?' }, class: "btn btn-block btn-danger "%>
+																	</li>
+																<%end%>
+															</ul>
+															<%end%>
+														<%end%>
+														</div>
+													<%end%>
+												</div>
+											<%end%>
 										</div>
 									</div>
 								</div>
@@ -146,7 +168,7 @@
 															<%= button_to 'Por supuesto', member_path( :id => member.id, 'member[level]' => 1), method: :put, class: "btn btn-block btn-primary"%>
 														</li>
 														<li>
-															<%= button_to 'No gracias', member_path(member), method: :delete, class: "btn btn-block btn-danger "%>
+															<%= button_to 'No gracias', member_path(member), method: :delete, data: { confirm: '¿Esta seguro de eliminar '+ i.email + ' ?' },  class: "btn btn-block btn-danger "%>
 														</li>
 													</ul>
 													<% end %>
