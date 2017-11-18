@@ -1,4 +1,3 @@
-<% if current_user.student == false %>
 
 	<% if current_user.name == nil || current_user.name == ''%>
 	<% n = current_user.email.split('@') %>
@@ -11,13 +10,17 @@
 	<div class="row col-md-10">
 		<h2 class="text-center"><strong>Bienvenido <%=n%></strong> </h2>
 	</div>
-	
-			<%if current_user.photo.present? == true %>
 			<div class="col-md-2">
+			<%if current_user.photo.present? == true %>
 				<%= image_tag(current_user.photo_url, class:"img-responsive img-thumbnail") %> 
-			</div>
+			<% else %>
+				<% if current_user.student == false %>
+					<%= image_tag("teacher.png", class:"img-responsive img-rounded") %>
+				<%else%>
+					<%= image_tag("student.png", class:"img-responsive img-rounded") %>
+				<%end%>
 			<% end %>
-	
+			</div>
 		</div>
 	
 		<div class="row" id="cuerpoHomeUser">
@@ -32,7 +35,10 @@
 				
 				<div class="list-group">
 					<% @subjectsUser.each do |subject| %>
-					<%= link_to subject.name, subject, class: "list-group-item list-group-item-info" %>
+					<%g = Group.joins(:inscriptions).where(inscriptions:{user_id: current_user.id}, groups:{subject_id: subject.id})%>
+					<%if g.length == 1 %>
+						<%= link_to subject.name, g[0] , class: "list-group-item list-group-item-info" %>
+					<%end%>
 					<%end%>
 	
 				</div>
@@ -63,83 +69,12 @@
 			
 						<%= link_to "Crear un grupo libre", new_team_path, class: "btn  btn-success" %>
 						<%= link_to "Unirte a un grupo", teams_path, class: "btn btn-success" %>
+						<% if current_user.student == false %>
 						<%= link_to "Crear un grupo asociado a una materia", new_group_path, class: "btn btn-success" %>
+						<%end%>
 			</div>
 			</div>
 		</div>
 	</div>
 	</div>
 	
-<% else %>
-
-	<% if current_user.name == nil || current_user.name == ''%>
-	<% n = current_user.email.split('@') %>
-	<% else %>
-	<% n = current_user.name.split %>
-	<% end %>
-	<% n = n[0] %>
-	<div class="container-fluid">
-		<div class="row" id="encabezadoBienvenida">
-	<div class="row col-md-10">
-		<h2 class="text-center"><strong>Bienvenido <%=n%></strong> </h2>
-	</div>
-	
-			<%if current_user.photo.present? == true %>
-			<div class="col-md-2">
-				<%= image_tag(current_user.photo_url, class:"img-responsive img-thumbnail") %> 
-			</div>
-			<% end %>
-	
-		</div>
-	
-		<div class="row" id="cuerpoHomeUser">
-			<br>
-		<br>
-		<div class="col-md-3" id="materiasInscritas">
-			<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h4>Materias que tienes inscritas</h4>
-			</div>
-			<div class="panel-body">
-				
-				<div class="list-group">
-					<% @subjectsUser.each do |subject| %>
-					<%= link_to subject.name, subject, class: "list-group-item list-group-item-info" %>
-					<%end%>
-	
-				</div>
-	<%= will_paginate @subjectsUser %>
-			</div>
-			
-			</div>
-		</div>
-		<div class="col-md-5">
-			<h1>TABLERO DE TAREAS PENDIENTES</h1>
-		</div>
-		<div class="col-md-4">
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<h4>Gupos libres que a los que te has unido</h4>
-					<% @freeTeamsIn.each  do |team|%>
-						<%=link_to team.name, team, class: "list-group-item list-group-item-info"%>
-					<%end%>
-				</div>
-				<div class="panel-body">
-					
-				</div>
-				
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 col-md-offset-8">
-			
-						<%= link_to "Crear un grupo libre", new_team_path, class: "btn  btn-success" %>
-						<%= link_to "Unirte a un grupo", teams_path, class: "btn btn-success" %>
-			</div>
-			</div>
-		</div>
-	</div>
-	</div>
-	
-<% end %>
-

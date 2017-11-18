@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Materia a la que está vinculado:</strong>
-  <%= @group.subject_id %>
-</p>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<div class="container-fluid" id="grupo">
+	<p id="notice"><%= notice %></p>
+	  <div class="jumbotron" id="tituloGrupo">
+	  	<h1 class="text-center text-uppercase">
+	  		<%= @subjectGroup[0].name %>
+	  	</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			
+		</div>
+	</div>
+	
+	<p>
+	  <strong>Materia a la que está vinculado:</strong>
+	  <%= @group.subject_id %>
+	</p>
+	
+	<%= link_to 'Edit', edit_group_path(@group) %> |
+	<%= link_to 'Back', groups_path %></div>

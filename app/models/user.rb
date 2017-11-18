@@ -21,4 +21,7 @@ class User < ApplicationRecord
   def self.freeTeamsIn(user_id)
     Team.includes([{members: :user},group: :teams]).where(users:{id: user_id}, groups: {id: 1}).order(created_at: :asc)
   end
+  def self.groupInscription(user_id)
+     Group.joins(:inscriptions).where(inscriptions:{user_id: user_id})
+  end
 end
