@@ -16,11 +16,14 @@
 			<h1 class="">
 				<strong><%= @team.name %></strong>
 			</h1>
-			<% if @team.logo.present? == true %>
 			<div class="col-md-8 ">
+			<% if @team.logo.present? == true %>
+			
 				<%= image_tag( @team.logo_url, class:"img-responsive img-circle") %>
-			</div>
+			<%else%>
+				<%= image_tag("team.jpg", class:"img-responsive img-rounded")%>
 			<% end %>
+			</div>
 
 		</div>
 		<div class="">
