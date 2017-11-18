@@ -4,7 +4,7 @@ class CreateMeetings < ActiveRecord::Migration[5.1]
       t.float :latitude
       t.float :longitude
       t.string :address
-      t.text :decription
+      t.text :description
       t.string :title
       t.datetime :time
 

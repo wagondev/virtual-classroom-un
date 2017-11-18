@@ -8,7 +8,7 @@ class MeetingsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@meetings) do |meeting, marker|
       marker.lat meeting.latitude
       marker.lng meeting.longitude
-      marker.infowindow meeting.decription
+      marker.infowindow meeting.description
 end
   end
 
@@ -74,6 +74,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:latitude, :longitude, :address, :decription, :title, :time)
+      params.require(:meeting).permit(:latitude, :longitude, :address, :description, :title, :time)
     end
 end

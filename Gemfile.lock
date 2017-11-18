@@ -79,6 +79,8 @@ GEM
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gmap_coordinates_picker (0.1.0)
+      rails (>= 3.1.0)
     gmaps4rails (2.1.2)
     i18n (0.9.0)
       concurrent-ruby (~> 1.0)
@@ -208,6 +210,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   geocoder
+  gmap_coordinates_picker
   gmaps4rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
