@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
   def show
     @subjectGroup = Group.subjectGroup(@group)
     @inscriptionGroup = Group.inscriptionGroup(@group)
+  
   end
 
   # GET /groups/new

@@ -13,28 +13,25 @@
   <% end %>
   
   <div class="container">
-    <div class="form-group row">
-      <div class="col-md-2 col-md-offset-10">
-        <div class="field">
-          <% form.label :group_id %>
-          <%= form.select :group_id, options_for_select(Group.where(id: 1).map{|s|[s.name, s.id]}),{},class:"form-control"%>
-        </div>
-      </div>
-    </div>
+    
 
     <form action="" id="form-newTeam">
       <div class="form-group col-md-7">
         <div class="field">
           <%= form.label :name, "Nombre del equipo", class: "control-label" %>
-          <%= form.text_field :name, id: :team_name, class: "form-control"  %>
+          <%= form.text_field :name, id: :team_name,:required => true, class: "form-control"  %>
         </div>
       </div>
+
+      <%= form.hidden_field :group_id, :value =>1%>
+      <%= form.hidden_field :min_member, :value =>2%>
+
 
       <div class="form-group col-md-4 col-md-offset-1">
         <div class="field">
           <%= form.label :max_member, "Numero maximo de integrantes", class:"control-label" %>
           <i>Minimo 2 integrantes</i>
-          <%= form.number_field :max_member, id: :team_max_member, class: "form-control" %>
+          <%= form.number_field :max_member, id: :team_max_member, in: 2..999, step: 1,:required => true , class: "form-control" %>
 
         </div>
       </div>
@@ -43,7 +40,7 @@
         <div class="field">
           <%= form.label :description, "Descripcion", class:"control-label" %> 
           <i>Recuerda que debe llamar la atencion ;)</i>
-          <%= form.text_area :description, id: :team_description, class: "form-control" %>
+          <%= form.text_area :description, id: :team_description, :required => true , class: "form-control" %>
         </div>
       </div>
 

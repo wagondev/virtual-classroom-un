@@ -1,5 +1,19 @@
-<h1>New Message</h1>
+<%if @message.type_message.nil? == true %>
+	<%= render 'form', message: @message %>
+<%else%>
+	<%case @message.type_message %>
+	<%when 1%>
+	<%= render 'form_text', message: @message %>
+	<%when 2%>
+	<%= render 'form_document', message: @message %>
+	<%when 3%>
+	<%= render 'form_meeting', message: @message %>
+	<%else%>
+	<%= render 'form', message: @message %>
+	<%end%>
+<%end%>
 
-<%= render 'form', message: @message %>
+
+
 
 <%= link_to 'Back', messages_path %>

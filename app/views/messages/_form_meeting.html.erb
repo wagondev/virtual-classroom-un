@@ -1,3 +1,6 @@
+<div class="container">
+<div class="row col-md-6">
+
 <%= form_with(model: message, local: true) do |form| %>
   <% if message.errors.any? %>
     <div id="error_explanation">
@@ -11,52 +14,103 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :member_id %>
-    <%= form.text_field :member_id, id: :message_member_id %>
+<%= form.hidden_field :member_id, :value => @memberId[0].id %>
+<%= form.hidden_field :type_message, :value =>3%>
+
+<div class="container">
+ <div class="row col-md-12">
+    <div class ="map2" id="map" ></div>
+ </div>
+</div>
+
+<div class="form-group">
+      <div class="field">
+        <%= form.label :title, "Ingresa el tìtulo", class:"control-label"%>
+        <em>Recuerde que el tamaño máximo es de 140 caracteres</em>
+        <%= form.text_field :title, id: :message_title, :required => true, class:"form-control"%>
+      </div>
+    </div>
+
+   <div class="form-group">
+      <div class="field">
+        <%= form.label :body , "Ingresa el mensaje", class:"control-label"%>
+        <%= form.text_area :body, id: :message_body, :required => true, class:"form-control" %>
+      </div>
+    </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :meeting, "Ingresa la fecha y hora de la reunión", class:"control-label" %>
+      <%= form.datetime_select t(:meeting), id: :message_meeting,  :required => true, :value => Time.now, class:"form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :message_title %>
-  </div>
+   <div class="actions">
+      <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+          <i class="icon-ok icon-white">ENVIAR</i><% end %>
+    </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :message_body %>
-  </div>
 
-  <div class="field">
-    <%= form.label :latutude %>
-    <%= form.text_field :latutude, id: :message_latutude %>
-  </div>
+    
+<%end%>
 
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: :message_longitude %>
-  </div>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :message_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :meeting %>
-    <%= form.datetime_select :meeting, id: :message_meeting %>
-  </div>
-
-  <div class="field">
-    <%= form.label :document %>
-    <%= form.file_field :document, id: :message_document, multiple: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.number_field :type, id: :message_type %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<script type="text/javascript">
+  var markers = [];
+  handler = Gmaps.build('Google');
+  handler.buildMap({ 
+    provider: {
+      zoom: 14,
+      center: new google.maps.LatLng(4.635540,-74.082807),
+    }, 
+    internal: {
+      id: 'map'
+    }});
+  
+  google.maps.event.addListener(handler.getMap(), 'click', function(event) {
+    placeMarker(event.latLng);
+    dir(event.latLng);
+  })
+  
+  function dir (latlng){
+    var geocoder = new google.maps.Geocoder();
+    var infowindow = new google.maps.InfoWindow;
+    geocoder.geocode({'meeting_location': latlng}, function(results, status) {
+      if (status === 'OK') {
+        if (results[1]) {
+          handler.getMap().setZoom(11);
+          var marker = new google.maps.Marker({
+            icon: 'info-i_maps.png',
+            position: latlng,
+            map: handler.getMap()
+          });
+          document.getElementById("meeting_address").value = results[1].formatted_address;
+          infowindow.setContent(results[1].formatted_address);
+          infowindow.open(map, marker);
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+  
+  function placeMarker(location) {
+    var marker = new google.maps.Marker({
+        position: location, 
+        map: handler.getMap(),
+        draggable: true
+    });
+    document.getElementById('meeting_latitude').value = location;
+    var aux = document.getElementById('meeting_latitude').value.substr(1,document.getElementById('meeting_latitude').value.length - 2).split(",")
+    document.getElementById("meeting_latitude").value = aux[0]
+    document.getElementById("meeting_longitude").value = aux[1]
+    google.maps.event.addListener(marker, 'click', function(event) {
+      marker.setMap(null);
+    });
+  }
+    
+</script>
