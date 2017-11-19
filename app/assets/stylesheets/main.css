@@ -426,7 +426,16 @@ footer li img {
    min-height: 300px;
    width:500px;
   height:300px;
- 
  }
+
+ .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
 
 
