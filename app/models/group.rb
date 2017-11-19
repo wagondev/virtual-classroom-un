@@ -4,6 +4,7 @@ class Group < ApplicationRecord
     
     has_many :inscriptions, dependent: :destroy
     has_many :teams, dependent: :destroy
+    has_many :assignments, dependent: :destroy
 
     def self.subjectGroup(group_id)
     	Subject.includes(:groups).where(groups:{id: group_id})

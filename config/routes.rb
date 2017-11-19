@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :scores
+  resources :assignments
   resources :messages
   resources :meetings
   resources :members
