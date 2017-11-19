@@ -6,16 +6,31 @@
 	  		<%= @subjectGroup[0].name %>
 	  	</h1>
 	</div>
+	<%if current_user.student == false%>
 	<div class="row">
 		<div class="col-md-4">
+			<div class="panel panel-primary">
+		      	<div class="panel-heading"><h3 class="text-center">Equipos de trabajo activos</h3></div>
+		      	<div class="panel-body">
+		      		<div class="list-group">
+		      			
+		      		</div>
+		      	</div>
+	    	</div>
 			
 		</div>
+		<div class="col-md-2">
+			<div class="panel-group">
+				<div class="panel panel-primary">
+					
+					
+				</div>
+			</div>
+		</div>
 	</div>
+	<%end%>
 	
 	<p>
 	  <strong>Materia a la que está vinculado:</strong>
 	  <%= @group.subject_id %>
 	</p>
-	
-	<%= link_to 'Edit', edit_group_path(@group) %> |
-	<%= link_to 'Back', groups_path %></div>
