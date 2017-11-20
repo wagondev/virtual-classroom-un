@@ -10,6 +10,7 @@
 
 	<%= stylesheet_link_tag 'main' %>
 	<%= stylesheet_link_tag 'font-awesome.min' %>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
  
 
@@ -34,11 +35,6 @@
 						<li>
  							<a href="#servicios">Nuestros Servicios</a>
  						</li>
-						<li>
-							<a href="#contacto">
-								Contacto
-							</a>
-						</li>
 						<% end %>
 						<% if user_signed_in? %>
 						<li>
@@ -77,7 +73,7 @@
 
  	<footer>
  	  <div class="container">
- 	    <p class="text-left">
+ 	    <p class="text-left-footer">
 		  <%= image_tag ("logo wagondev thumb.png") %> WagonDev <%= Time.now.year %>
  	    </p>
  	  </div>

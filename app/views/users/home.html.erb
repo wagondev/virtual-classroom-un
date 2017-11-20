@@ -29,7 +29,12 @@
 		<div class="col-md-3" id="materiasInscritas">
 			<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h4>Materias que enseñas</h4>
+				<% if current_user.student == false %>
+					<h4>Materias que enseñas</h4>
+				<% end %>
+				<% if current_user.student == true %>
+					<h4>Materias en las que estás inscrito</h4>
+				<% end %>
 			</div>
 			<div class="panel-body">
 				
