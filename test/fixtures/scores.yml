@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  id_assign: 1
+  value_score: 1
+  inscription_id: 1
 
 two:
-  title: MyString
-  id_assign: 1
+  value_score: 1
+  inscription_id: 1
