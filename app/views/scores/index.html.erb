@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Value score</th>
-      <th>Inscription</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
     <% @scores.each do |score| %>
       <tr>
         <td><%= score.value_score %></td>
-        <td><%= score.inscription_id %></td>
         <td><%= link_to 'Show', score %></td>
         <td><%= link_to 'Edit', edit_score_path(score) %></td>
         <td><%= link_to 'Destroy', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
