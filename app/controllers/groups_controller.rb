@@ -12,7 +12,50 @@ class GroupsController < ApplicationController
   def show
     @subjectGroup = Group.subjectGroup(@group)
     @inscriptionGroup = Group.inscriptionGroup(@group)
-  
+    @studentNumberTotal = Group.studentNumberTotal(@group)
+    @teamsAvailable = Group.teamsAvailable(@group)
+    @userInscriptionGroupAlphabetic = Group.userInscriptionGroupAlphabetic(@group, current_user)
+    #@prueba=Group.find(minNumber)
+  end
+
+  def createTeams
+    minNumber = params[:minNumber]
+     maxNumber = params[:maxNumber]
+     numberGroup= params[:numberGroup]
+     group= Group.find(numberGroup.to_i)
+     if minNumber.to_i > maxNumber.to_i 
+      aux = maxNumber.to_i
+      maxNumber = minNumber.to_i
+      minNumber = aux
+    end
+    @studentNumberTotal = Group.studentNumberTotal(numberGroup.to_i)
+    averange = (maxNumber.to_i + minNumber.to_i) / 2
+    numberOfGroups = (@studentNumberTotal[numberGroup.to_i].to_i - 1) / averange
+    @subjectGroup = Group.subjectGroup(numberGroup.to_i)
+    idTeams = Array.new(numberOfGroups)
+    userInscriptionGroupAlphabetic = Group.userInscriptionGroupAlphabetic(numberGroup.to_i, current_user)
+    userId = Array.new((@studentNumberTotal[numberGroup.to_i].to_i - 1))
+    m=0
+    userInscriptionGroupAlphabetic.each do |u|
+      userId[m] = u.id.to_i
+      m= m+1
+    end
+    m=0
+    for i in(1..numberOfGroups)
+      aux = Team.create(name: "Equipo de trabajo  No " + i.to_s + ", " + @subjectGroup[0].name.to_s, max_member: maxNumber.to_i, description: "Equipo creado por orden alfabético # " + i.to_s , group_id: numberGroup.to_i, min_member: minNumber.to_i)
+      Member.create(user_id: current_user.id, team_id: aux.id, level: 3)
+      for j in(1..averange)
+        Member.create(user_id: userId[m], team_id: aux.id, level: 1)
+        m= m+1
+      end
+      idTeams[i]=aux
+    end
+    if  (m <  (@studentNumberTotal[numberGroup.to_i].to_i - 1))
+      for i in ((m + 1)..(@studentNumberTotal[numberGroup.to_i].to_i - 1))
+        Member.create(user_id: userId[i], team_id: idTeams[(i+1)-m], level: 1)
+      end
+    end
+    redirect_to group_url numberGroup 
   end
 
   # GET /groups/new

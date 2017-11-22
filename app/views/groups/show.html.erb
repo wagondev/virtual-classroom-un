@@ -14,6 +14,9 @@
 		      		<div class="panel-heading"><h4 class="text-center">Equipos de trabajo activos</h4></div>
 		      			<div class="panel-body">
 		      				<div class="list-group">
+		      						<%@teamsAvailable.each do |team|%>
+		      						<%=link_to team.name.split(@subjectGroup[0].name)[0],  team, class:"btn btn-default"%>
+		      						<%end%>
 		      				</div>
 		      			</div>
 	    			</div>
@@ -25,13 +28,15 @@
 		      		<div class="panel-heading"><h4 class="text-center">Notas</h4></div>
 		      			<div class="panel-body">
 		      				<div class="list-group">
+		      					<%@userInscriptionGroupAlphabetic.each do |user|%>
+		      						<%=user.email%>
+		      						<%end%>
 		      				</div>
 		   			</div>
 	    		</div>
 			</div>
 		</div>
 		
-		<p></p>
 		
 		<div class="row">
 			<div class="col-md-1">
@@ -43,7 +48,7 @@
 			</div>
 		</div>
 		
-		<p></p>
+
 		
 		<div class="row">
 			<div class="col-md-1">
@@ -51,12 +56,48 @@
 			</div>
 		</div>
 		
-		<p></p>
+	
 		
 		<div class="row">
 			<div class="col-md-1">
-					<%= link_to "Crear equipos por orden alfabético", new_team_path, class: "btn  btn-success" %>
+					<button class="btn btn-success" type="button" data-toggle="modal" data-target="#ordenAlfabetico">Crear equipos por orden alfabético</button>
 			</div>
 		</div>
+	
+
+</div>
+
+<div id="ordenAlfabetico" class="modal fade" role="">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"><strong>Crear equipos por orden alfabético</strong></h4>
+      </div>
+      <div class="modal-body">
+      	<div class="container">
+      		<div class="row col-md-4">
+ 
+      			<%= form_tag ("/groups/createTeams")  do %>
+				  <%=label_tag "minNumber"%>
+				  <%= number_field_tag "minNumber" %>
+				<%=label_tag "maxNumber"%>
+				  <%= number_field_tag "maxNumber" %>
+				  <%= hidden_field_tag(:numberGroup, @group.id)%>
+				 <%= submit_tag "Submit" %>
+				 <% end %>
+      		</div>
+      		<p class="small">Recureda que si e</p>
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 		
 	<%end%>
