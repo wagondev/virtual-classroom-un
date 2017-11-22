@@ -45,9 +45,9 @@
           
           <div class="form-group ">
             <div class="field">
-              <%= f.label :password, "Contraseña"%>
+              <%= f.label :password, "Contraseña", class:"label-control"%>
               <% if @minimum_password_length %>
-              <em>(mínimo <%= @minimum_password_length %> caracteres)</em>
+              <em class="label-control>(mínimo <%= @minimum_password_length %> caracteres)</em>
               <% end %><br />
               <%= f.password_field :password, autocomplete: "off", :required => true, class:"form-control" %>
             </div>
@@ -55,14 +55,14 @@
           
           <div class="form-group ">
             <div class="field">
-              <%= f.label :confirm, "Confirma la contraseña" %><br />
+              <%= f.label :confirm, "Confirma la contraseña", class:"label-control" %>
               <%= f.password_field :password_confirmation, autocomplete: "off", :required => true, class:"form-control" %>
             </div>
           </div>
             <br>
-          <div class="form ">
+          <div class="form col-lg-8 col-lg-offset-4">
             <div class="actions">
-              <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+              <%= button_tag(type: 'submit', class: "btn btn-primary-session") do %>
               <i class="icon-ok icon-white">Crear cuenta</i><% end %>
 
             </div>
