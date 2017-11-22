@@ -177,6 +177,7 @@ free_group = free_subject.groups.create(name: "Grupos Libres") #Grupo en el que 
 free_group.teams.create(name: "Wagon-dev", max_member: 4, description: "Equipo libre 1", group_id: 1, min_member: 2)
 free_group.teams.create(name: "Rails s", max_member: 2, description: "Equipo libre 2", group_id: 1, min_member: 2)
 free_group.teams.create(name: "ITs OK", max_member: 5, group_id: 1, min_member: 2)
+free_group.teams.create(name: "Ingesoft Libre", max_member: 5, group_id: 1, min_member: 2)
 
 Member.create(user_id: 1, team_id: 1, level: 3)
 Member.create(user_id: 2, team_id: 1, level: 2)

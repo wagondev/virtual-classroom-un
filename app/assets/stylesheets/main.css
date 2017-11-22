@@ -28,14 +28,14 @@ body.container-fluid{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
 }
 
 .navbar-default{
     background:rgba(180, 180, 180, 1);
     height: 8rem;
     border-style: none;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
 }
 
 .navbar-default:hover{
@@ -46,35 +46,35 @@ body.container-fluid{
     padding-top: 3rem;
     font-family: 'Lato-SemiboldItalic';
     font-size: 3rem;
-    color: #0040FF;
-    font-family: 'Raleway', sans-serif;
+    color: #08088A;
+    font-family: 'Delius', cursive;
 }
 
 .navbar-default .navbar-brand:hover{
   background:rgba(210, 210, 210, 1) !important;
-  color: #0040FF !important;
+  color: #08088A !important;
   height: 8rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Delius', cursive;
 }
 
 .navbar-default .navbar-right li{
     height: 8rem; 
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
 }
 
 .navbar-default .navbar-right a{
-    color: #0040FF !important;
+    color: #08088A !important;
     height: 8rem;
     padding-top: 3rem;
     text-align: center;
     font-size: 1.4rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
 }
 
 .navbar-default .navbar-right a:hover,
 .navbar-default .navbar-collapse ul .active a{
     background:rgba(210, 210, 210, 1) !important;
-    color: #0040FF !important;
+    color: #08088A !important;
     text-align: center;
 }
 
@@ -126,7 +126,7 @@ header p{
     background-color: white;
     color: #0040FF;
     padding-top: 3rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
 }
 #servicios .fill{
     height: 20rem;
@@ -164,10 +164,11 @@ header p{
 
 #servicios p{
     padding: 3rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
     color: #0040FF;
     font-size: 14px;
 }
+
 #people .fill{
     height: 20rem;
     width: 20rem;
@@ -183,12 +184,11 @@ header p{
     background-color: rgba(0, 0, 140, 0.7);
     padding-top: 5rem;
     padding-bottom:  5rem;
-    color: rgba(200,200,200, 1);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
+    color: #FFFFFF;
 
 }
 #quienSomos .fill{
-
     background-image: url(icon.png);
     background-size: auto 100%;
     background-position: center center;
@@ -196,11 +196,11 @@ header p{
     height: 35rem;
     width: 35rem;
     border-radius: 20%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
 }
 
 #quienSomos .caption{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Delius', cursive;
     font-size: 2rem;
     padding: 3rem;
     text-align: justify;
@@ -208,7 +208,7 @@ header p{
 }
 
 #quienSomos p {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Delius', cursive;
   font-size: 14px;
 }
 
@@ -306,19 +306,21 @@ opacity: 0.5;
 }
 
 #encabezadoBienvenida{
-  background-color: rgba(0,51,0, 0.8);
-    padding-top: 5rem;
-    padding-bottom:  5rem;
-    color: #E0F8F7
+  background:rgba(180, 180, 180, 0.7);
+    padding-top: 3rem;
+    padding-bottom:  3rem;
+    border-radius: 3px;
+    font-family: 'Delius', cursive;
+    color: #08088A;
 }
 
-
-
 #cuerpoHomeUser{
-  background-color: rgba(0,0,77, 0.8);
-    padding-top: 5rem;
+  background-color: rgba(0, 0, 140, 0.5);
+    margin-top: 3rem;
     padding-bottom:  5rem;
-    color: #E0F8F7
+    border-radius: 3px;
+    font-family: 'Delius', cursive;
+    color: #FFFFFF;
 }
 
 #teamsFree{
@@ -326,6 +328,21 @@ opacity: 0.5;
     padding-top: 5rem;
     padding-bottom:  5rem;
     color: #E0F8F7
+}
+
+.list-group-item, .list-group-item:visited{
+  background-color: #6666ff;
+  color: #FFFFFF;
+}
+
+.list-group-item:active:focus{
+  background-color: #9999ff;
+  color: #FFFFFF;
+}
+
+.list-group-item:hover {  
+   background-color: #cceeff;
+   color: #1a8cff;
 }
 
 #newTeam{
@@ -356,7 +373,7 @@ opacity: 0.5;
 }
 
 #tituloGrupo{
-  background-color: rgba(26, 0, 26, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
     padding-top: 5rem;
     padding-bottom:  5rem;
     color: #ccffcc
@@ -451,6 +468,118 @@ footer li img {
 }
 
 .text-left-footer {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Delius', cursive;
   color: #0040FF;
+}
+
+
+.btn{
+  background-color: #FFFFFF;
+  color: #1a8cff;
+  border-color:  #e6e6ff;
+  border-radius: 2px;
+  font-family: 'Delius', cursive;
+  float: none;
+}
+
+.btn:hover {  
+   background-color: #cceeff;
+   color: #1a8cff;
+   border-color:  #e6e6ff;
+}
+
+.btn:visited {
+  color: #1a8cff;
+  border-color:  #e6e6ff;
+}
+
+.btn:active:focus {
+  background-color: #cceeff;
+  color: #1a8cff;
+  border-color:  #e6e6ff;
+}
+
+.btn:target {
+  background-color: #cceeff;
+  color: #1a8cff;
+  border-color:  #e6e6ff;
+}
+
+#tituloGrupo {
+  color: #1a1aff;
+  padding: 1px;
+}
+
+#grupo {
+  background-color: rgba(0, 0, 140, 0.5);
+}
+
+#teamsAviable {
+  background-color: rgba(0, 128, 255, 0.7);
+}
+
+.btn-crearGrupo {
+  padding-top: 5px;
+}
+
+.control-label {
+  text-align: center;
+}
+
+.label-control {
+  text-align: center;
+}
+
+.form-control {
+  border-radius: 2px;
+  background-color: rgba(230, 153, 255, 0.5);
+  color: #260033;
+  display: block;
+}
+
+.btn-save-team {
+  position:relative;
+    left:42%;
+  color: #600080;
+}
+
+.form-control {
+  border-radius: 2px;
+  background-color: rgba(153, 230, 153, 0.5);
+  color: #FFFFFF;
+  display: block;
+}
+
+.btn-primary-session {
+  color: #239023;
+  border-color: #46d246;
+}
+
+.btn-primary-session:hover {
+  color: #239023;
+  border-color: #46d246;
+}
+
+.btn-primary-session:active:focus {
+  color: #239023;
+  border-color: #46d246;
+}
+
+.btn-primary-session:visited {
+  color: #239023;
+  border-color: #46d246;
+}
+
+.btn-primary-session:target {
+  color: #239023;
+  border-color: #46d246;
+}
+
+
+.checkbox-session {
+  background-color: rgba(153, 230, 153, 0.5);
+}
+
+#iniciar {
+  text-align: center;
 }

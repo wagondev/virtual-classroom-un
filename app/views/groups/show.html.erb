@@ -9,7 +9,7 @@
 	<%if current_user.student == false%>
 		
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-6">
 				<div class="panel panel-primary">
 		      		<div class="panel-heading"><h4 class="text-center">Equipos de trabajo activos</h4></div>
 		      			<div class="panel-body">
@@ -20,7 +20,7 @@
 				</div>
 				
 		
-			<div class="col-md-3 col-md-offset-6">
+			<div class="col-md-6 col-md-offset">
 				<div class="panel panel-primary">
 		      		<div class="panel-heading"><h4 class="text-center">Notas</h4></div>
 		      			<div class="panel-body">
@@ -38,7 +38,7 @@
 					<%= link_to "Crear equipos aleatorios", new_team_path, class: "btn btn-success" %>
 			</div>
 			
-			<div class="col-md-1 col-md-offset-8">
+			<div class="col-md-1 col-md-offset-9">
 					<%= link_to "Descargar notas", new_team_path, class: "btn  btn-success" %>
 			</div>
 		</div>

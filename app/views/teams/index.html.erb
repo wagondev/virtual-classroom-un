@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid" id="teamsAviable">
+<div class="container-fluid text-center" id="teamsAviable">
   <h1>Equipos disponibles</h1>
   
   <table class="table .table-striped">
     <thead id="theadTeams">
       <tr>
-        <th class="text-center"><strong >Equipo</strong></th>
-        <th class="text-center">Descripcion</th>
-        <th class="text-center">Logo</th>
+        <th class="text-center"><strong ><h3>Equipo</h3></strong></th>
+        <th class="text-center"><h3>Descripción</h3></th>
+        <th class="text-center"><h3>Logo</h3></th>
         <th colspan="1"></th>
       </tr>
     </thead>
@@ -33,6 +33,7 @@
   
     </tbody>
   </table >
+  
+  <%= link_to 'Crear equipo', new_team_path , class:"btn btn-crearGrupo"%>
+  
 </div>
-
-<div class="text-right" id="link"> <%= link_to 'Crear equipo', new_team_path , class:"btn btn-link"%> </div>
