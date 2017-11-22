@@ -6,37 +6,33 @@
 <% @myLevel.each do |level|  %>
 <%myLevel = level.level %>
 <%end%>
-<div class="alert alert-info">
-	<p id="notice"><%= notice %></p>
-</div>
 <div class="container-fluid" id="teamsFree">
 	<% if myLevel >= 0%>
 	<div class="">
-		<div class="col-md-4 col-md-offset-1">
-			<h1 class="">
+		<div class="row col-md-12">
+			<h1 class="text-center">
 				<strong><%= @team.name %></strong>
 			</h1>
-			<div class="col-md-8 ">
+		</div>
+		<div class="col-md-2 col-md-offset-5">
 			<% if @team.logo.present? == true %>
 			
 				<%= image_tag( @team.logo_url, class:"img-responsive img-circle") %>
 			<%else%>
 				<%= image_tag("team.jpg", class:"img-responsive img-rounded")%>
 			<% end %>
-			</div>
-
 		</div>
-		<div class="">
-			<h3 class="text-center"><kbd> Somos: <%= @team.description%></kbd></h3>
+		<div class="col-md-2 col-md-offset-5">
+			<h3> <%= @team.description%> </h3>
 		</div>	
 		<div class="row">
 		</div>
 		<br>
 		<br>
 		<div class="">
-			<div class="row">
+			<div class="row" id="btn-dates">
 				<div class="col-md-8">
-					<div class="panel panel-danger">
+					<div class="panel panel-primary">
 						<div class="panel panel-heading">
 							<h4 class="text-center">Notificaciones y mensajes</h4>
 						</div>
@@ -55,11 +51,11 @@
 															<h5 class="text-justify text-success"><%= m.body%></h5>
 														<%elsif m.type_message == 2%>
 															<%m.document.each do |document|%>
-															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn-warning" %></p>
+															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn" %></p>
 															<%end%>
 
 														<%end%>
-														<p class="text-muted small">Mensaje de:<%= User.includes(:members).where(members:{id: m.member_id}).pluck(:email)[0]%></p>
+														<p class="text-muted small">Mensaje de: <%= User.includes(:members).where(members:{id: m.member_id}).pluck(:email)[0]%></p>
 															
 													</div>
 												</div>
@@ -72,7 +68,7 @@
 														<h5 class="text-justify text-success"><%= m.body%></h5>
 													<%elsif m.type_message == 2%>
 														<%m.document.each do |document|%>
-															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn-warning" %></p>
+															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn" %></p>
 															<%end%>
 													<%end%>
 													<p class="text-muted small">Mensaje de: <%= User.includes(:members).where(members:{id: m.member_id}).pluck(:email)[0]%></p>
@@ -87,9 +83,9 @@
 							<%if myLevel > 0%>
 							</div>
 							<div class="btn-group btn-group-justified">
-								<a href="#texto"  class="btn btn-info" data-toggle="modal">Enviar mensaje</a>
-								<a href="#documento" class="btn btn-warning" data-toggle="modal">Enviar documento(s)</a>
-								<a href="#reunion" class="btn btn-success" data-toggle="modal">Programar reunion</a>
+								<a href="#texto"  class="btn btn-wall" data-toggle="modal">Enviar mensaje</a>
+								<a href="#documento" class="btn btn-wall" data-toggle="modal">Enviar documento(s)</a>
+								<a href="#reunion" class="btn btn-wall" data-toggle="modal">Programar reunion</a>
 
 							</div>
 							<%end%>
@@ -192,7 +188,7 @@
 															<%= button_to 'Por supuesto', member_path( :id => member.id, 'member[level]' => 1), method: :put, class: "btn btn-block btn-primary"%>
 														</li>
 														<li>
-															<%= button_to 'No gracias', member_path(member), method: :delete, data: { confirm: '¿Esta seguro de eliminar '+ i.email + ' ?' },  class: "btn btn-block btn-danger "%>
+															<%= button_to 'No gracias', member_path(member), method: :delete, data: { confirm: '¿Esta seguro de eliminar '+ i.email + ' ?' },  class: "btn btn-block btn-sucess "%>
 														</li>
 													</ul>
 													<% end %>
@@ -211,10 +207,6 @@
 			</div>
 		</div>
 	</div>
-	<p class="text-right">
-		Numero de integrantes:
-		<strong><%= @team.max_member %></strong>
-	</p>
 	<%else%>
 	<h2 class="text-center">No tienes acceso a este grupo</h2>
 	<%end%>
