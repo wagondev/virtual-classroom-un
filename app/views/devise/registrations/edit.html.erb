@@ -12,22 +12,22 @@
   <form action="">
     <div class="  form-group">
      <div class="row">
-       <div class="col-md-7">
-         <div class="form-group col-md-6">
+       <div class="row" >
+         <div class="form-group col-lg-8 col-lg-offset-2" id="campos-edit">
           <div class="field">
             <%= f.label :nombre , class: "control-label" %>
             <%= f.text_field :name, autofocus: true, class: "form-control" %>
           </div>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-lg-8 col-md-offset-2"id="campos-edit">
          <div class="field">
           <%= f.label :identificación, class: "control-label" %>
           <%= f.text_field :identification, autofocus: true, class: "form-control" %>
         </div>
       </div>
 
-      <div class="form-group col-md-6 ">
+      <div class="form-group col-lg-8 col-md-offset-2" id="carrera-edit">
         <div class="field">
           <%= f.label :carrera, class: "control-label" %>
           <%= f.select(:career, Career.all.collect {|a| [a.name, a.id]}, {},{class:"form-control"})%>
@@ -35,7 +35,7 @@
         </div>  
       </div>
 
-      <div class="form-group col-md-6">
+      <div class="form-group col-lg-8 col-md-offset-2" id="campos-edit">
         <div class="text-center">
           <div class="field">
             <%= f.label :rol, "Rol academico", class:"label-control" %>
@@ -52,9 +52,9 @@
        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
        <% end %>
        <div class="row">
-         <div class="form-group col-md-8 col-md-offset-2">
+         <div class="form-group col-lg-8 col-md-offset-2 " id="campos-edit">
            <div class="field">
-             <%= f.label :contraseña, class: "control-label" %> <i>(Déjalo en blanco si no deseas cambiarla)</i><br />
+             <%= f.label :contraseña, class: "control-label text-center"%> <i>(Déjalo en blanco si no deseas cambiarla)</i><br />
              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
              <% if @minimum_password_length %>
              <br>
@@ -64,9 +64,9 @@
          </div>
          
          <div class="form-group">
-           <div class="col-md-8 col-md-offset-2">
+           <div class="form-group col-lg-8 col-lg-offset-2" id="campos-edit">
              <div class="field">
-               <%= f.label :confirmación_de_contraseña, "Confirma la contraseña", class: "control-label"%>
+               <%= f.label :confirmación_de_contraseña, "Confirma la contraseña", class: "control-label text-center"%>
                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
              </div>
            </div>
@@ -77,7 +77,7 @@
     </div>
 
 
-    <div class="form-group col-md-5">
+    <div class="form-group col-lg-8 col-lg-offset-2" id="campos-edit">
       <div class="field">
         <%= f.label :foto, "Avatar", class: "control-label text-center " %>
         <%if current_user.photo.present? == true %>
@@ -97,16 +97,16 @@
   
 
 
-  <div class="row col-md-8 col-md-offset-2">
+  <div class="row col-md-8 col-md-offset-2" id="campos-edit">
     <div class="alert alert-info">
-      <div class="field">
+      <div class="field text-center">
         <%= f.label :contraseña_actual ,"Ingresa tu contraseña actual" %> <i>(necesitamos tu contraseña actual para confirmar los cambios)</i>
         <%= f.password_field :current_password, autocomplete: "off", :required => true, class: "form-control" %>
       </div>
     </div>
   </div>
 </div>
-<div class="row col-md-5 col-md-offset-4">
+<div class="row col-md-5 col-md-offset-5">
   <div class="form">
     <div class="actions">
       <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
@@ -125,10 +125,6 @@
 
 <div class="container-fluid" id="cancelar">
   <br>
-  <div class="alert alert-danger text-center">
-  <strong>¡Zona de peligro!</strong>
-</div>
-  <br>
   <h2 class="text-center">Cancelar mi cuenta</h2>
   
   <h3 class="text-center">¿Descontento?</h3> 
@@ -141,5 +137,4 @@
       <br>
   </div>
   
-  <div class="text-right"><%= link_to "Back", :back, class:"btn btn-link "%></div>
 </div>
