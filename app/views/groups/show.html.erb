@@ -21,13 +21,8 @@
 		      						<%end%>
 		      				</div>
 		      				<div class="btn-group btn-group-justified">
-<<<<<<< HEAD
-		      					<a href="#ordenAlfabetico" class="btn btn-success" type="button" data-toggle="modal" >Crear equipos por orden alfabético</a>
-		      					<a class="btn btn-success" type="button" data-toggle="modal" href="#aleatorio">Crear equipos aleatorios</a>
-=======
 		      					<a href="#ordenAlfabetico" class="btn btn-success" type="button" data-toggle="modal" ><strong>Crear equipos por orden alfabético</strong></a>
 		      					<a class="btn btn-success" type="button" data-toggle="modal" href="#aleatorio"><strong>Crear equipos aleatorios</strong></a>
->>>>>>> 7cf063e4c456294c54c1382cd3cc81ca55b6a7c2
 		      				</div>
 		      			</div>
 	    			</div>
@@ -71,12 +66,6 @@
 			</div>
 		</div>
 		 -->
-	
-		
-		
-	<%@userInscriptionGroupAlphabetic.each do |user|%>
-		      						<%=user.email%>
-		      						<%end%>
 
 
 
@@ -173,10 +162,9 @@
   </div>
 </div>
 		
-	<%end%>
+	<%else%>
 
 
-	<%if current_user.student == true%>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="panel panel-primary">
@@ -219,12 +207,6 @@
 			</div>
 		</div>
 		 -->
-	
-		
-		
-	<%@userInscriptionGroupAlphabetic.each do |user|%>
-		      						<%=user.email%>
-		      						<%end%>
 
 
 

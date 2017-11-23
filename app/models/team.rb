@@ -3,8 +3,6 @@ class Team < ApplicationRecord
     validates :max_member, presence: true, :numericality => {greater_than_or_equal_to: :min_member}
     validates :min_member, presence: true, :numericality => {greater_than_or_equal_to: 1}
     validates :description, length: {maximum: 1000}
-      geocoded_by :address
-  after_validation :geocode
     
     mount_uploader :logo, FreeGroupImageUploader
      
