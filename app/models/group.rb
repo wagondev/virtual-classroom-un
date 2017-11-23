@@ -21,4 +21,7 @@ class Group < ApplicationRecord
     def self.userInscriptionGroupAlphabetic(group_id, user_id)
         User.includes(inscriptions: :group).where(groups:{id: group_id}).where.not(id: user_id).order(email: :asc)
     end
+    def self.assignmentGroup(group_id)
+        Assignment.where(group_id: group_id).order(:created_at)
+    end
 end

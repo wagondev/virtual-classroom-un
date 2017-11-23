@@ -16,6 +16,7 @@ class GroupsController < ApplicationController
     @teamsAvailable = Group.teamsAvailable(@group, current_user)
     @userInscriptionGroupAlphabetic = Group.userInscriptionGroupAlphabetic(@group, current_user)
     @assignment = Assignment.new
+    @assignmentGroup = Group.assignmentGroup(@group)
     #@prueba=Group.find(minNumber)
   end
 
