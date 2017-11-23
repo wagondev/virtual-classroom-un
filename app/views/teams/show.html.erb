@@ -53,6 +53,10 @@
 															<%m.document.each do |document|%>
 															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn" %></p>
 															<%end%>
+														<%elsif m.type_message == 3%>
+															<div style='width: 500px;'>
+ 																 <div id="viewMap" style='width: 500px; height: 400px;'></div>
+															</div>
 
 														<%end%>
 														<p class="text-muted small">Mensaje de: <%= User.includes(:members).where(members:{id: m.member_id}).pluck(:email)[0]%></p>
@@ -70,6 +74,10 @@
 														<%m.document.each do |document|%>
 															<p><%=link_to document.to_s.split('/')[5], document.to_s, :target => "_blank", class:"btn-xs btn" %></p>
 															<%end%>
+													<%elsif m.type_message == 3%>
+															<div style='width: 500px;'>
+ 																 <div id="viewMap" style='width: 500px; height: 400px;'></div>
+															</div>
 													<%end%>
 													<p class="text-muted small">Mensaje de: <%= User.includes(:members).where(members:{id: m.member_id}).pluck(:email)[0]%></p>
 													</div>
@@ -290,8 +298,9 @@
 
 
 <script>
+
 $("#reunion").on("shown.bs.modal", function () {
-    google.maps.event.trigger(map, "resize");
+    google.maps.event.trigger(mapModal, "resize");
 });
 
 $(document).ready(function(){
@@ -300,5 +309,16 @@ $(document).ready(function(){
     e.stopPropagation();
     e.preventDefault();
   });
+});
+
+
+</script>
+
+<script>
+	handler = Gmaps.build('Google');
+	handler.buildMap({ provider: {}, internal: {id: 'viewMap'}}, function(){
+ 	markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  	handler.bounds.extendWith(markers);
+  	handler.fitMapToBounds();
 });
 </script>

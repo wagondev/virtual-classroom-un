@@ -5,6 +5,12 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.all
+    @messagesMeeting = Message.last
+      @hash = Gmaps4rails.build_markers(@messagesMeeting) do |message, marker|
+      marker.lat message.latutude
+      marker.lng message.longitude
+      marker.infowindow message.body
+    end
   end
 
   # GET /messages/1
@@ -16,11 +22,6 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     #@memberId = Message.memberId(current_user.id, @team)
-    @hash = Gmaps4rails.build_markers(@meetings) do |meeting, marker|
-      marker.lat meeting.latitude
-      marker.lng meeting.longitude
-      marker.infowindow meeting.decription
-    end
 
   end
 
@@ -80,6 +81,7 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:member_id, :title, :body, :type_message)
       params.require(:message).permit(:member_id, :title,  {document: []}, :type_message)
+      params.require(:message).permit(:member_id, :title, :body, :latutude, :longitude, :meeting, :type_message)
       params.require(:message).permit(:member_id, :title, :body, :latutude, :longitude, :address, :meeting, {document: []}, :type_message)
     end
 end
