@@ -18,6 +18,10 @@
 		      						<%=link_to team.name.split(@subjectGroup[0].name)[0],  team, class:"btn btn-default"%>
 		      						<%end%>
 		      				</div>
+		      				<div class="btn-group btn-group-justified">
+		      					<a href="#ordenAlfabetico" class="btn btn-success" type="button" data-toggle="modal" >rear equipos por orden alfabético</a>
+		      					<a class="btn btn-success" type="button" data-toggle="modal" href="#aleatorio">Crear equipos aleatorios</a>
+		      				</div>
 		      			</div>
 	    			</div>
 				</div>
@@ -25,48 +29,41 @@
 		
 			<div class="col-md-6 col-md-offset">
 				<div class="panel panel-primary">
-		      		<div class="panel-heading"><h4 class="text-center">Notas</h4></div>
+		      		<div class="panel-heading"><h4 class="text-center">Tareas</h4></div>
 		      			<div class="panel-body">
 		      				<div class="list-group">
-		      					<%@userInscriptionGroupAlphabetic.each do |user|%>
-		      						<%=user.email%>
-		      						<%end%>
+		      					
 		      				</div>
+		      				<div class="btn-group btn-group-justified">
+		      					
+								<a href="#nuevaTarea"  class="btn btn-wall" data-toggle="modal">Crear tareas</a>
+							</div>
 		   			</div>
 	    		</div>
 			</div>
 		</div>
 		
 		
-		<div class="row">
-			<div class="col-md-1">
-
-					<button class="btn btn-success" type="button" data-toggle="modal" data-target="#aleatorio">Crear equipos aleatorios</button>
-			</div>
-			
-			<div class="col-md-1 col-md-offset-9">
-					<%= link_to "Descargar notas", new_team_path, class: "btn  btn-success" %>
-			</div>
+		
+	
 		</div>
 		
 
 		
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-md-1">
 					<%= link_to "Crear equipos vacíos", new_team_path, class: "btn  btn-success" %>
 			</div>
 		</div>
-		
+		 -->
 	
 		
-		<div class="row">
-			<div class="col-md-1">
-					<button class="btn btn-success" type="button" data-toggle="modal" data-target="#ordenAlfabetico">Crear equipos por orden alfabético</button>
-			</div>
-		</div>
-	
+		
+	<%@userInscriptionGroupAlphabetic.each do |user|%>
+		      						<%=user.email%>
+		      						<%end%>
 
-</div>
+
 
 <div id="ordenAlfabetico" class="modal fade" role="">
   <div class="modal-dialog">
@@ -83,9 +80,9 @@
  
       			<%= form_tag ("/groups/createTeams")  do %>
 				  <%=label_tag "minNumber","Numero minimo de estudiantes", class: "control-label"%>
-				  <%= number_field_tag "minNumber",nil ,class:'form-control' %>
+				  <%= number_field_tag "minNumber",nil,in: 2..(@studentNumberTotal[@group.id]), step: 1,:required => true ,class:'form-control' %>
 				<%=label_tag "maxNumber","Numero maximo de estudiantes", class: "control-label"%>
-				  <%= number_field_tag "maxNumber",nil,class:'form-control' %>
+				  <%= number_field_tag "maxNumber",nil, in: 2..(@studentNumberTotal[@group.id]), step: 1,:required => true ,class:'form-control' %>
 				  <%= hidden_field_tag(:numberGroup, @group.id)%>
 				  <br>
 				 <%= button_tag(type: 'submit', class: "btn btn-save-team") do %>
@@ -116,14 +113,40 @@
  
       			<%= form_tag ("/groups/createTeamsRandom")  do %>
 				  <%=label_tag "minNumber","Numero minimo de estudiantes", class: "control-label"%>
-				  <%= number_field_tag "minNumber",nil ,class:'form-control' %>
+				  <%= number_field_tag "minNumber",nil,in: 2..(@studentNumberTotal[@group.id]-1), step: 1,:required => true ,class:'form-control' %>
 				<%=label_tag "maxNumber","Numero maximo de estudiantes", class: "control-label"%>
-				  <%= number_field_tag "maxNumber",nil,class:'form-control' %>
+				  <%= number_field_tag "maxNumber",nil,in: 2..(@studentNumberTotal[@group.id]-1), step: 1,:required => true,class:'form-control' %>
 				  <%= hidden_field_tag(:numberGroup, @group.id)%>
 				  <br>
 				 <%= button_tag(type: 'submit', class: "btn btn-save-team") do %>
           <i class="icon-ok icon-white">Crear equipo</i><% end %>
 				 <% end %>
+      		</div>
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="nuevaTarea" class="modal fade" role="">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"><strong>Asignar una nueva tarea</strong></h4>
+      </div>
+      <div class="modal-body">
+      	<div class="container">
+      		<div class="row col-md-4 col-md-offset-1">
+ 
+      			<%= render "assignments/form" ,assignment: @assignment, :group => @group %>
+
       		</div>
       	</div>
       </div>

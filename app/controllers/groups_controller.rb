@@ -13,8 +13,9 @@ class GroupsController < ApplicationController
     @subjectGroup = Group.subjectGroup(@group)
     @inscriptionGroup = Group.inscriptionGroup(@group)
     @studentNumberTotal = Group.studentNumberTotal(@group)
-    @teamsAvailable = Group.teamsAvailable(@group)
+    @teamsAvailable = Group.teamsAvailable(@group, current_user)
     @userInscriptionGroupAlphabetic = Group.userInscriptionGroupAlphabetic(@group, current_user)
+    @assignment = Assignment.new
     #@prueba=Group.find(minNumber)
   end
 

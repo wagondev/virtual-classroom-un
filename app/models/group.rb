@@ -15,8 +15,8 @@ class Group < ApplicationRecord
     def self.studentNumberTotal(group_id)
         Inscription.group(:group_id).where(group_id: group_id).count
     end
-    def self.teamsAvailable(group_id)
-        Team.where(group_id: group_id).order(:created_at)
+    def self.teamsAvailable(group_id, user_id)
+        Team.includes(members: :user).where(group_id: group_id,users:{id: user_id}).order(:created_at)
     end
     def self.userInscriptionGroupAlphabetic(group_id, user_id)
         User.includes(inscriptions: :group).where(groups:{id: group_id}).where.not(id: user_id).order(email: :asc)
