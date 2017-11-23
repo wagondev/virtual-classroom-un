@@ -11,17 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :assignment_title %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :title , "Ingrese un titulo para la tarea" , class:"control-label"%>
+      <%= form.text_field :title, id: :assignment_title,:required => true, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :percent %>
-    <%= form.text_field :percent, id: :assignment_percent %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :percent , "Ingrese el porcentaje correspondiente a la tarea" , class:"control-label"%>
+      <%= form.number_field :percent, id: :assignment_percent, in: 0.25..100, step: 0.25,:required => true, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.hidden_field :group_id, :value => @group.id%>
+
+   <%= button_tag(type: 'submit', class: "btn btn-save-team") do %>
+          <i class="icon-ok icon-white">Enviar tarea</i><% end %>
 <% end %>

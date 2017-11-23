@@ -28,7 +28,8 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        #format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to group_url @assignment.group_id }
         format.json { render :show, status: :created, location: @assignment }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:title, :percent)
+      params.require(:assignment).permit(:title, :percent, :group_id)
     end
 end
