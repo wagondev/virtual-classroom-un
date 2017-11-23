@@ -19,7 +19,7 @@
 
 <div class="container">
  <div class="row col-md-12">
-    <div class ="map2" id="map" ></div>
+    <div class ="map2" id="mapModal" ></div>
  </div>
 </div>
 
@@ -45,10 +45,16 @@
     </div>
   </div>
 
+    <%= form.hidden_field :latutude, id: :message_latutude %>
+
+    <%= form.hidden_field :longitude, id: :message_longitude %>
+
+
    <div class="actions">
       <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
           <i class="icon-ok icon-white">ENVIAR</i><% end %>
     </div>
+
 
 
     
@@ -66,7 +72,7 @@
       center: new google.maps.LatLng(4.635540,-74.082807),
     }, 
     internal: {
-      id: 'map'
+      id: 'mapModal'
     }});
   
   google.maps.event.addListener(handler.getMap(), 'click', function(event) {
@@ -84,11 +90,11 @@
           var marker = new google.maps.Marker({
             icon: 'info-i_maps.png',
             position: latlng,
-            map: handler.getMap()
+            mapModal: handler.getMap()
           });
           document.getElementById("message_address").value = results[1].formatted_address;
           infowindow.setContent(results[1].formatted_address);
-          infowindow.open(map, marker);
+          infowindow.open(mapModal, marker);
         } else {
           window.alert('No results found');
         }
@@ -104,9 +110,9 @@
         map: handler.getMap(),
         draggable: true
     });
-    document.getElementById('message_latitude').value = location;
-    var aux = document.getElementById('message_latitude').value.substr(1,document.getElementById('message_latitude').value.length - 2).split(",")
-    document.getElementById("message_latitude").value = aux[0]
+    document.getElementById('message_latutude').value = location;
+    var aux = document.getElementById('message_latutude').value.substr(1,document.getElementById('message_latutude').value.length - 2).split(",")
+    document.getElementById("message_latutude").value = aux[0]
     document.getElementById("message_longitude").value = aux[1]
     google.maps.event.addListener(marker, 'click', function(event) {
       marker.setMap(null);

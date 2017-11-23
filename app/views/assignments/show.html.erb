@@ -1,14 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @assignment.title %>
-</p>
 
-<p>
-  <strong>Percent:</strong>
-  <%= @assignment.percent %>
-</p>
+ <div class="container-fluid" id="tareas"> 
+ 	<div class="text-center">
+ 		<h3 class="text-uppercase">
+ 			<%= @assignment.title %>
+ 		</h3>
+ 		</div>
+ 	<strong><%= @assignment.percent %>%</strong>
+ 	<div class="container">
+ 		<table class="table">
+ 			<thead>
+ 				<tr>
+ 					<th>Estudiante</th>
+ 					<th>Nota</th>
+ 					<th colspan="1"></th>
+ 				</tr>
+ 			</thead>
+ 			<tbody>
+ 				<%@studentGroup.each do |s|%>
+ 				<tr>
+ 					<td><%=s.email%></td>
+ 					<%= render 'scores/form',score: @score %>
+ 				</tr>
+ 				<%end%>
+ 			</tbody>
+ 		</table>
+ 	</div>
+ 	
 
-<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
-<%= link_to 'Back', assignments_path %>
+ </div>
+
+

@@ -28,7 +28,8 @@ class ScoresController < ApplicationController
 
     respond_to do |format|
       if @score.save
-        format.html { redirect_to @score, notice: 'Score was successfully created.' }
+        #format.html { redirect_to @score, notice: 'Score was successfully created.' }
+        format.html { redirect_to assignment_url @score.assignment_id }
         format.json { render :show, status: :created, location: @score }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class ScoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def score_params
-      params.require(:score).permit(:value_score)
+      params.require(:score).permit(:value_score, :assignment_id, :inscription_id)
     end
 end

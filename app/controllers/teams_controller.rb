@@ -25,6 +25,12 @@ class TeamsController < ApplicationController
     @message = Message.new
     @memberId = Team.memberId(current_user.id, @team.id)
     @memberIn = Team.memberIn(@team.id)
+    @messageMeeting = Team.messageMeeting
+    @hash = Gmaps4rails.build_markers(@messageMeeting) do |message, marker|
+      marker.lat message.latutude
+      marker.lng message.longitude
+      marker.infowindow message.body
+    end
   end
 
   

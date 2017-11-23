@@ -15,12 +15,19 @@
 		      			<div class="panel-body">
 		      				<div class="list-group">
 		      						<%@teamsAvailable.each do |team|%>
-		      						<%=link_to team.name.split(@subjectGroup[0].name)[0],  team, class:"btn btn-default"%>
+		      						<div class="col-md-4">
+			      						<%=link_to team.name.split(@subjectGroup[0].name)[0],  team, class:"btn btn-default btn-block"%>
+			      					</div>
 		      						<%end%>
 		      				</div>
 		      				<div class="btn-group btn-group-justified">
+<<<<<<< HEAD
 		      					<a href="#ordenAlfabetico" class="btn btn-success" type="button" data-toggle="modal" >Crear equipos por orden alfabético</a>
 		      					<a class="btn btn-success" type="button" data-toggle="modal" href="#aleatorio">Crear equipos aleatorios</a>
+=======
+		      					<a href="#ordenAlfabetico" class="btn btn-success" type="button" data-toggle="modal" ><strong>Crear equipos por orden alfabético</strong></a>
+		      					<a class="btn btn-success" type="button" data-toggle="modal" href="#aleatorio"><strong>Crear equipos aleatorios</strong></a>
+>>>>>>> 7cf063e4c456294c54c1382cd3cc81ca55b6a7c2
 		      				</div>
 		      			</div>
 	    			</div>
@@ -32,6 +39,14 @@
 		      		<div class="panel-heading"><h4 class="text-center">Tareas</h4></div>
 		      			<div class="panel-body">
 		      				<div class="list-group">
+		      					<div class="row">
+		      						<%@assignmentGroup.each do |a|%>
+		      						<div class="col-md-6">
+
+		      							<%= link_to a.title, assignment_path( a, :type_assignment => 2, :group => @group ), class:"btn btn-default btn-block"%>
+		      						</div>
+		      						<%end%>
+		      					</div>
 		      					
 		      				</div>
 		      				<div class="btn-group btn-group-justified">

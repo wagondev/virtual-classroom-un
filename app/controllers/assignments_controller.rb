@@ -10,6 +10,16 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1
   # GET /assignments/1.json
   def show
+    @type_assignment = params[:type_assignment]
+    @group = params[:group]
+    @score = Score.new
+    @inscriptionGroup = Assignment.inscriptionGroup(@group)
+    @studentGroup = Group.userInscriptionGroupAlphabetic(@group, current_user)
+    if @type_assignment == 2
+      
+    end
+
+
   end
 
   # GET /assignments/new

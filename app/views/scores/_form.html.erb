@@ -11,12 +11,19 @@
     </div>
   <% end %>
 
+<td>
   <div class="field">
-    <%= form.label :value_score %>
     <%= form.number_field :value_score, id: :score_value_score %>
   </div>
+</td>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%=form.hidden_field :assignment_id, :value=> @assignment.id %>
+<%@inscriptionGroup.each do |i| %>
+  <%@studentGroup.each do |st|%>
+    <%if i.user_id == st.id%>
+      <%=form.hidden_field :inscription_id, :value=> i.id %>
+    <%end%>
+  <%end%>
+<%end%>
+  
 <% end %>

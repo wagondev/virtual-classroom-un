@@ -3,6 +3,8 @@ class Team < ApplicationRecord
     validates :max_member, presence: true, :numericality => {greater_than_or_equal_to: :min_member}
     validates :min_member, presence: true, :numericality => {greater_than_or_equal_to: 1}
     validates :description, length: {maximum: 1000}
+      geocoded_by :address
+  after_validation :geocode
     
     mount_uploader :logo, FreeGroupImageUploader
      
@@ -45,5 +47,8 @@ class Team < ApplicationRecord
     end
     def self.getMessages(team_id)
         Message.includes(:member).where(members:{team_id: team_id}).order(created_at: :desc)       
+    end
+    def self.messageMeeting
+        Message.where.not(longitude: nil)
     end
 end
